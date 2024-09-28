@@ -44,4 +44,14 @@ public abstract class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    private void Awake()
+    {
+        // Add Rigidbody2D component
+        gameObject.AddComponent<Rigidbody2D>();
+
+        // Add a Collider2D component
+        BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
+        collider.isTrigger = true;
+    }
 }
