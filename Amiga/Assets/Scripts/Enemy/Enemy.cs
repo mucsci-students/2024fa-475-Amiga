@@ -5,16 +5,16 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     /// <summary> The health of the enemy. </summary>
-    private int m_health;
+    public int health;
 
     /// <summary> The speed of the enemy. </summary>
-    private float m_speed;
+    public float speed;
 
-    /// <summary> The # of seconds between each attack of the enemy. </summary>
-    private float m_attackInterval;
+    /// <summary> The attack range of the enemy. </summary>
+    public float range;
 
-    /// <summary> The transform of the enemy. </summary>
-    private Transform m_transform;
+    /// <summary> The damage per second of the enemy. </summary>
+    public float dps;
 
     /// <summary>
     /// Attack action of the enemy.
@@ -25,10 +25,23 @@ public abstract class Enemy : MonoBehaviour
     /// Take given amount of damage.
     /// </summary>
     /// <param name="damage"> The amount of damage taken. </param>
-    public abstract void TakeDamage(int damage);
+    public virtual void TakeDamage(int damage)
+    {
+        if (health <= damage)
+        {
+            Die();
+        }
+        else
+        {
+            health -= damage;
+        }
+    }
 
     /// <summary>
     /// Die action of the enemy.
     /// </summary>
-    public abstract void Die();
+    public virtual void Die()
+    {
+        Destroy(gameObject);
+    }
 }
