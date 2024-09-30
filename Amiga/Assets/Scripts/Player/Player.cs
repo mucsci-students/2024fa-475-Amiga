@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // TODO: hook staff to player
+    /// <summary>
+    /// The staff used by the player.
+    /// All mutable properties are defined in staff.
+    /// </summary>
+    public Staff staff;
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
+
         // Add Rigidbody2D component
         gameObject.AddComponent<Rigidbody2D>();
 
@@ -19,7 +25,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Initialize staff game object with player.
+        staff = new GameObject("Staff").GetComponent<Staff>();
     }
 
     // Update is called once per frame
