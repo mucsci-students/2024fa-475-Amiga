@@ -5,6 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     /// <summary>
+    /// Reference to the bullet prefab
+    /// </summary>
+    public GameObject bulletPrefab;
+
+    /// <summary>
     /// The staff used by the player.
     /// All mutable properties are defined in staff.
     /// </summary>
@@ -60,6 +65,30 @@ public class Player : MonoBehaviour
         // Get the mouse position in world space
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // TODO: sound effects for the attack
+        // Calculate direction from player to mouse
+        Vector2 direction = (mousePosition - (Vector2)transform.position).normalized;
+
+        for (int i = 0; i < staff.bulletCount; ++i)
+        {
+            // TODO: avoid overlap
+            shoot(direction);
+        }
+    }
+
+    /// <summary>
+    /// Shoot a bullet.
+    /// </summary>
+    private void shoot(Vector2 direction)
+    {
+        // Instantiate the bullet
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+
+        // Set bullet properties (speed, size, damage)
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+        bulletScript.Initialize(staff.bulletDamage, staff.bulletSpeed, staff.bulletSize, staff.bulletLife);
+
+        // Set bullet rotation to face the direction of the mouse
+        // The bullet sprite should be pointing up
+        bullet.transform.up = direction;
     }
 }
