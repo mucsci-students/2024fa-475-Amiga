@@ -9,7 +9,7 @@ public class DebrisBehavior : MonoBehaviour
 
     private float destroyDistance = 20f;
     private float destroyTime;
-    private float lifetime = 1f; // in seconds
+    private float lifetime = 1.5f; // in seconds
 
     // Start is called before the first frame update
     void Start()
