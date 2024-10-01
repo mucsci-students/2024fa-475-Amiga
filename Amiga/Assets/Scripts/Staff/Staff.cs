@@ -52,7 +52,8 @@ public class Staff : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        // Parent(Player) is already DontDestroyOnLoad
+        //DontDestroyOnLoad(gameObject);
     }
 
     void Start()
@@ -67,9 +68,9 @@ public class Staff : MonoBehaviour
 
         bulletDamage = 10;
         bulletCount = 1;
-        bulletSpeed = 10;
-        bulletSize = 10;
-        bulletLife = 10;
+        bulletSpeed = 2;
+        bulletSize = 1;
+        bulletLife = 50;
         armorDefense = 10;
         armorRecoverySpeed = 5;
         jumpHeight = 5;

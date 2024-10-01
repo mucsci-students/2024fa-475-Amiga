@@ -30,10 +30,10 @@ public class Bullet : MonoBehaviour
         gameObject.AddComponent<Rigidbody2D>().gravityScale = 0;
 
         // Add a Collider2D component
-        CircleCollider2D collider = gameObject.AddComponent<CircleCollider2D>();
+        gameObject.AddComponent<CircleCollider2D>().isTrigger = true;
     }
 
-    public void Initialize(int damage, int speed, int size, int life)
+    public void Initialize(int damage, int speed, int size, int life, Vector2 direction)
     {
         this.damage = damage;
         this.speed = speed;
@@ -46,6 +46,7 @@ public class Bullet : MonoBehaviour
         GetComponent<CircleCollider2D>().radius = size / 2;
 
         // Use Rigidbody2D for movement
+        transform.up = direction;
         GetComponent<Rigidbody2D>().velocity = transform.up * speed;
     }
 
@@ -57,5 +58,21 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    // Called when another collider enters the trigger collider
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name.Equals("Player"))
+        {
+            return;
+        }
+        else
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
+        // Debug.Log("Trigger Entered by: " + other.gameObject.name);
+        // Perform actions when the trigger is entered
     }
 }
