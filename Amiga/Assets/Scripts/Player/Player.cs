@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Player : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class Player : MonoBehaviour
     /// Reference to the staff prefab
     /// </summary>
     public GameObject staffPrefab;
+
+    /// <summary>
+    /// Reference to the tilemap handler
+    /// </summary>
+    public TilemapHandler handler;
 
     /// <summary>
     /// The staff used by the player.
@@ -31,11 +37,6 @@ public class Player : MonoBehaviour
 
         // Add a Collider2D component
         gameObject.AddComponent<BoxCollider2D>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
     }
 
     // Update is called once per frame
@@ -92,6 +93,7 @@ public class Player : MonoBehaviour
     {
         // Instantiate the bullet
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        bullet.GetComponent<Bullet>().handler = handler;
 
         // Set bullet properties (speed, size, damage)
         bullet.GetComponent<Bullet>().Initialize(staff.bulletDamage,

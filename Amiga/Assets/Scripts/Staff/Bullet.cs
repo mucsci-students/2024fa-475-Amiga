@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Bullet : MonoBehaviour
 {
+    /// <summary>
+    /// Reference to the tilemap handler
+    /// </summary>
+    public TilemapHandler handler;
+
     /// <summary>
     /// The damage of bullet.
     /// </summary>
@@ -12,12 +18,12 @@ public class Bullet : MonoBehaviour
     /// <summary>
     /// The speed of bullet.
     /// </summary>
-    public int speed;
+    public float speed;
 
     /// <summary>
     /// The size of bullet.
     /// </summary>
-    public int size;
+    public float size;
 
     /// <summary>
     /// The life of bullet.
@@ -30,10 +36,14 @@ public class Bullet : MonoBehaviour
         gameObject.AddComponent<Rigidbody2D>().gravityScale = 0;
 
         // Add a Collider2D component
-        gameObject.AddComponent<CircleCollider2D>().isTrigger = true;
+        gameObject.AddComponent<CircleCollider2D>();
     }
 
-    public void Initialize(int damage, int speed, int size, int life, Vector2 direction)
+    private void Start()
+    {
+    }
+
+    public void Initialize(int damage, float speed, float size, float life, Vector2 direction)
     {
         this.damage = damage;
         this.speed = speed;
@@ -60,19 +70,21 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    // Called when another collider enters the trigger collider
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.name.Equals("Player"))
+        // TODO: something different
+        if (collision.gameObject.name.Equals("Player"))
         {
             return;
         }
         else
         {
-            Destroy(other.gameObject);
+            foreach (ContactPoint2D contact in collision.contacts)
+            {
+                // Get the point where the collision occurred
+                handler.DestroyTile(contact.point, transform.up);
+            }
             Destroy(gameObject);
         }
-        // Debug.Log("Trigger Entered by: " + other.gameObject.name);
-        // Perform actions when the trigger is entered
     }
 }

@@ -22,17 +22,17 @@ public class Staff : MonoBehaviour
     /// <summary>
     /// The speed of bullet.
     /// </summary>
-    public int bulletSpeed;
+    public float bulletSpeed;
 
     /// <summary>
     /// The size of bullet.
     /// </summary>
-    public int bulletSize;
+    public float bulletSize;
 
     /// <summary>
     /// The life of bullet.
     /// </summary>
-    public int bulletLife;
+    public float bulletLife;
 
     // Defense properties:-------------------------------------------
 
@@ -68,9 +68,9 @@ public class Staff : MonoBehaviour
 
         bulletDamage = 10;
         bulletCount = 1;
-        bulletSpeed = 2;
-        bulletSize = 1;
-        bulletLife = 50;
+        bulletSpeed = 7.0f;
+        bulletSize = 0.5f;
+        bulletLife = 3.0f;
         armorDefense = 10;
         armorRecoverySpeed = 5;
         jumpHeight = 5;

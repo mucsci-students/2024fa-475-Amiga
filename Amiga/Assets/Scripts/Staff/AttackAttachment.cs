@@ -17,25 +17,25 @@ public class AttackAttachment : Attachment
     /// <summary>
     /// The speed increase amount of the attachment.
     /// </summary>
-    public int bulletSpeedIncrease;
+    public float bulletSpeedIncrease;
 
     /// <summary>
     /// The size increase amount of the attachment.
     /// </summary>
-    public int bulletSizeIncrease;
+    public float bulletSizeIncrease;
 
     /// <summary>
     /// The life increase amount of the attachment.
     /// </summary>
-    public int bulletLifeIncrease;
+    public float bulletLifeIncrease;
 
     void Start()
     {
         bulletDamageIncrease = 10;
         bulletCountIncrease = 0;
-        bulletSpeedIncrease = 0;
-        bulletSizeIncrease = 0;
-        bulletLifeIncrease = 0;
+        bulletSpeedIncrease = 0.0f;
+        bulletSizeIncrease = 0.0f;
+        bulletLifeIncrease = 0.0f;
     }
 
     public override void Attach(Staff staff)
