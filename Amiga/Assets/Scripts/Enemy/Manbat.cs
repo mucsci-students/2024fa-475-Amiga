@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Manbat : AirEnemy
 {
-    public override void Attack()
-    {
-        throw new System.NotImplementedException();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +22,7 @@ public class Manbat : AirEnemy
     // Update is called once per frame
     void Update()
     {
-        // fly or attack
         Fly();
+        Attack();
     }
 }

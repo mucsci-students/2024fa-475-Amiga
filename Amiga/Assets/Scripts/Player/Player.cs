@@ -59,5 +59,27 @@ public class Player : MonoBehaviour
         }
     }
 
-    
+    /// <summary>
+    /// Take given amount of damage.
+    /// </summary>
+    /// <param name="damage"> The amount of damage taken. </param>
+    public virtual void TakeDamage(int damage)
+    {
+        if (staff.TakeDamage(damage))
+        {
+            // Damage taken
+        }
+        else
+        {
+            Die();
+        }
+    }
+
+    /// <summary>
+    /// Die action of the enemy.
+    /// </summary>
+    public virtual void Die()
+    {
+        Destroy(gameObject);
+    }
 }

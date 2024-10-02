@@ -4,6 +4,11 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
+    /// <summary>
+    /// Reference to the player
+    /// </summary>
+    public GameObject player;
+
     /// <summary> The health of the enemy. </summary>
     public int health;
 
@@ -14,12 +19,23 @@ public abstract class Enemy : MonoBehaviour
     public float range;
 
     /// <summary> The damage per second of the enemy. </summary>
-    public float dps;
+    public int dps;
 
     /// <summary>
     /// Attack action of the enemy.
     /// </summary>
-    public abstract void Attack();
+    public virtual void Attack()
+    {
+        // TODO: each enemy should have its own attck action
+        // Calculate the distance between the two GameObjects
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+
+        // Check if the distance is less than the attack range
+        if (distance < range)
+        {
+            player.GetComponent<Player>().TakeDamage(dps);
+        }
+    }
 
     /// <summary>
     /// Take given amount of damage.
@@ -52,6 +68,11 @@ public abstract class Enemy : MonoBehaviour
 
         // Add a Collider2D component
         BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
-        collider.isTrigger = true;
+    }
+
+    void Start()
+    {
+        // Start invoking the Attack method every 1 second
+        InvokeRepeating(nameof(Attack), 1.0f, 1.0f);
     }
 }

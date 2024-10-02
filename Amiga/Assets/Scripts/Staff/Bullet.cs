@@ -77,13 +77,19 @@ public class Bullet : MonoBehaviour
         {
             return;
         }
-        else
+        else if (collision.gameObject.GetComponent<Tilemap>() != null)
         {
             foreach (ContactPoint2D contact in collision.contacts)
             {
                 // Get the point where the collision occurred
                 handler.DestroyTile(contact.point, transform.up);
             }
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.GetComponent<Enemy>() != null)
+        {
+            Debug.Log("Colliding");
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }

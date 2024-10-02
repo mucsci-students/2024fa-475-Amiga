@@ -5,11 +5,6 @@ using UnityEngine;
 
 public class DarkElf : GroundEnemy
 {
-    public override void Attack()
-    {
-        throw new System.NotImplementedException();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +23,7 @@ public class DarkElf : GroundEnemy
     // Update is called once per frame
     void Update()
     {
-        // move or attack
         Move();
+        Attack();
     }
 }

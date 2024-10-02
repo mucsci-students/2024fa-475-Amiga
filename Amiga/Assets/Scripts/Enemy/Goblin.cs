@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Goblin : GroundEnemy
 {
-    public override void Attack()
-    {
-        throw new System.NotImplementedException();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +12,8 @@ public class Goblin : GroundEnemy
         // Speed:  medium
         // Range:  medium
         // DPS:    medium
-        health = 100;
-        speed = 50;
+        health = 20;
+        speed = 1;
         range = 10;
         dps = 50;
         direction = 1;
@@ -27,7 +22,6 @@ public class Goblin : GroundEnemy
     // Update is called once per frame
     void Update()
     {
-        // move or attack
         Move();
     }
 }

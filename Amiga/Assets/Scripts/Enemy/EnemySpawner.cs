@@ -5,6 +5,11 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     /// <summary>
+    /// Reference to the player
+    /// </summary>
+    public GameObject player;
+
+    /// <summary>
     /// Reference to the enemy prefab
     /// </summary>
     public GameObject enemyPrefab;
@@ -28,7 +33,8 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            GameObject enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            enemy.GetComponent<Enemy>().player = player;
             yield return new WaitForSeconds(spawnInterval);
         }
     }
