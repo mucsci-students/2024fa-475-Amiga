@@ -12,6 +12,8 @@ public class TilemapHandler : MonoBehaviour
     [SerializeField] private List<Sprite> spriteMasks;
 
     private Tilemap destructibleTilemap;
+    private int currentDebrisLayer = 1; // each debris should get its own layer
+    private int maxDebrisLayer = 100; // 1 <= currentDebrisLayer <= 100
 
     void Start()
     {
@@ -36,7 +38,8 @@ public class TilemapHandler : MonoBehaviour
                 GameObject debris = Instantiate (debrisPrefab, debrisPos, Quaternion.identity);
                 Rigidbody2D rb = debris.GetComponent<Rigidbody2D> ();
                 PolygonCollider2D collider = debris.GetComponent<PolygonCollider2D> ();
-                SpriteRenderer sr = debris.GetComponent<SpriteRenderer> ();
+                SpriteRenderer rend = debris.GetComponent<SpriteRenderer> ();
+                SpriteMask mask = debris.GetComponent<SpriteMask> ();
 
                 // update its collider
                 collider.pathCount = spriteMasks[i].GetPhysicsShapeCount ();
@@ -51,8 +54,15 @@ public class TilemapHandler : MonoBehaviour
                 // update its sprite
                 TileData tileData = new TileData ();
                 tileBase.GetTileData (tilePos, destructibleTilemap, ref tileData);
-                sr.sprite = tileData.sprite;
-                debris.GetComponent<SpriteMask> ().sprite = spriteMasks[i];
+                rend.sprite = tileData.sprite;
+                mask.sprite = spriteMasks[i];
+
+                // give it a unique order in the sorting order
+                rend.sortingOrder = currentDebrisLayer;
+                
+                mask.frontSortingOrder = currentDebrisLayer;
+                mask.backSortingOrder = currentDebrisLayer - 1;
+                if (++currentDebrisLayer > maxDebrisLayer) currentDebrisLayer = 1;
 
                 // adjust its size & add the force of impact
                 debris.transform.localScale *= 0.95f;
