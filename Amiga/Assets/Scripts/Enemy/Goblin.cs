@@ -7,6 +7,9 @@ public class Goblin : GroundEnemy
     // Start is called before the first frame update
     void Start()
     {
+        // Start invoking the Attack method every 1 second
+        InvokeRepeating(nameof(Attack), 1.0f, 1.0f);
+
         // Goblin properties:
         // Health: medium
         // Speed:  medium
@@ -15,7 +18,7 @@ public class Goblin : GroundEnemy
         health = 20;
         speed = 1;
         range = 10;
-        dps = 50;
+        dps = 10;
         direction = 1;
     }
 

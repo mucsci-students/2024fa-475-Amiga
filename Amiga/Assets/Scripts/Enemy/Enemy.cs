@@ -69,10 +69,4 @@ public abstract class Enemy : MonoBehaviour
         // Add a Collider2D component
         BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
     }
-
-    void Start()
-    {
-        // Start invoking the Attack method every 1 second
-        InvokeRepeating(nameof(Attack), 1.0f, 1.0f);
-    }
 }
