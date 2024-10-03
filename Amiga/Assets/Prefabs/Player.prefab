@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.8174672, a: 1}
+  m_Sprite: {fileID: -1439275963, guid: 714ac5da723cf42c9872faf69bca150c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,8 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1364c8dfe4832d9468878bb8003129b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8590953270453585271, guid: 07fc87f09e8aada4eaabd5857f1f0bfa, type: 3}
-  staffPrefab: {fileID: 6786148107247302247, guid: 79c2535f7a500e44085cc3ee22004b37, type: 3}
   staff: {fileID: 7601831500149142839}
 --- !u!1 &6786148107247302247
 GameObject:
@@ -175,8 +173,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
-  m_Color: {r: 1, g: 0.5214751, b: 0, a: 1}
+  m_Sprite: {fileID: -1103835368, guid: 32333d2b371304e1a836310e42967b40, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -198,12 +196,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c805eb10293d3043a2239aadcc7033c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8590953270453585271, guid: 07fc87f09e8aada4eaabd5857f1f0bfa, type: 3}
+  handler: {fileID: 0}
   attachments: []
+  attachmentCount: 0
+  hpDisplay: {fileID: 0}
+  manaDisplay: {fileID: 0}
+  armorDisplay: {fileID: 0}
   bulletDamage: 0
   bulletCount: 0
   bulletSpeed: 0
   bulletSize: 0
   bulletLife: 0
   armorDefense: 0
+  currentArmorDefense: 0
   armorRecoverySpeed: 0
   jumpHeight: 0
+  maxHealth: 0
+  currentHealth: 0
+  healthRecoverySpeed: 0
+  maxMana: 0
+  currentMana: 0
+  manaRecoverySpeed: 0
+  manaCost: 0

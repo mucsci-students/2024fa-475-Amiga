@@ -52,8 +52,8 @@ public class Bullet : MonoBehaviour
         GetComponent<CircleCollider2D>().radius = size / 2;
 
         // Use Rigidbody2D for movement
-        transform.up = direction;
-        GetComponent<Rigidbody2D>().velocity = transform.up * speed;
+        transform.right = direction;
+        GetComponent<Rigidbody2D>().velocity = transform.right * speed;
     }
 
     // Update is called once per frame
