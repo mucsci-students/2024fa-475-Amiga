@@ -12,6 +12,12 @@ public abstract class Attachment : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+
+        // Add Rigidbody2D component
+        gameObject.AddComponent<Rigidbody2D>();
+
+        // Add a Collider2D component
+        gameObject.AddComponent<BoxCollider2D>();
     }
 
     /// <summary>

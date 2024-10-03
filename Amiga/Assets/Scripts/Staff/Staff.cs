@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,9 @@ public class Staff : MonoBehaviour
 
     /// <summary> The attachments on the staff. </summary>
     public List<Attachment> attachments;
+
+    /// <summary> The # of attachments on the staff. </summary>
+    public int attachmentCount;
 
     /// <summary>
     /// Reference to hp diplay UI.
@@ -132,8 +136,16 @@ public class Staff : MonoBehaviour
         {
             null,
             null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
             null
         };
+
+        attachmentCount = 0;
 
         bulletDamage = 10;
         bulletCount = 1;
@@ -184,8 +196,9 @@ public class Staff : MonoBehaviour
         // Empty slot, avilable to attach
         if (index < attachments.Count && attachments[index] == null)
         {
-            attachments[index] = attachment;
             attachment.Attach(this);
+            attachments[index] = attachment;
+            ++attachmentCount;
             return true;
         }
         else
@@ -204,12 +217,23 @@ public class Staff : MonoBehaviour
         if (index < attachments.Count && attachments[index] != null)
         {
             attachments[index].Detach(this);
+            attachments[index] = null;
+            --attachmentCount;
             return true;
         }
         else
         {
             return false;
         }
+    }
+
+    /// <summary>
+    /// Get the # of attachments attached to the staff.
+    /// </summary>
+    /// <returns> # of attachments attached to the staff. </returns>
+    public int GetAttachmentCount()
+    {
+        return attachmentCount;
     }
 
     /// <summary>

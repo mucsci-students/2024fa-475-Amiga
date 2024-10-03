@@ -82,4 +82,15 @@ public class Player : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<Attachment>() != null)
+        {
+            staff.AttachAttachment(collision.gameObject.GetComponent<Attachment>(), staff.GetAttachmentCount());
+
+            // TODO: move this to backpack instead of set to inactive
+            collision.gameObject.SetActive(false);
+        }
+    }
 }

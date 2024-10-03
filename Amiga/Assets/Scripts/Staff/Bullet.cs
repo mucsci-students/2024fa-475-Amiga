@@ -39,10 +39,6 @@ public class Bullet : MonoBehaviour
         gameObject.AddComponent<CircleCollider2D>();
     }
 
-    private void Start()
-    {
-    }
-
     public void Initialize(int damage, float speed, float size, float life, Vector2 direction)
     {
         this.damage = damage;
@@ -88,7 +84,6 @@ public class Bullet : MonoBehaviour
         }
         else if (collision.gameObject.GetComponent<Enemy>() != null)
         {
-            Debug.Log("Colliding");
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
             Destroy(gameObject);
         }

@@ -67,6 +67,6 @@ public abstract class Enemy : MonoBehaviour
         gameObject.AddComponent<Rigidbody2D>();
 
         // Add a Collider2D component
-        BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
+        gameObject.AddComponent<BoxCollider2D>();
     }
 }
