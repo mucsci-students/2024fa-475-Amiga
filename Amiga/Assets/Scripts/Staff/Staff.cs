@@ -258,4 +258,26 @@ public class Staff : MonoBehaviour
         currentHealth = Mathf.Min(maxHealth, currentHealth + healthRecoverySpeed);
         currentMana = Mathf.Min(maxMana, currentMana + manaRecoverySpeed);
     }
+
+    /// <summary>
+    /// Take given amount of damage.
+    /// </summary>
+    /// <param name="damage"> The amount of damage taken. </param>
+    /// <returns> true for alive, false for dead </returns>
+    public virtual bool TakeDamage(int damage)
+    {
+        if (currentArmorDefense > 0)
+        {
+            currentArmorDefense = Mathf.Max(0, currentArmorDefense - damage);
+        }
+        else if (currentHealth <= damage)
+        {
+            return false;
+        }
+        else
+        {
+            currentHealth -= damage;
+        }
+        return true;
+    }
 }

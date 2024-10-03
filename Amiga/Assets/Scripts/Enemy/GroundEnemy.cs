@@ -12,6 +12,14 @@ public abstract class GroundEnemy : Enemy
     /// </summary>
     public virtual void Move()
     {
+        if (player.transform.position.x < transform.position.x)
+        {
+            direction = -1;
+        }
+        else
+        {
+            direction = 1;
+        }
         transform.position = (Vector2)transform.position + new Vector2(speed * Time.deltaTime * direction, 0);
     }
 }
