@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        spawnInterval = 1.0f;
+        spawnInterval = 2.0f;
         StartCoroutine(SpawnEnemies());
     }
 

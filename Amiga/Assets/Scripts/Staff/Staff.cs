@@ -166,7 +166,7 @@ public class Staff : MonoBehaviour
         // Calculate direction from staff to mouse
         Vector2 direction = (mousePosition - (Vector2)transform.position).normalized;
 
-        transform.right = direction;
+        transform.up = direction;
 
         hpDisplay.text = "hp: " + currentHealth.ToString();
         manaDisplay.text = "mana: " + currentMana.ToString();
