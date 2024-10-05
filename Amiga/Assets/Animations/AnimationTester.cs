@@ -9,6 +9,7 @@ public class AnimationTester : MonoBehaviour
     [SerializeField] private Animator manbat;
     [SerializeField] private Animator troll;
     [SerializeField] private Animator darkElf;
+    [SerializeField] private Animator wizard;
 
     // Start is called before the first frame update
     void Start()
@@ -19,17 +20,27 @@ public class AnimationTester : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Is Attacking will be set to false once the animation has ended
-        goblin.SetBool ("Is Attacking", Input.GetMouseButtonDown (0));
-        troll.SetBool ("Is Attacking", Input.GetMouseButtonDown (0));
+        float xInput = Mathf.Abs (Input.GetAxis ("Horizontal"));
+        bool mouseDown = Input.GetMouseButton (0);
+        bool spaceDown = Input.GetKey (KeyCode.Space);
 
-        // Is Charging will not reset to false automatically, it must be done via script
-        darkElf.SetBool ("Is Charging", Input.GetMouseButton (0));
-
+        // Speed should be related to the curent movement speed of the enemy
         //  1 <= Speed <= 2 for realistic animations
-        goblin.SetFloat ("Speed", 1 + Mathf.Abs (Input.GetAxis ("Horizontal")));
-        manbat.SetFloat ("Speed", 1 + Mathf.Abs (Input.GetAxis ("Horizontal")));
-        troll.SetFloat ("Speed", 1 + Mathf.Abs (Input.GetAxis ("Horizontal")));
-        darkElf.SetFloat ("Speed", 1 + Mathf.Abs (Input.GetAxis ("Horizontal")));
+        goblin.SetFloat ("Speed", 1 + xInput);
+        manbat.SetFloat ("Speed", 1 + xInput);
+        troll.SetFloat ("Speed", 1 + xInput);
+        darkElf.SetFloat ("Speed", 1 + xInput);
+        wizard.SetFloat ("Speed", 1 + xInput);
+
+        // Is Attacking should be true while the enemy is attacking
+        goblin.SetBool ("Is Attacking", mouseDown);
+        troll.SetBool ("Is Attacking", mouseDown);
+        wizard.SetBool ("Is Attacking", mouseDown);
+
+        // Is Charging should be true while the enemy is charging its attack
+        darkElf.SetBool ("Is Charging", mouseDown);
+
+        // Is Jumping should be true while the enemy is in the air
+        wizard.SetBool ("Is Jumping", spaceDown);
     }
 }
