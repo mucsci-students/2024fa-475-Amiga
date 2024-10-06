@@ -600,6 +600,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8400077467386937271, guid: 03c3b452fc20ff64a9bc1dfd1ed6ebe4, type: 3}
   m_PrefabInstance: {fileID: 2978638802174673524}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1848685433 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7858806832972757209, guid: 03c3b452fc20ff64a9bc1dfd1ed6ebe4, type: 3}
+  m_PrefabInstance: {fileID: 2978638802174673524}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1a66edcf05a44d98c1ec9fea159e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1991723723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,6 +1062,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7601831500149142839, guid: ea6a39b0706b07543970ecb81496222b, type: 3}
+      propertyPath: handler
+      value: 
+      objectReference: {fileID: 1848685433}
     - target: {fileID: 7601831500149142839, guid: ea6a39b0706b07543970ecb81496222b, type: 3}
       propertyPath: hpDisplay
       value: 

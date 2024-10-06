@@ -18,10 +18,12 @@ public class Player : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         // Add Rigidbody2D component
-        gameObject.AddComponent<Rigidbody2D>().gravityScale = 9.8f;
+        //Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
+        //rb.gravityScale = 9.8f;
+        //rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         // Add a Collider2D component
-        gameObject.AddComponent<BoxCollider2D>();
+        //gameObject.AddComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame

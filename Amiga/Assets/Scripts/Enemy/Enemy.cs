@@ -64,7 +64,7 @@ public abstract class Enemy : MonoBehaviour
     private void Awake()
     {
         // Add Rigidbody2D component
-        gameObject.AddComponent<Rigidbody2D>();
+        gameObject.AddComponent<Rigidbody2D>().freezeRotation = true;
 
         // Add a Collider2D component
         gameObject.AddComponent<BoxCollider2D>();
