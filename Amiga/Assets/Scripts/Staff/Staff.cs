@@ -137,18 +137,11 @@ public class Staff : MonoBehaviour
     void Start()
     {
         // start with 3 empty slots
-        attachments = new List<Attachment>
+        attachments = new List<Attachment>();
+        for (int i = 0; i < 100; ++i)
         {
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-            null
-        };
+            attachments.Add(null);
+        }
 
         attachmentCount = 0;
 
@@ -164,6 +157,7 @@ public class Staff : MonoBehaviour
 
         jumpHeight = 5;
         floating = false;
+
         maxHealth = 100;
         currentHealth = maxHealth;
         healthRecoverySpeed = 5;

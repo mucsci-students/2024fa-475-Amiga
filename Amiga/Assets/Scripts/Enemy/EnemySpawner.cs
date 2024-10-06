@@ -10,6 +10,11 @@ public class EnemySpawner : MonoBehaviour
     public GameObject player;
 
     /// <summary>
+    /// Reference to the random attachment prefab generator
+    /// </summary>
+    public GameObject attachmentGenerator;
+
+    /// <summary>
     /// Reference to the enemy prefab
     /// </summary>
     public GameObject enemyPrefab;
@@ -34,6 +39,7 @@ public class EnemySpawner : MonoBehaviour
         {
             GameObject enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
             enemy.GetComponent<Enemy>().player = player;
+            enemy.GetComponent<Enemy>().attachmentGenerator = attachmentGenerator;
             yield return new WaitForSeconds(spawnInterval);
         }
     }
