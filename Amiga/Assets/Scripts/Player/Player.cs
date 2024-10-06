@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     /// </summary>
     public Staff staff;
 
+    public bool isGrounded;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -41,13 +43,28 @@ public class Player : MonoBehaviour
     {
         // Get input from WASD or arrow keys
         float moveX = Input.GetAxis("Horizontal"); // A/D or Left/Right arrows
-        float moveY = Input.GetAxis("Vertical"); // W/S or Up/Down arrows
+        float moveY = 0.0f;
+        if (staff.floating)
+        {
+            moveY = Input.GetAxis("Vertical"); // W/S or Up/Down arrows
+        }
 
-        // Create a movement vector
-        Vector2 movement = new Vector2(moveX, moveY).normalized * 5.0f;
+        // Update physics only when needed instead of every frame.
+        if (moveX != 0.0f || moveY != 0.0f)
+        {
+            // Create a movement vector
+            Vector2 movement = new Vector2(moveX, moveY).normalized * 5.0f;
 
-        // Set the velocity of the Rigidbody2D
-        GetComponent<Rigidbody2D>().velocity = movement;
+            // Set the velocity of the Rigidbody2D for movement
+            GetComponent<Rigidbody2D>().velocity = movement;
+        }
+
+        // Check for jumping input using 'Space'
+        // TODO: Ensure the player is on the ground
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        {
+            GetComponent<Rigidbody2D>().AddForce(Vector2.up * staff.jumpHeight, ForceMode2D.Impulse);
+        }
     }
 
     /// <summary>
@@ -88,6 +105,8 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        isGrounded = true;
+
         if (collision.gameObject.GetComponent<Attachment>() != null)
         {
             staff.AttachAttachment(collision.gameObject.GetComponent<Attachment>(), staff.GetAttachmentCount());
@@ -95,5 +114,10 @@ public class Player : MonoBehaviour
             // TODO: move this to backpack instead of set to inactive
             collision.gameObject.SetActive(false);
         }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        isGrounded = false;
     }
 }

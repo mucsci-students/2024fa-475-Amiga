@@ -89,6 +89,11 @@ public class Staff : MonoBehaviour
     public int jumpHeight;
 
     /// <summary>
+    /// Whether or not the player is floating
+    /// </summary>
+    public bool floating;
+
+    /// <summary>
     /// The maximum health
     /// </summary>
     public int maxHealth;
@@ -158,6 +163,7 @@ public class Staff : MonoBehaviour
         armorRecoverySpeed = 5;
 
         jumpHeight = 5;
+        floating = false;
         maxHealth = 100;
         currentHealth = maxHealth;
         healthRecoverySpeed = 5;

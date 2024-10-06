@@ -138,7 +138,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 9.8
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -308,6 +308,7 @@ MonoBehaviour:
   currentArmorDefense: 0
   armorRecoverySpeed: 0
   jumpHeight: 0
+  floating: 0
   maxHealth: 0
   currentHealth: 0
   healthRecoverySpeed: 0

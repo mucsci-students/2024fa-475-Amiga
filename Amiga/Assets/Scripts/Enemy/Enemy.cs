@@ -30,8 +30,6 @@ public abstract class Enemy : MonoBehaviour
         // Calculate the distance between the two GameObjects
         float distance = Vector3.Distance(transform.position, player.transform.position);
 
-        Debug.Log(distance.ToString());
-
         // Check if the distance is less than the attack range
         if (distance < range)
         {
