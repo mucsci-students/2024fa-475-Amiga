@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 
 public class Player : MonoBehaviour
@@ -82,7 +83,7 @@ public class Player : MonoBehaviour
     /// </summary>
     public virtual void Die()
     {
-        Destroy(gameObject);
+        // Reload the current scene
     }
 
     void OnCollisionEnter2D(Collision2D collision)

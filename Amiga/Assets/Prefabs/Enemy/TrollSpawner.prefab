@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4693579569378610879}
-  - component: {fileID: 8603539863741302639}
+  - component: {fileID: -8333150347963121388}
   m_Layer: 0
-  m_Name: GoblinSpawner
+  m_Name: TrollSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8603539863741302639
+--- !u!114 &-8333150347963121388
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  enemyPrefab: {fileID: 3814055608966723007, guid: be9a8cab1752941eca63317e8ff8b9cd, type: 3}
-  spawnInterval: 0
+  enemyPrefab: {fileID: 3071598386226736340, guid: c18abdbba1e58a149b8886e5910e0b67, type: 3}
+  spawnInterval: 2

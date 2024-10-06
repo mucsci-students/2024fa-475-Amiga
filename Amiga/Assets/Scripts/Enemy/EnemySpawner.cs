@@ -17,11 +17,10 @@ public class EnemySpawner : MonoBehaviour
     /// <summary>
     /// # of seconds between enemy spawn
     /// </summary>
-    public float spawnInterval;
+    public float spawnInterval = 2.0f;
 
     void Start()
     {
-        spawnInterval = 2.0f;
         StartCoroutine(SpawnEnemies());
     }
 

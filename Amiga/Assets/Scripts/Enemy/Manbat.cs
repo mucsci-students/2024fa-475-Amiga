@@ -12,10 +12,10 @@ public class Manbat : AirEnemy
         // Speed:  fast
         // Range:  far
         // DPS:    medium
-        health = 100;
-        speed = 100;
-        range = 50;
-        dps = 50;
+        health = 20;
+        speed = 2;
+        range = 25;
+        dps = 10;
         direction = new Vector2(1, 0);
     }
 

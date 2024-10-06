@@ -12,10 +12,10 @@ public class Troll : GroundEnemy
         // Speed:  slow
         // Range:  short
         // DPS:    high
-        health = 500;
-        speed = 25;
+        health = 50;
+        speed = 0.5f;
         range = 5;
-        dps = 100;
+        dps = 40;
         direction = 1;
     }
 
