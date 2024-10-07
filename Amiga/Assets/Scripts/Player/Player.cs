@@ -44,7 +44,9 @@ public class Player : MonoBehaviour
         // Get input from WASD or arrow keys
         float moveX = Input.GetAxis("Horizontal"); // A/D or Left/Right arrows
         float moveY = 0.0f;
-        if (staff.floating)
+
+        // is floating
+        if (staff.floating > 0)
         {
             moveY = Input.GetAxis("Vertical"); // W/S or Up/Down arrows
         }

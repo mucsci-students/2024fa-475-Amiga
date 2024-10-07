@@ -7,18 +7,12 @@ public class DefenseAttachment : Attachment
     /// <summary>
     /// The defense increase amount of the attachment.
     /// </summary>
-    public int armorDefenseIncrease;
+    public int armorDefenseIncrease = 0;
 
     /// <summary>
     /// The recovery speed increase amount of the attachment.
     /// </summary>
-    public int armorRecoverySpeedIncrease;
-
-    void Start()
-    {
-        armorDefenseIncrease = 10;
-        armorRecoverySpeedIncrease = 0;
-    }
+    public int armorRecoverySpeedIncrease = 0;
 
     public override void Attach(Staff staff)
     {

@@ -90,23 +90,9 @@ public class Staff : MonoBehaviour
 
     /// <summary>
     /// Whether or not the player is floating
+    /// Use integer instead of bool to avoid multiple attaching
     /// </summary>
-    public bool floating;
-
-    /// <summary>
-    /// The maximum health
-    /// </summary>
-    public int maxHealth;
-
-    /// <summary>
-    /// The current health
-    /// </summary>
-    public int currentHealth;
-
-    /// <summary>
-    /// The recovery speed of health.(per second)
-    /// </summary>
-    public int healthRecoverySpeed;
+    public int floating;
 
     /// <summary>
     /// The maximum mana
@@ -127,6 +113,21 @@ public class Staff : MonoBehaviour
     /// The cost of mana for each attack
     /// </summary>
     public int manaCost;
+
+    /// <summary>
+    /// The maximum health
+    /// </summary>
+    public int maxHealth;
+
+    /// <summary>
+    /// The current health
+    /// </summary>
+    public int currentHealth;
+
+    /// <summary>
+    /// The recovery speed of health.(per second)
+    /// </summary>
+    public int healthRecoverySpeed;
 
     private void Awake()
     {
@@ -154,17 +155,16 @@ public class Staff : MonoBehaviour
         armorDefense = 50;
         currentArmorDefense = 50;
         armorRecoverySpeed = 5;
-
         jumpHeight = 5;
-        floating = false;
-
-        maxHealth = 100;
-        currentHealth = maxHealth;
-        healthRecoverySpeed = 5;
+        floating = 0;
         maxMana = 100;
         currentMana = maxMana;
         manaRecoverySpeed = 20;
         manaCost = 10;
+
+        maxHealth = 100;
+        currentHealth = maxHealth;
+        healthRecoverySpeed = 5;
 
         // Start invoking the Recover method every 1 second
         InvokeRepeating(nameof(Recover), 1.0f, 1.0f);
@@ -247,11 +247,21 @@ public class Staff : MonoBehaviour
         // Calculate direction from player to mouse
         Vector2 direction = (mousePosition - (Vector2)transform.position).normalized;
 
-        for (int i = 0; i < Mathf.Min(bulletCount, currentMana / manaCost); ++i)
+        if (manaCost <= 0)
         {
-            // TODO: avoid overlap
-            Shoot(direction);
-            currentMana -= manaCost;
+            for (int i = 0; i < bulletCount; ++i)
+            {
+                Shoot(direction);
+                currentMana = Mathf.Max(maxMana, currentMana - manaCost);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < Mathf.Min(bulletCount, currentMana / manaCost); ++i)
+            {
+                Shoot(direction);
+                currentMana -= manaCost;
+            }
         }
     }
 
@@ -260,6 +270,8 @@ public class Staff : MonoBehaviour
     /// </summary>
     private void Shoot(Vector2 direction)
     {
+        // TODO: avoid bullet overlap
+
         // Instantiate the bullet
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         bullet.GetComponent<Bullet>().handler = handler;

@@ -8,9 +8,5 @@ public class DamageIncreaseAttachment : AttackAttachment
     void Start()
     {
         bulletDamageIncrease = 10;
-        bulletCountIncrease = 0;
-        bulletSpeedIncrease = 0.0f;
-        bulletSizeIncrease = 0.0f;
-        bulletLifeIncrease = 0.0f;
     }
 }

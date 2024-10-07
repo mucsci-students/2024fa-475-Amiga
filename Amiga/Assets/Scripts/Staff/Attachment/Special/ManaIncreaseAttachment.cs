@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletSizeIncrease : AttackAttachment
+public class ManaIncreaseAttachment : SpecialAttachment
 {
     // Start is called before the first frame update
     void Start()
     {
-        bulletSizeIncrease = 1.0f;
+        manaIncrease = 10;
     }
 }
