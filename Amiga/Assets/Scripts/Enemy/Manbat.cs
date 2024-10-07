@@ -7,15 +7,17 @@ public class Manbat : AirEnemy
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<Rigidbody2D>().gravityScale = 0.0f;
+
         // Goblin properties:
         // Health: medium
         // Speed:  fast
         // Range:  far
         // DPS:    medium
-        health = 100;
-        speed = 100;
-        range = 50;
-        dps = 50;
+        health = 20;
+        speed = 2;
+        range = 25;
+        dps = 10;
         direction = new Vector2(1, 0);
     }
 

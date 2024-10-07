@@ -13,6 +13,9 @@ public abstract class AirEnemy : Enemy
     /// </summary>
     public virtual void Fly()
     {
+        // Calculate direction from enemy to player
+        direction = (Vector2)(player.transform.position - transform.position).normalized;
+
         transform.position = (Vector2)transform.position + (speed * Time.deltaTime * direction);
     }
 }

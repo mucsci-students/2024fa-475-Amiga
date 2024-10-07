@@ -32,11 +32,8 @@ public class Bullet : MonoBehaviour
 
     void Awake()
     {
-        // Add Rigidbody2D component
-        gameObject.AddComponent<Rigidbody2D>().gravityScale = 0;
-
         // Add a Collider2D component
-        gameObject.AddComponent<CircleCollider2D>();
+        //gameObject.GetComponent<CircleCollider2D>().isTrigger = true;
     }
 
     public void Initialize(int damage, float speed, float size, float life, Vector2 direction)
@@ -51,14 +48,15 @@ public class Bullet : MonoBehaviour
 
         GetComponent<CircleCollider2D>().radius = size / 2;
 
-        // Use Rigidbody2D for movement
         transform.right = direction;
-        GetComponent<Rigidbody2D>().velocity = transform.right * speed;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Move bullet by modifying its position directly
+        transform.position += speed * Time.deltaTime * transform.right;
+
         life -= Time.deltaTime;
         if (life <= 0)
         {
@@ -66,22 +64,21 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        // TODO: something different
+        // Check if the bullet hits the Player and return (ignore player)
         if (collision.gameObject.name.Equals("Player"))
         {
             return;
         }
+        // Check if the bullet hits a tilemap and destroy the tile
         else if (collision.gameObject.GetComponent<Tilemap>() != null)
         {
-            foreach (ContactPoint2D contact in collision.contacts)
-            {
-                // Get the point where the collision occurred
-                handler.DestroyTile(contact.point, transform.up);
-            }
+            Vector2 contactPoint = collision.ClosestPoint(transform.position);  // Get the closest point of contact
+            handler.DestroyTile(contactPoint, transform.up);  // Destroy the tile at the contact point
             Destroy(gameObject);
         }
+        // Check if the bullet hits an enemy and apply damage
         else if (collision.gameObject.GetComponent<Enemy>() != null)
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
