@@ -66,7 +66,6 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
         // Check if the bullet hits the Player and return (ignore player)
         if (collision.gameObject.name.Equals("Player"))
         {

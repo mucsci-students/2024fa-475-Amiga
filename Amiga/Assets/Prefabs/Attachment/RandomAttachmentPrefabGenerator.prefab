@@ -46,3 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachmentPrefabs:
   - {fileID: 1843948832506494642, guid: 73fe39c57b19ca94a90170772fbf6013, type: 3}
+  - {fileID: 3632332074848352137, guid: 37825d97488631848ac30ead32a576bf, type: 3}
+  - {fileID: 304085674659292160, guid: 7c7640983cbabe949844fa4e62d50c3b, type: 3}
+  - {fileID: 7548559990099050810, guid: 02f5f6ccbc372764f864fd1f48aecf4d, type: 3}
