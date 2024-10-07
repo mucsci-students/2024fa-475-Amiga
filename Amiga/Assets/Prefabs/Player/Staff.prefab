@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1103835368, guid: 32333d2b371304e1a836310e42967b40, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &7601831500149142839
@@ -99,8 +99,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 0}
   handler: {fileID: 0}
+  sprites: []
   attachments: []
   attachmentCount: 0
+  maxAttachmentCount: 0
+  maxMaxAttachmentCount: 0
   hpDisplay: {fileID: 0}
   manaDisplay: {fileID: 0}
   armorDisplay: {fileID: 0}
@@ -113,10 +116,12 @@ MonoBehaviour:
   currentArmorDefense: 0
   armorRecoverySpeed: 0
   jumpHeight: 0
-  maxHealth: 0
-  currentHealth: 0
-  healthRecoverySpeed: 0
+  speedBoost: 0
+  floating: 0
   maxMana: 0
   currentMana: 0
   manaRecoverySpeed: 0
   manaCost: 0
+  maxHealth: 0
+  currentHealth: 0
+  healthRecoverySpeed: 0

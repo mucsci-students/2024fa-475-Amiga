@@ -16,11 +16,31 @@ public class Staff : MonoBehaviour
     /// </summary>
     public TilemapHandler handler;
 
+    /// <summary>
+    /// Reference to the sprite renderer component
+    /// </summary>
+    private SpriteRenderer spriteRenderer;
+
+    /// <summary>
+    /// Reference to the staff sprites
+    /// </summary>
+    [SerializeField] private List<Sprite> sprites;
+
     /// <summary> The attachments on the staff. </summary>
     public List<Attachment> attachments;
 
     /// <summary> The # of attachments on the staff. </summary>
     public int attachmentCount;
+
+    /// <summary>
+    /// The maximum number of attachments the staff can currently take
+    /// </summary>
+    public int maxAttachmentCount;
+
+    /// <summary>
+    /// The maximum number of attachments the staff can EVER take
+    /// </summary>
+    private int maxMaxAttachmentCount;
 
     /// <summary>
     /// Reference to hp diplay UI.
@@ -89,6 +109,11 @@ public class Staff : MonoBehaviour
     public int jumpHeight;
 
     /// <summary>
+    /// The increase in the player's walk speed
+    /// </summary>
+    public float speedBoost;
+
+    /// <summary>
     /// Whether or not the player is floating
     /// Use integer instead of bool to avoid multiple attaching
     /// </summary>
@@ -137,14 +162,23 @@ public class Staff : MonoBehaviour
 
     void Start()
     {
+        maxMaxAttachmentCount = 5;
+
         // start with 3 empty slots
+        maxAttachmentCount = 3;
+
         attachments = new List<Attachment>();
-        for (int i = 0; i < 100; ++i)
+        for (int i = 0; i < maxAttachmentCount; ++i)
         {
             attachments.Add(null);
         }
 
         attachmentCount = 0;
+
+        // update sprite & staff position
+        spriteRenderer = GetComponent<SpriteRenderer> ();
+        spriteRenderer.sprite = sprites[0];
+        UpdatePosition (false, false);
 
         bulletDamage = 10;
         bulletCount = 1;
@@ -173,12 +207,12 @@ public class Staff : MonoBehaviour
     void Update()
     {
         // Get the mouse position in world space
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         // Calculate direction from staff to mouse
-        Vector2 direction = (mousePosition - (Vector2)transform.position).normalized;
+        //Vector2 direction = (mousePosition - (Vector2)transform.position).normalized;
 
-        transform.up = direction;
+        //transform.up = direction;
 
         hpDisplay.text = "hp: " + currentHealth.ToString();
         manaDisplay.text = "mana: " + currentMana.ToString();
@@ -315,5 +349,35 @@ public class Staff : MonoBehaviour
             currentHealth -= damage;
         }
         return true;
+    }
+
+    public bool LevelUpStaff ()
+    {
+        if (maxAttachmentCount < maxMaxAttachmentCount)
+        {
+            ++maxAttachmentCount;
+            attachments.Add (null);
+            spriteRenderer.sprite = sprites[maxAttachmentCount - 3];
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void UpdatePosition (bool isAttacking, bool flipX)
+    {
+        int flip = flipX ? -1 : 1;
+        if (isAttacking)
+        {
+            transform.localPosition = new Vector3 (flip * 0.45f, 0.35f, 0f);
+            transform.rotation = Quaternion.Euler (new Vector3 (0f, 0f, 0f));
+        }
+        else
+        {
+            transform.localPosition = new Vector3 (flip * 0.35f, 0f, 0f);
+            transform.rotation = Quaternion.Euler (flip * new Vector3 (0f, 0f, -30f));
+        }
     }
 }

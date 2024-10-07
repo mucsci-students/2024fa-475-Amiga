@@ -1317,6 +1317,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6206555454006825184, guid: ea6a39b0706b07543970ecb81496222b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6206555454006825184, guid: ea6a39b0706b07543970ecb81496222b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6206555454006825184, guid: ea6a39b0706b07543970ecb81496222b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7601831500149142839, guid: ea6a39b0706b07543970ecb81496222b, type: 3}
       propertyPath: handler
       value: 
@@ -1333,6 +1345,22 @@ PrefabInstance:
       propertyPath: armorDisplay
       value: 
       objectReference: {fileID: 2095753402}
+    - target: {fileID: 7601831500149142839, guid: ea6a39b0706b07543970ecb81496222b, type: 3}
+      propertyPath: sprites.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7601831500149142839, guid: ea6a39b0706b07543970ecb81496222b, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: -1532623700, guid: edeb59075d4fc4c82bbcb7ab0e6bc748, type: 3}
+    - target: {fileID: 7601831500149142839, guid: ea6a39b0706b07543970ecb81496222b, type: 3}
+      propertyPath: sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 456337647, guid: edeb59075d4fc4c82bbcb7ab0e6bc748, type: 3}
+    - target: {fileID: 7601831500149142839, guid: ea6a39b0706b07543970ecb81496222b, type: 3}
+      propertyPath: sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: -1103835368, guid: 32333d2b371304e1a836310e42967b40, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

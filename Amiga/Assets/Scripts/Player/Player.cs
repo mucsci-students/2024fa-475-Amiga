@@ -16,6 +16,11 @@ public class Player : MonoBehaviour
 
     public bool isGrounded;
 
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+
+    private float defaultSpeed = 5.0f;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -27,6 +32,12 @@ public class Player : MonoBehaviour
 
         // Add a Collider2D component
         //gameObject.AddComponent<BoxCollider2D>();
+    }
+
+    private void Start ()
+    {
+        animator = GetComponent<Animator> ();
+        spriteRenderer = GetComponent<SpriteRenderer> ();
     }
 
     // Update is called once per frame
@@ -45,6 +56,11 @@ public class Player : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal"); // A/D or Left/Right arrows
         float moveY = 0.0f;
 
+        // update animation
+        animator.SetFloat ("Speed", 1.0f + Mathf.Abs (moveX) * (defaultSpeed + staff.speedBoost) * 0.1f);
+        if ((moveX < 0 && !spriteRenderer.flipX) || (moveX > 0 && spriteRenderer.flipX))
+            spriteRenderer.flipX = moveX < 0;
+
         // is floating
         if (staff.floating > 0)
         {
@@ -55,7 +71,7 @@ public class Player : MonoBehaviour
         if (moveX != 0.0f || moveY != 0.0f)
         {
             // Create a movement vector
-            Vector2 movement = new Vector2(moveX, moveY).normalized * 5.0f;
+            Vector2 movement = new Vector2(moveX, moveY).normalized * (defaultSpeed + staff.speedBoost);
 
             // Set the velocity of the Rigidbody2D for movement
             GetComponent<Rigidbody2D>().velocity = movement;
@@ -78,6 +94,16 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             staff.Launch();
+        }
+        if (Input.GetMouseButton (0)) // update animator
+        {
+            animator.SetBool ("Is Attacking", true);
+            staff.UpdatePosition (true, spriteRenderer.flipX);
+        } 
+        else
+        {
+            animator.SetBool ("Is Attacking", false);
+            staff.UpdatePosition (false, spriteRenderer.flipX);
         }
     }
 
@@ -108,6 +134,7 @@ public class Player : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         isGrounded = true;
+        animator.SetBool ("Is Jumping", false);
 
         if (collision.gameObject.GetComponent<Attachment>() != null)
         {
@@ -120,6 +147,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
+        animator.SetBool ("Is Jumping", true);
         isGrounded = false;
     }
 }
