@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private float defaultSpeed = 5.0f;
+    private int lavaDamage = 20; // the amount of damage damaging tiles such as lave do
 
     private void Awake()
     {
@@ -144,6 +145,13 @@ public class Player : MonoBehaviour
         else if (collision.gameObject.GetComponent<Tilemap>() != null)
         {
             isGrounded = true;
+            
+            // take damage if lava
+            if (String.Equals (collision.gameObject.name, "Damaging Tilemap"))
+            {
+                GetComponent<Rigidbody2D>().AddForce(Vector2.up * staff.jumpHeight, ForceMode2D.Impulse); // jump
+                TakeDamage (lavaDamage);
+            }
         }
     }
 
