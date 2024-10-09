@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Tilemaps
   - Debris
   - 
   - 
@@ -38,9 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: Background Tilemap
+    uniqueID: 3513920363
     locked: 0
   - name: Debris
     uniqueID: 3495119221
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Tilemap
+    uniqueID: 4030666011
     locked: 0

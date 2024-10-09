@@ -1,0 +1,371 @@
+fileFormatVersion: 2
+guid: 7419aa2c1a2554317be309ae9a65e548
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 154
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Portal & Grass Sprites_14
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 766
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 178bd2a0de82f4aeda62c4020588f710
+      internalID: -93024823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portal & Grass Sprites_15
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 766
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b76f7ba447f504ee2b29b6c1b5b921e8
+      internalID: -2096635006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portal & Grass Sprites_16
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 766
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02eba3025a923431f9523c3e89609e2f
+      internalID: -1429422242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portal & Grass Sprites_17
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 766
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7627474bee66c47009b416c14744ab9d
+      internalID: -443659847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portal & Grass Sprites_18
+      rect:
+        serializedVersion: 2
+        x: 1799
+        y: 766
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c2578d6d3c504397934897f91009eeb
+      internalID: -1788454503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portal & Grass Sprites_29
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 456
+        width: 154
+        height: 154
+      alignment: 9
+      pivot: {x: 0.48693016, y: 0.5000004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36917fd71040b46bd93d232b3aed6856
+      internalID: -2143464428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portal & Grass Sprites_30
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 458
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef801b9bda3fb44aa8def0aed98ca51c
+      internalID: 985100316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portal & Grass Sprites_31
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 458
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f847caecf6f84a859c4c451b49095c6
+      internalID: -446338818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portal & Grass Sprites_32
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 458
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53cb31f668cce4e14a2f58abdaed1ba0
+      internalID: -1021154930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Portal & Grass Sprites_0
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 612
+        width: 462
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 623ef8f0595734da89a7cdcdbbec0314
+      internalID: 1654569664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Portal & Grass Sprites_0: 1654569664
+      Portal & Grass Sprites_1: -1140649389
+      Portal & Grass Sprites_10: -414818527
+      Portal & Grass Sprites_11: 1142071090
+      Portal & Grass Sprites_12: 610436049
+      Portal & Grass Sprites_13: 341733501
+      Portal & Grass Sprites_14: -93024823
+      Portal & Grass Sprites_15: -2096635006
+      Portal & Grass Sprites_16: -1429422242
+      Portal & Grass Sprites_17: -443659847
+      Portal & Grass Sprites_18: -1788454503
+      Portal & Grass Sprites_19: 1440810993
+      Portal & Grass Sprites_2: -1411413126
+      Portal & Grass Sprites_20: 2142202454
+      Portal & Grass Sprites_21: -556993434
+      Portal & Grass Sprites_22: -1109697902
+      Portal & Grass Sprites_23: 1119022904
+      Portal & Grass Sprites_24: -747137663
+      Portal & Grass Sprites_25: 215056781
+      Portal & Grass Sprites_26: 838771934
+      Portal & Grass Sprites_27: 1151161936
+      Portal & Grass Sprites_28: 1941891942
+      Portal & Grass Sprites_29: -2143464428
+      Portal & Grass Sprites_3: 1097740016
+      Portal & Grass Sprites_30: 985100316
+      Portal & Grass Sprites_31: -446338818
+      Portal & Grass Sprites_32: -1021154930
+      Portal & Grass Sprites_33: 2145974700
+      Portal & Grass Sprites_34: 125512378
+      Portal & Grass Sprites_35: 61520373
+      Portal & Grass Sprites_36: -1216246682
+      Portal & Grass Sprites_37: -91251790
+      Portal & Grass Sprites_38: -440360389
+      Portal & Grass Sprites_39: -681085147
+      Portal & Grass Sprites_4: 930783831
+      Portal & Grass Sprites_40: -1480109604
+      Portal & Grass Sprites_41: -624133153
+      Portal & Grass Sprites_42: 1196185601
+      Portal & Grass Sprites_43: -1890401
+      Portal & Grass Sprites_44: 663400422
+      Portal & Grass Sprites_45: -1623077171
+      Portal & Grass Sprites_46: -2046594425
+      Portal & Grass Sprites_5: 2030245920
+      Portal & Grass Sprites_6: -424344870
+      Portal & Grass Sprites_7: -1692227785
+      Portal & Grass Sprites_8: -1808497199
+      Portal & Grass Sprites_9: -1826273930
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

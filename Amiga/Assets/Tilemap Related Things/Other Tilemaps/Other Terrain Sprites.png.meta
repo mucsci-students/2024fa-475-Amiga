@@ -1,0 +1,925 @@
+fileFormatVersion: 2
+guid: 1ae7d6a306ad84a7d9da98d0f3bdedd7
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 154
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Other Terrain Sprites_2
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1232
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b23f4e5629871446082452e8d63e37a8
+      internalID: -171149144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_3
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 1232
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e241ade737a8746e390e7d7a5a2c1e96
+      internalID: 1717856239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 1232
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ebca851e84e48cba7a4e26dd93bb63
+      internalID: 677812763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 1232
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98ac7067773ca41fd99ebacdc9d966ce
+      internalID: 2072344519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_7
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 1232
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a659a0ddce8b444aa4e19a2cdd7dc59
+      internalID: -1723337516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_8
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 1232
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f78e82de0f41844c18321268bc7dcf55
+      internalID: -2054415835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_9
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 1232
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d56159171bb8d42d3abb580b89d7dfd8
+      internalID: 2060001751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_10
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 1232
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a60604b7ef64416ba35aa01c09f709b
+      internalID: 40192557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_15
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1078
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4181b7d09cfc24b67a0002edb13bf28d
+      internalID: -1501439251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_16
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 1078
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7f36d8a7f3be416a98f83ed10887fcb
+      internalID: -1598455330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_17
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 1078
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c079fdfa61cef4516909e97ab57af08a
+      internalID: -1134179361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_18
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 1078
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1245c323552f408786e356e4b1dd01d
+      internalID: -559894474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_20
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 1078
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f86f622f3ad64701ae9960a12b9366e
+      internalID: 577988187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_21
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 1078
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79cc20cdedc094e999e54372754d4d60
+      internalID: -2117796833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_22
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 1078
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87aba6851dabb495cb313b08ae31c5ef
+      internalID: 1429276703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_23
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 1078
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f2106435ae204e3eb632286c4bd25dc
+      internalID: 728302177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_26
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 924
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 847119418560f4348ba7184979116f7f
+      internalID: -1556040321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_27
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 924
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c9fa6019a9e4a8a89bd9c478762fef
+      internalID: -1402150803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_28
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 924
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f0beacbdbf404de7836a05c7d756c4b
+      internalID: -1249035573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_29
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 924
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ed1f0725be241b1b5a427d7571fd61
+      internalID: 444399058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_36
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 770
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b83259f98cc4433800a4992c8ab323
+      internalID: -1804504425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_37
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 770
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e15a93991bee4ec3be0df547d7df9b4
+      internalID: -1868006426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_38
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 770
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b107a14acc5524d57aa64741bdbc1595
+      internalID: 119419467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_39
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 770
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ee536aec84545b492a110a5301cdd0
+      internalID: 1159911797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_41
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 770
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9281843e8e39b4622815693708d1c9e5
+      internalID: 904453279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_43
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 770
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1bca805a34e64a5f878c118d427259a
+      internalID: 410322821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_45
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 770
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5711b314dca7c4ff68e6e48dc4d0831e
+      internalID: -2092573234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_48
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 616
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aecc19d40514349d3b487c8f4b98d3b6
+      internalID: -587201455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_50
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 616
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03281b94c141249c693ccd78a608e30f
+      internalID: 1530588808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_52
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 616
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17e196f398b8e48bd9e46f5e8f58c4f8
+      internalID: 583036957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_56
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 462
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95ff5d93f99c94bb48a698d66b522b63
+      internalID: -96323352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_57
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 462
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f41350d519094f53ab05de94350d6d5
+      internalID: 468571908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_59
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 462
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55900301d0a843f598c14f1bc0e4c41
+      internalID: -1309978879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_61
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 462
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76d1b7c3ac559462cba6ce16203ba644
+      internalID: 572891407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Other Terrain Sprites_63
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 462
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aace4af7e70e4ea1b2220713d7e47de
+      internalID: 360252401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Other Terrain Sprites_0: -1259875954
+      Other Terrain Sprites_1: 586483612
+      Other Terrain Sprites_10: 40192557
+      Other Terrain Sprites_11: -1590188380
+      Other Terrain Sprites_12: -983818017
+      Other Terrain Sprites_13: 2037385330
+      Other Terrain Sprites_14: -1468473186
+      Other Terrain Sprites_15: -1501439251
+      Other Terrain Sprites_16: -1598455330
+      Other Terrain Sprites_17: -1134179361
+      Other Terrain Sprites_18: -559894474
+      Other Terrain Sprites_19: 340029648
+      Other Terrain Sprites_2: -171149144
+      Other Terrain Sprites_20: 577988187
+      Other Terrain Sprites_21: -2117796833
+      Other Terrain Sprites_22: 1429276703
+      Other Terrain Sprites_23: 728302177
+      Other Terrain Sprites_24: 1054250419
+      Other Terrain Sprites_25: -638783563
+      Other Terrain Sprites_26: -1556040321
+      Other Terrain Sprites_27: -1402150803
+      Other Terrain Sprites_28: -1249035573
+      Other Terrain Sprites_29: 444399058
+      Other Terrain Sprites_3: 1717856239
+      Other Terrain Sprites_30: 1194574520
+      Other Terrain Sprites_31: 138834676
+      Other Terrain Sprites_32: -212732610
+      Other Terrain Sprites_33: -2009741057
+      Other Terrain Sprites_34: 845254261
+      Other Terrain Sprites_35: -1783135663
+      Other Terrain Sprites_36: -1804504425
+      Other Terrain Sprites_37: -1868006426
+      Other Terrain Sprites_38: 119419467
+      Other Terrain Sprites_39: 1159911797
+      Other Terrain Sprites_4: 677812763
+      Other Terrain Sprites_40: -866397582
+      Other Terrain Sprites_41: 904453279
+      Other Terrain Sprites_42: 1745385401
+      Other Terrain Sprites_43: 410322821
+      Other Terrain Sprites_44: -369191808
+      Other Terrain Sprites_45: -2092573234
+      Other Terrain Sprites_46: 497472135
+      Other Terrain Sprites_47: -389720515
+      Other Terrain Sprites_48: -587201455
+      Other Terrain Sprites_49: -1603884428
+      Other Terrain Sprites_5: 2072344519
+      Other Terrain Sprites_50: 1530588808
+      Other Terrain Sprites_51: -1140205913
+      Other Terrain Sprites_52: 583036957
+      Other Terrain Sprites_53: -436617687
+      Other Terrain Sprites_54: -1092219297
+      Other Terrain Sprites_55: 859648433
+      Other Terrain Sprites_56: -96323352
+      Other Terrain Sprites_57: 468571908
+      Other Terrain Sprites_58: -938061781
+      Other Terrain Sprites_59: -1309978879
+      Other Terrain Sprites_6: 705217161
+      Other Terrain Sprites_60: -230697708
+      Other Terrain Sprites_61: 572891407
+      Other Terrain Sprites_62: 1425116801
+      Other Terrain Sprites_63: 360252401
+      Other Terrain Sprites_64: 1724139449
+      Other Terrain Sprites_65: -253827290
+      Other Terrain Sprites_66: -1756501146
+      Other Terrain Sprites_67: -1402539014
+      Other Terrain Sprites_68: 824134562
+      Other Terrain Sprites_69: 1419177994
+      Other Terrain Sprites_7: -1723337516
+      Other Terrain Sprites_70: 2083112993
+      Other Terrain Sprites_71: 1057328922
+      Other Terrain Sprites_72: 857211194
+      Other Terrain Sprites_73: 597834425
+      Other Terrain Sprites_74: -589848685
+      Other Terrain Sprites_75: -1906077542
+      Other Terrain Sprites_8: -2054415835
+      Other Terrain Sprites_9: 2060001751
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

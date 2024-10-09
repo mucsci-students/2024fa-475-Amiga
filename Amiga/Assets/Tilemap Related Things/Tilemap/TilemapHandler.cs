@@ -10,6 +10,8 @@ public class TilemapHandler : MonoBehaviour
 
     [SerializeField] private GameObject debrisPrefab;
     [SerializeField] private List<Sprite> spriteMasks;
+    [SerializeField] private Tilemap foregroundTilemap;
+    [SerializeField] private Tilemap backgroundTilemap;
 
     private Tilemap destructibleTilemap;
     private int currentDebrisLayer = 1; // each debris should get its own layer
@@ -30,6 +32,8 @@ public class TilemapHandler : MonoBehaviour
         {
             destructibleTilemap.SetTile (tilePos, null);
             Vector3 debrisPos = tilePos + new Vector3 (0.5f, 0.5f, 0);
+
+            //DestroyRelatedTiles (tilePos);
 
             // create some pieces of debris
             for (int i = 0; i < spriteMasks.Count; ++i)
@@ -65,13 +69,19 @@ public class TilemapHandler : MonoBehaviour
                 if (++currentDebrisLayer > maxDebrisLayer) currentDebrisLayer = 1;
 
                 // adjust its size & add the force of impact
-                debris.transform.localScale *= 0.95f;
+                debris.transform.localScale *= 0.9f;
                 rb.AddForceAtPosition (impactDir, impactPos, ForceMode2D.Impulse);
 
             }
 
         }
 
+    }
+
+    private void DestroyRelatedTiles (Vector3Int position)
+    {
+        foregroundTilemap.SetTile (position + new Vector3Int (0, 1, 0), null);
+        backgroundTilemap.SetTile (position + new Vector3Int (0, 1, 0), null);
     }
 
 }
