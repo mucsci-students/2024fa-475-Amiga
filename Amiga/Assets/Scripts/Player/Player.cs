@@ -71,14 +71,13 @@ public class Player : MonoBehaviour
         if (moveX != 0.0f || moveY != 0.0f)
         {
             // Create a movement vector
-            Vector2 movement = new Vector2(moveX, moveY).normalized * (defaultSpeed + staff.speedBoost);
+            Vector2 movement = new Vector2(moveX, moveY).normalized * (defaultSpeed + staff.speedBoost) * Time.deltaTime;
 
-            // Set the velocity of the Rigidbody2D for movement
-            GetComponent<Rigidbody2D>().velocity = movement;
+            // Move the player directly
+            transform.Translate(movement);
         }
 
         // Check for jumping input using 'Space'
-        // TODO: Ensure the player is on the ground
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * staff.jumpHeight, ForceMode2D.Impulse);
@@ -133,7 +132,6 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        isGrounded = true;
         animator.SetBool ("Is Jumping", false);
 
         if (collision.gameObject.GetComponent<Attachment>() != null)
@@ -143,11 +141,19 @@ public class Player : MonoBehaviour
             // TODO: move this to backpack instead of set to inactive
             collision.gameObject.SetActive(false);
         }
+        else if (collision.gameObject.GetComponent<Tilemap>() != null)
+        {
+            isGrounded = true;
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
         animator.SetBool ("Is Jumping", true);
-        isGrounded = false;
+
+        if (collision.gameObject.GetComponent<Tilemap>() != null)
+        {
+            isGrounded = false;
+        }
     }
 }
