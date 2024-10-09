@@ -46,7 +46,7 @@ public class Bullet : MonoBehaviour
         //Update size of components
         transform.localScale = new Vector3(size, size, 1);
 
-        GetComponent<CircleCollider2D>().radius = size / 2;
+        GetComponent<BoxCollider2D>().size *= size;
 
         transform.right = direction;
     }

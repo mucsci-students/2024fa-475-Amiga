@@ -19,28 +19,23 @@ public class EnemySpawner : MonoBehaviour
     /// </summary>
     public GameObject enemyPrefab;
 
-    /// <summary>
-    /// # of seconds between enemy spawn
-    /// </summary>
-    public float spawnInterval = 2.0f;
-
-    void Start()
+    // Subscribe to the event
+    void OnEnable()
     {
-        StartCoroutine(SpawnEnemies());
+        GameEvents.OnEnemySpawn += SpawnEnemy;  // Subscribe to the custom event
     }
 
-    /// <summary>
-    /// Spawn an enemy every spawn interval
-    /// </summary>
-    /// <returns> wait </returns>
-    IEnumerator SpawnEnemies()
+    // Unsubscribe from the event
+    void OnDisable()
     {
-        while (true)
-        {
-            GameObject enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-            enemy.GetComponent<Enemy>().player = player;
-            enemy.GetComponent<Enemy>().attachmentGenerator = attachmentGenerator;
-            yield return new WaitForSeconds(spawnInterval);
-        }
+        GameEvents.OnEnemySpawn -= SpawnEnemy;  // Unsubscribe to avoid memory leaks
+    }
+
+    // Spawn the enemy when the custom event is triggered
+    void SpawnEnemy()
+    {
+        GameObject enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+        enemy.GetComponent<Enemy>().player = player;
+        enemy.GetComponent<Enemy>().attachmentGenerator = attachmentGenerator;
     }
 }

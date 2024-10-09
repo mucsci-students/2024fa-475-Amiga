@@ -27,4 +27,21 @@ public class Goblin : GroundEnemy
     {
         Move();
     }
+
+    /// <summary>
+    /// Attack action of the enemy.
+    /// </summary>
+    public virtual void Attack()
+    {
+        // TODO: Attack animation goes here
+
+        // Calculate the distance between the two GameObjects
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+
+        // Check if the distance is less than the attack range
+        if (distance < range)
+        {
+            player.GetComponent<Player>().TakeDamage(dps);
+        }
+    }
 }

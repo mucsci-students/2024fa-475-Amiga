@@ -7,6 +7,9 @@ public class Troll : GroundEnemy
     // Start is called before the first frame update
     void Start()
     {
+        // Start invoking the Attack method every 1 second
+        InvokeRepeating(nameof(Attack), 1.0f, 1.0f);
+
         // Troll properties:
         // Health: high
         // Speed:  slow
@@ -24,6 +27,22 @@ public class Troll : GroundEnemy
     {
         // move or attack
         Move();
-        Attack();
+    }
+
+    /// <summary>
+    /// Attack action of the enemy.
+    /// </summary>
+    public virtual void Attack()
+    {
+        // TODO: Attack animation goes here
+
+        // Calculate the distance between the two GameObjects
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+
+        // Check if the distance is less than the attack range
+        if (distance < range)
+        {
+            player.GetComponent<Player>().TakeDamage(dps);
+        }
     }
 }
