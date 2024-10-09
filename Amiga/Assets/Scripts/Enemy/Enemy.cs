@@ -32,25 +32,21 @@ public abstract class Enemy : MonoBehaviour
     /// <param name="damage"> The amount of damage taken. </param>
     public virtual void TakeDamage(int damage)
     {
-        if (health <= damage)
-        {
-            Die();
-        }
-        else
-        {
-            health -= damage;
-        }
+        health -= damage;
     }
 
     /// <summary>
     /// Die action of the enemy.
     /// </summary>
-    public virtual void Die()
+    public virtual void CheckDeath()
     {
-        Attachment attachment = attachmentGenerator.GetComponent<RandomAttachmentPrefab>().GenerateAttachement();
-        Instantiate(attachment, transform.position, Quaternion.identity);
+        if (health <= 0)
+        {
+            Attachment attachment = attachmentGenerator.GetComponent<RandomAttachmentPrefab>().GenerateAttachement();
+            Instantiate(attachment, transform.position, Quaternion.identity);
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 
     private void Awake()

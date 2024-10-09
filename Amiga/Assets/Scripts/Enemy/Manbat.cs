@@ -32,6 +32,8 @@ public class Manbat : AirEnemy
     // Update is called once per frame
     void Update()
     {
+        CheckDeath();
+
         Fly();
     }
 

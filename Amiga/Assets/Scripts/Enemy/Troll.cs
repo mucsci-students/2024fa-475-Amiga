@@ -25,6 +25,8 @@ public class Troll : GroundEnemy
     // Update is called once per frame
     void Update()
     {
+        CheckDeath();
+
         // move or attack
         Move();
     }

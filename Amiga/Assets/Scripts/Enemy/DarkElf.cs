@@ -31,6 +31,8 @@ public class DarkElf : GroundEnemy
     // Update is called once per frame
     void Update()
     {
+        CheckDeath();
+
         Move();
     }
 
