@@ -33,7 +33,7 @@ public class TilemapHandler : MonoBehaviour
             destructibleTilemap.SetTile (tilePos, null);
             Vector3 debrisPos = tilePos + new Vector3 (0.5f, 0.5f, 0);
 
-            //DestroyRelatedTiles (tilePos);
+            DestroyRelatedTiles (tilePos);
 
             // create some pieces of debris
             for (int i = 0; i < spriteMasks.Count; ++i)
@@ -80,8 +80,11 @@ public class TilemapHandler : MonoBehaviour
 
     private void DestroyRelatedTiles (Vector3Int position)
     {
-        foregroundTilemap.SetTile (position + new Vector3Int (0, 1, 0), null);
-        backgroundTilemap.SetTile (position + new Vector3Int (0, 1, 0), null);
+        if(foregroundTilemap != null && backgroundTilemap != null)
+        {
+            foregroundTilemap.SetTile (position + new Vector3Int (0, 1, 0), null);
+            backgroundTilemap.SetTile (position + new Vector3Int (0, 1, 0), null);
+        }
     }
 
 }
