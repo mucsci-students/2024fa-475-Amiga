@@ -75,7 +75,13 @@ public class Bullet : MonoBehaviour
         else if (collision.gameObject.GetComponent<Tilemap>() != null)
         {
             Vector2 contactPoint = collision.ClosestPoint(transform.position);  // Get the closest point of contact
-            handler.DestroyTile(contactPoint, transform.up);  // Destroy the tile at the contact point
+            
+            // Not sure why, but the impactPos need adjustment
+            Vector3 adjustedImpactPos = contactPoint + new Vector2(
+            transform.right.x > 0 ? 0.01f : -0.05f,  // Adjust based on horizontal direction
+            transform.right.y > 0 ? 0.05f : -0.05f);  // Adjust based on vertical direction);
+
+            handler.DestroyTile(adjustedImpactPos, transform.up);  // Destroy the tile at the contact point
             Destroy(gameObject);
         }
         // Check if the bullet hits an enemy and apply damage
