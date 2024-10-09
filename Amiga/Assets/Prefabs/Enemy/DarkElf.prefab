@@ -99,11 +99,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  attachmentGenerator: {fileID: 0}
   health: 0
   speed: 0
   range: 0
   dps: 0
   direction: 0
+  enemyBulletPrefab: {fileID: 8063144356946199438, guid: 5054f2c6402e874468ae307d8a0cd00e, type: 3}
 --- !u!95 &5695494994065063895
 Animator:
   serializedVersion: 5
