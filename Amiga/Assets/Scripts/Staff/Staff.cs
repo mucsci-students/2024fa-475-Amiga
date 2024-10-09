@@ -214,9 +214,9 @@ public class Staff : MonoBehaviour
 
         //transform.up = direction;
 
-        hpDisplay.text = "hp: " + currentHealth.ToString();
-        manaDisplay.text = "mana: " + currentMana.ToString();
-        armorDisplay.text = "armor: " + currentArmorDefense.ToString();
+        //hpDisplay.text = "hp: " + currentHealth.ToString();
+        //manaDisplay.text = "mana: " + currentMana.ToString();
+        //armorDisplay.text = "armor: " + currentArmorDefense.ToString();
     }
 
     /// <summary>
