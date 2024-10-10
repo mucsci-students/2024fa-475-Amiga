@@ -53,6 +53,21 @@ public class Player : MonoBehaviour
     /// </summary>
     public void Move()
     {
+        if (staff.floating > 0)
+        {
+            if (GetComponent<Rigidbody2D>().gravityScale != 0.0f)
+            {
+                GetComponent<Rigidbody2D>().gravityScale = 0.0f;
+            }
+        }
+        else
+        {
+            if (GetComponent<Rigidbody2D>().gravityScale == 0.0f)
+            {
+                GetComponent<Rigidbody2D>().gravityScale = 1.0f;
+            }
+        }
+
         // Get input from WASD or arrow keys
         float moveX = Input.GetAxis("Horizontal"); // A/D or Left/Right arrows
         float moveY = 0.0f;
@@ -79,7 +94,7 @@ public class Player : MonoBehaviour
         }
 
         // Check for jumping input using 'Space'
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (staff.floating <= 0 && isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * staff.jumpHeight, ForceMode2D.Impulse);
         }
@@ -111,7 +126,7 @@ public class Player : MonoBehaviour
     /// Take given amount of damage.
     /// </summary>
     /// <param name="damage"> The amount of damage taken. </param>
-    public virtual void TakeDamage(int damage)
+    public virtual void TakeDamage(float damage)
     {
         if (staff.TakeDamage(damage))
         {

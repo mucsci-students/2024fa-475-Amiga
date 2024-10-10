@@ -21,10 +21,10 @@ public class DarkElf : GroundEnemy
         // Speed:  medium
         // Range:  far
         // DPS:    high
-        health = 10;
-        speed = 1;
-        range = 25;
-        dps = 20;
+        health = 10.0f;
+        speed = 1.0f;
+        range = 25.0f;
+        dps = 20.0f;
         direction = 1;
     }
 

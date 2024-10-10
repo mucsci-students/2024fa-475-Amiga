@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
     /// <summary>
     /// The damage of bullet.
     /// </summary>
-    public int damage;
+    public float damage;
 
     /// <summary>
     /// The speed of bullet.
@@ -36,7 +36,7 @@ public class Bullet : MonoBehaviour
         //gameObject.GetComponent<CircleCollider2D>().isTrigger = true;
     }
 
-    public void Initialize(int damage, float speed, float size, float life, Vector2 direction)
+    public void Initialize(float damage, float speed, float size, float life, Vector2 direction)
     {
         this.damage = damage;
         this.speed = speed;
@@ -78,7 +78,7 @@ public class Bullet : MonoBehaviour
             
             // Not sure why, but the impactPos need adjustment
             Vector3 adjustedImpactPos = contactPoint + new Vector2(
-            transform.right.x > 0 ? 0.01f : -0.05f,  // Adjust based on horizontal direction
+            transform.right.x > 0 ? 0.05f : -0.05f,  // Adjust based on horizontal direction
             transform.right.y > 0 ? 0.05f : -0.05f);  // Adjust based on vertical direction);
 
             handler.DestroyTile(adjustedImpactPos, transform.up);  // Destroy the tile at the contact point
