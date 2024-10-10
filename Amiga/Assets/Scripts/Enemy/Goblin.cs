@@ -15,10 +15,10 @@ public class Goblin : GroundEnemy
         // Speed:  medium
         // Range:  medium
         // DPS:    medium
-        health = 20;
-        speed = 1;
-        range = 10;
-        dps = 10;
+        health = 20.0f;
+        speed = 1.0f;
+        range = 10.0f;
+        dps = 10.0f;
         direction = 1;
     }
 
