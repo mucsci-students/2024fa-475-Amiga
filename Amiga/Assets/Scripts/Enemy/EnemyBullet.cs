@@ -14,7 +14,7 @@ public class EnemyBullet : MonoBehaviour
     /// <summary>
     /// The damage of bullet.
     /// </summary>
-    public int damage;
+    public float damage;
 
     /// <summary>
     /// The speed of bullet.
@@ -31,7 +31,7 @@ public class EnemyBullet : MonoBehaviour
     /// </summary>
     public float life;
 
-    public void Initialize(int damage, Vector2 direction)
+    public void Initialize(float damage, Vector2 direction)
     {
         this.damage = damage;
         this.speed = 5.0f;
@@ -50,7 +50,7 @@ public class EnemyBullet : MonoBehaviour
         transform.position += speed * Time.deltaTime * transform.right;
 
         life -= Time.deltaTime;
-        if (life <= 0)
+        if (life <= 0.0f)
         {
             Destroy(gameObject);
         }

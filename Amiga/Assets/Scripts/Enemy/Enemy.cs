@@ -15,7 +15,7 @@ public abstract class Enemy : MonoBehaviour
     public GameObject attachmentGenerator;
 
     /// <summary> The health of the enemy. </summary>
-    public int health;
+    public float health;
 
     /// <summary> The speed of the enemy. </summary>
     public float speed;
@@ -24,13 +24,13 @@ public abstract class Enemy : MonoBehaviour
     public float range;
 
     /// <summary> The damage per second of the enemy. </summary>
-    public int dps;
+    public float dps;
 
     /// <summary>
     /// Take given amount of damage.
     /// </summary>
     /// <param name="damage"> The amount of damage taken. </param>
-    public virtual void TakeDamage(int damage)
+    public virtual void TakeDamage(float damage)
     {
         health -= damage;
     }
@@ -40,7 +40,7 @@ public abstract class Enemy : MonoBehaviour
     /// </summary>
     public virtual void CheckDeath()
     {
-        if (health <= 0)
+        if (health <= 0.0f)
         {
             Attachment attachment = attachmentGenerator.GetComponent<RandomAttachmentPrefab>().GenerateAttachement();
             Instantiate(attachment, transform.position, Quaternion.identity);

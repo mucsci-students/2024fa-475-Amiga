@@ -53,24 +53,24 @@ public class Staff : MonoBehaviour
     /// <summary>
     /// Reference to hp diplay UI.
     /// </summary>
-    public Text hpDisplay;
+    public GameObject hpDisplay;
 
     /// <summary>
     /// Reference to hp diplay UI.
     /// </summary>
-    public Text manaDisplay;
+    public GameObject manaDisplay;
 
     /// <summary>
     /// Reference to hp diplay UI.
     /// </summary>
-    public Text armorDisplay;
+    public GameObject armorDisplay;
 
     // Attack properties---------------------------------------------
 
     /// <summary>
     /// The damage of bullet.
     /// </summary>
-    public int bulletDamage;
+    public float bulletDamage;
 
     /// <summary>
     /// The count of bullet.
@@ -97,17 +97,17 @@ public class Staff : MonoBehaviour
     /// <summary>
     /// The maximum defense amount of armor.
     /// </summary>
-    public int armorDefense;
+    public float armorDefense;
 
     /// <summary>
     /// The current defense amount of armor.
     /// </summary>
-    public int currentArmorDefense;
+    public float currentArmorDefense;
 
     /// <summary>
     /// The recovery speed of armor.(per second)
     /// </summary>
-    public int armorRecoverySpeed;
+    public float armorRecoverySpeed;
 
     // Special properties:-------------------------------------------
 
@@ -130,17 +130,17 @@ public class Staff : MonoBehaviour
     /// <summary>
     /// The maximum mana
     /// </summary>
-    public int maxMana;
+    public float maxMana;
 
     /// <summary>
     /// The current mana
     /// </summary>
-    public int currentMana;
+    public float currentMana;
 
     /// <summary>
     /// The recovery speed of mana.(per second)
     /// </summary>
-    public int manaRecoverySpeed;
+    public float manaRecoverySpeed;
 
     /// <summary>
     /// The cost of mana for each attack
@@ -150,23 +150,17 @@ public class Staff : MonoBehaviour
     /// <summary>
     /// The maximum health
     /// </summary>
-    public int maxHealth;
+    public float maxHealth;
 
     /// <summary>
     /// The current health
     /// </summary>
-    public int currentHealth;
+    public float currentHealth;
 
     /// <summary>
     /// The recovery speed of health.(per second)
     /// </summary>
-    public int healthRecoverySpeed;
-
-    private void Awake()
-    {
-        // Parent(Player) is already DontDestroyOnLoad
-        //DontDestroyOnLoad(gameObject);
-    }
+    public float healthRecoverySpeed;
 
     void Start()
     {
@@ -195,28 +189,25 @@ public class Staff : MonoBehaviour
         spriteRenderer.sprite = sprites[0];
         UpdatePosition (false, false);
 
-        bulletDamage = 10;
+        bulletDamage = 10.0f;
         bulletCount = 1;
         bulletSpeed = 7.0f;
         bulletSize = 1.0f;
         bulletLife = 3.0f;
 
-        armorDefense = 50;
-        currentArmorDefense = 50;
-        armorRecoverySpeed = 5;
+        armorDefense = 50.0f;
+        currentArmorDefense = 50.0f;
+        armorRecoverySpeed = 5.0f;
         jumpHeight = 5;
         floating = 0;
-        maxMana = 100;
+        maxMana = 100.0f;
         currentMana = maxMana;
-        manaRecoverySpeed = 20;
+        manaRecoverySpeed = 20.0f;
         manaCost = 10;
 
-        maxHealth = 100;
+        maxHealth = 100.0f;
         currentHealth = maxHealth;
-        healthRecoverySpeed = 5;
-
-        // Start invoking the Recover method every 1 second
-        InvokeRepeating(nameof(Recover), 1.0f, 1.0f);
+        healthRecoverySpeed = 5.0f;
     }
 
     void Update()
@@ -229,9 +220,11 @@ public class Staff : MonoBehaviour
 
         //transform.up = direction;
 
-        //hpDisplay.text = "hp: " + currentHealth.ToString();
-        //manaDisplay.text = "mana: " + currentMana.ToString();
-        //armorDisplay.text = "armor: " + currentArmorDefense.ToString();
+        Recover();
+
+        hpDisplay.GetComponent<HP>().UpdateHP(currentHealth, maxHealth);
+        manaDisplay.GetComponent<MANA>().UpdateMANA(currentMana, maxMana);
+        armorDisplay.GetComponent<ARMOR>().UpdateARMOR(currentArmorDefense, armorDefense);
     }
 
     /// <summary>
@@ -339,9 +332,9 @@ public class Staff : MonoBehaviour
     /// </summary>
     public void Recover()
     {
-        currentArmorDefense = Mathf.Min(armorDefense, currentArmorDefense + armorRecoverySpeed);
-        currentHealth = Mathf.Min(maxHealth, currentHealth + healthRecoverySpeed);
-        currentMana = Mathf.Min(maxMana, currentMana + manaRecoverySpeed);
+        currentArmorDefense = Mathf.Min(armorDefense, currentArmorDefense + armorRecoverySpeed * Time.deltaTime);
+        currentHealth = Mathf.Min(maxHealth, currentHealth + healthRecoverySpeed * Time.deltaTime);
+        currentMana = Mathf.Min(maxMana, currentMana + manaRecoverySpeed * Time.deltaTime);
     }
 
     /// <summary>
@@ -349,11 +342,11 @@ public class Staff : MonoBehaviour
     /// </summary>
     /// <param name="damage"> The amount of damage taken. </param>
     /// <returns> true for alive, false for dead </returns>
-    public virtual bool TakeDamage(int damage)
+    public virtual bool TakeDamage(float damage)
     {
-        if (currentArmorDefense > 0)
+        if (currentArmorDefense > 0.0f)
         {
-            currentArmorDefense = Mathf.Max(0, currentArmorDefense - damage);
+            currentArmorDefense = Mathf.Max(0.0f, currentArmorDefense - damage);
         }
         else if (currentHealth <= damage)
         {
