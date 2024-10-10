@@ -9,6 +9,11 @@ public abstract class Attachment : MonoBehaviour
     /// </summary>
     public bool attached = false;
 
+    /// <summary>
+    /// The number of this attachmnet's sprite.
+    /// </summary>
+    public int spriteNumber;
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);

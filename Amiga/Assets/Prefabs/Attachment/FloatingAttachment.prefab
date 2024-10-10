@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attached: 0
+  spriteNumber: 10
   jumpHeightIncrease: 0
   floating: 0
   manaIncrease: 0

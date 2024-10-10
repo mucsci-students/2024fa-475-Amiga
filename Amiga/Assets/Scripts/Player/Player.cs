@@ -152,10 +152,27 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.GetComponent<Attachment>() != null)
         {
-            staff.AttachAttachment(collision.gameObject.GetComponent<Attachment>(), staff.GetAttachmentCount());
+            int slotIndex = staff.GetNextAttachmentIndex ();
+            if (slotIndex != -1)
+            {
+                staff.AttachAttachment(collision.gameObject.GetComponent<Attachment>(), slotIndex);
+                collision.gameObject.SetActive(false);
+            }
+            else
+            {
+                slotIndex = staff.GetNextInventoryIndex ();
+                if (slotIndex != -1)
+                {
+                    staff.StoreAttachment(collision.gameObject.GetComponent<Attachment>(), slotIndex);
+                    collision.gameObject.SetActive(false);
+                }
+            }
+
+
+            //staff.AttachAttachment(collision.gameObject.GetComponent<Attachment>(), staff.GetNextAttachmentIndex());
 
             // TODO: move this to backpack instead of set to inactive
-            collision.gameObject.SetActive(false);
+            //collision.gameObject.SetActive(false);
         }
         else if (collision.gameObject.GetComponent<Tilemap>() != null)
         {

@@ -11,6 +11,7 @@ public class MenuInitializer : MonoBehaviour
 
     void Start()
     {
+        // generate inventory slots
         int i = 0;
         for (float x = -225f - 9f; x <= 225 + 9f; x += 50f + 2f)
         {
@@ -21,6 +22,7 @@ public class MenuInitializer : MonoBehaviour
                 ++i;
             }
         }
+
     }
 
 }

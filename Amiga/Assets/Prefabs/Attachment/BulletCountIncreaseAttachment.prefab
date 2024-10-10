@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attached: 0
+  spriteNumber: 2
   bulletDamageIncrease: 0
   bulletCountIncrease: 0
   bulletSpeedIncrease: 0

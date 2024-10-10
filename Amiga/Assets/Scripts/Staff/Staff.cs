@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Staff : MonoBehaviour
 {
+
     /// <summary>
     /// Reference to the bullet prefab
     /// </summary>
@@ -236,7 +237,7 @@ public class Staff : MonoBehaviour
     public bool AttachAttachment(Attachment attachment, int index)
     {
         // Empty slot, avilable to attach
-        if (index < attachments.Count && attachments[index] == null)
+        if (attachment != null && index < maxAttachmentCount && attachments[index] == null)
         {
             attachment.Attach(this);
             attachments[index] = attachment;
@@ -256,7 +257,7 @@ public class Staff : MonoBehaviour
     /// <returns></returns>
     public bool DetachAttachment(int index)
     {
-        if (index < attachments.Count && attachments[index] != null)
+        if (index < maxAttachmentCount && attachments[index] != null)
         {
             attachments[index].Detach(this);
             attachments[index] = null;
@@ -270,12 +271,70 @@ public class Staff : MonoBehaviour
     }
 
     /// <summary>
-    /// Get the # of attachments attached to the staff.
+    /// Get the next staff slot that an attachment should be put in.
     /// </summary>
-    /// <returns> # of attachments attached to the staff. </returns>
-    public int GetAttachmentCount()
+    /// <returns> A valid index of a staff slot. </returns>
+    public int GetNextAttachmentIndex()
     {
-        return attachmentCount;
+        if (attachmentCount == maxAttachmentCount) return -1;
+        else
+        {
+            for (int i = 0; i < maxAttachmentCount; ++i)
+            {
+                if (attachments[i] == null) return i;
+            }
+        }
+        return -1;
+    }
+
+    /// <summary>
+    /// Get the next inventory slot that an attachment should be put in.
+    /// </summary>
+    /// <returns> A valid index of an inventory slot. </returns>
+    public int GetNextInventoryIndex()
+    {
+        for (int i = 0; i < inventory.Count; ++i)
+        {
+            if (inventory[i] == null) return i;
+        }
+        return -1;
+    }
+
+    /// <summary>
+    /// Try to store the given attachment at the given index.
+    /// </summary>
+    /// <param name="attachment"> the attachment to store </param>
+    /// <param name="index"> the index to store to </param>
+    /// <returns></returns>
+    public bool StoreAttachment (Attachment attachment, int index)
+    {
+        if (attachment != null && inventory[index] == null)
+        {
+            inventory[index] = attachment;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Try to discard the attachment at the given index.
+    /// </summary>
+    /// <param name="index"> the index to discard from </param>
+    /// <returns></returns>
+    public bool DiscardAttachment (int index)
+    {
+        if (inventory[index] != null)
+        {
+            inventory[index] = null;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     /// <summary>
@@ -360,7 +419,7 @@ public class Staff : MonoBehaviour
     }
 
     // levels up the staff (add 2 attachment slots) if able
-    public bool LevelUpStaff ()
+    public void LevelUpStaff ()
     {
         if (staffLevel < maxStaffLevel)
         {
@@ -369,11 +428,6 @@ public class Staff : MonoBehaviour
             attachments.Add (null);
             attachments.Add (null);
             spriteRenderer.sprite = sprites[staffLevel];
-            return true;
-        }
-        else
-        {
-            return false;
         }
     }
 

@@ -98,5 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attached: 0
+  spriteNumber: 4
   armorDefenseIncrease: 0
   armorRecoverySpeedIncrease: 0
