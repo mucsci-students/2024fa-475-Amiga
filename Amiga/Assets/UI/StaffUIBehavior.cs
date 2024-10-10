@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// THIS IS NO LONGER BEING USED
+// TODO: DELETE
+
 public class StaffUIBehavior : MonoBehaviour
 {
 

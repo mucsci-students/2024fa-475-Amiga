@@ -32,15 +32,23 @@ public class Staff : MonoBehaviour
     /// <summary> The # of attachments on the staff. </summary>
     public int attachmentCount;
 
+    /// <summary> The # of attachments on the staff. </summary>
+    public int staffLevel;
+
     /// <summary>
     /// The maximum number of attachments the staff can currently take
     /// </summary>
     public int maxAttachmentCount;
 
     /// <summary>
-    /// The maximum number of attachments the staff can EVER take
+    /// The maximum level the staff can reach
     /// </summary>
-    private int maxMaxAttachmentCount;
+    private int maxStaffLevel = 2;
+
+    /// <summary>
+    /// The attachments currently in the player's inventory
+    /// </summary>
+    public List<Attachment> inventory;
 
     /// <summary>
     /// Reference to hp diplay UI.
@@ -162,9 +170,9 @@ public class Staff : MonoBehaviour
 
     void Start()
     {
-        maxMaxAttachmentCount = 5;
 
         // start with 3 empty slots
+        staffLevel = 0;
         maxAttachmentCount = 3;
 
         attachments = new List<Attachment>();
@@ -174,6 +182,13 @@ public class Staff : MonoBehaviour
         }
 
         attachmentCount = 0;
+
+        // start with an inventory of 30 empty slots
+        inventory = new List<Attachment> ();
+        for (int i = 0; i < 30; ++i)
+        {
+            inventory.Add(null);
+        }
 
         // update sprite & staff position
         spriteRenderer = GetComponent<SpriteRenderer> ();
@@ -351,13 +366,16 @@ public class Staff : MonoBehaviour
         return true;
     }
 
+    // levels up the staff (add 2 attachment slots) if able
     public bool LevelUpStaff ()
     {
-        if (maxAttachmentCount < maxMaxAttachmentCount)
+        if (staffLevel < maxStaffLevel)
         {
-            ++maxAttachmentCount;
+            ++staffLevel;
+            maxAttachmentCount += 2;
             attachments.Add (null);
-            spriteRenderer.sprite = sprites[maxAttachmentCount - 3];
+            attachments.Add (null);
+            spriteRenderer.sprite = sprites[staffLevel];
             return true;
         }
         else
