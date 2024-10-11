@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -799848075
-  m_SortingLayer: 1
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1955532647, guid: 960dda3b2e00344d79f2a79fbc3f48e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -103,20 +103,20 @@ PolygonCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1079
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 512
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 512
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 512
   m_CallbackLayers:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 512
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -159,7 +159,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1079
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -209,8 +209,8 @@ SpriteMask:
   m_MaskAlphaCutoff: 1
   m_FrontSortingLayerID: -799848075
   m_BackSortingLayerID: -799848075
-  m_FrontSortingLayer: 1
-  m_BackSortingLayer: 1
+  m_FrontSortingLayer: -1
+  m_BackSortingLayer: -1
   m_FrontSortingOrder: 0
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 1

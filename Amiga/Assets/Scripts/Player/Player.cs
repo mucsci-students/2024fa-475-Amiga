@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rb;
 
     private float defaultSpeed = 5.0f;
     private int lavaDamage = 20; // the amount of damage damaging tiles such as lave do
@@ -39,13 +40,17 @@ public class Player : MonoBehaviour
     {
         animator = GetComponent<Animator> ();
         spriteRenderer = GetComponent<SpriteRenderer> ();
+        rb = GetComponent<Rigidbody2D> ();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move();
-        Attack();
+        if (Time.timeScale > 0)
+        {
+            Move();
+            Attack();
+        }
     }
 
     /// <summary>
@@ -55,16 +60,16 @@ public class Player : MonoBehaviour
     {
         if (staff.floating > 0)
         {
-            if (GetComponent<Rigidbody2D>().gravityScale != 0.0f)
+            if (rb.gravityScale != 0.0f)
             {
-                GetComponent<Rigidbody2D>().gravityScale = 0.0f;
+                rb.gravityScale = 0.0f;
             }
         }
         else
         {
-            if (GetComponent<Rigidbody2D>().gravityScale == 0.0f)
+            if (rb.gravityScale == 0.0f)
             {
-                GetComponent<Rigidbody2D>().gravityScale = 1.0f;
+                rb.gravityScale = 1.0f;
             }
         }
 
@@ -87,7 +92,7 @@ public class Player : MonoBehaviour
         if (moveX != 0.0f || moveY != 0.0f)
         {
             // Create a movement vector
-            Vector2 movement = new Vector2(moveX, moveY).normalized * (defaultSpeed + staff.speedBoost) * Time.deltaTime;
+            Vector2 movement = Time.timeScale == 0 ? new Vector2 (0f, 0f) : new Vector2(moveX, moveY).normalized * (defaultSpeed + staff.speedBoost) * Time.deltaTime / Time.timeScale;
 
             // Move the player directly
             transform.Translate(movement);
@@ -106,7 +111,7 @@ public class Player : MonoBehaviour
     public void Attack()
     {
         // If left button is clicked
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && (Input.mousePosition.x < 1335 || Input.mousePosition.x > 1435 || Input.mousePosition.y < 1025 | Input.mousePosition.y > 1130))
         {
             staff.Launch();
         }

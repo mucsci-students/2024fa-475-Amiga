@@ -27,6 +27,11 @@ public class Staff : MonoBehaviour
     /// </summary>
     [SerializeField] private List<Sprite> sprites;
 
+    /// <summary>
+    /// Reference to the UI canvas
+    /// </summary>
+    [SerializeField] private Canvas canvas;
+
     /// <summary> The attachments on the staff. </summary>
     public List<Attachment> attachments;
 
@@ -129,6 +134,11 @@ public class Staff : MonoBehaviour
     public int floating;
 
     /// <summary>
+    /// How much the player will slow enemies down when firing
+    /// </summary>
+    public float slowmoEffect = 0.5f;
+
+    /// <summary>
     /// The maximum mana
     /// </summary>
     public float maxMana;
@@ -162,6 +172,7 @@ public class Staff : MonoBehaviour
     /// The recovery speed of health.(per second)
     /// </summary>
     public float healthRecoverySpeed;
+
 
     void Start()
     {
@@ -201,6 +212,7 @@ public class Staff : MonoBehaviour
         armorRecoverySpeed = 5.0f;
         jumpHeight = 5;
         floating = 0;
+        slowmoEffect = 1f;
         maxMana = 100.0f;
         currentMana = maxMana;
         manaRecoverySpeed = 20.0f;
@@ -226,6 +238,12 @@ public class Staff : MonoBehaviour
         hpDisplay.GetComponent<HP>().UpdateHP(currentHealth, maxHealth);
         manaDisplay.GetComponent<MANA>().UpdateMANA(currentMana, maxMana);
         armorDisplay.GetComponent<ARMOR>().UpdateARMOR(currentArmorDefense, armorDefense);
+
+        // bring timeScale back to 1 if not paused
+        if (Time.timeScale < 1f && Time.timeScale != 0f)
+        {
+            Time.timeScale += Time.deltaTime;
+        }
     }
 
     /// <summary>
@@ -364,6 +382,8 @@ public class Staff : MonoBehaviour
                 currentMana -= manaCost;
             }
         }
+
+        SetSlowmo (slowmoEffect);
     }
 
     /// <summary>
@@ -444,5 +464,12 @@ public class Staff : MonoBehaviour
             transform.localPosition = new Vector3 (flip * 0.35f, 0f, 0f);
             transform.rotation = Quaternion.Euler (flip * new Vector3 (0f, 0f, -30f));
         }
+    }
+
+    // A method to set the game speed, used by the pause menu
+    public void SetSlowmo (float speed)
+    {
+        Time.timeScale = speed;
+        Time.fixedDeltaTime *= speed;
     }
 }
