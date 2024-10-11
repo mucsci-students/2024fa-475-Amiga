@@ -13,6 +13,10 @@ PROJECT BACKLOG
 
 (these can be done once all of the current issues have been resolved)
 
+More levels
+More attachments
 Boss enemy
-Music & sound clips
+Background music
+Sound clips
+Parallax effect
 Towers & structures for the monster
