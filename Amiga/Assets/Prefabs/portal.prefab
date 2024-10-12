@@ -183,7 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a76ffcd87a2b548a859b10644453d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {fileID: 0}
+  destinations: []
+  mixer: {fileID: 24100000, guid: 1105851bd921b4593add9e4341c81b35, type: 2}
 --- !u!61 &5073216881276340081
 BoxCollider2D:
   m_ObjectHideFlags: 0

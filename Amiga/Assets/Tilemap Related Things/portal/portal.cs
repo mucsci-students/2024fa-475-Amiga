@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Portal : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class Portal : MonoBehaviour
 
     [SerializeField] private List<Transform> destinations;  // List of possible destinations
 
+    [SerializeField] private AudioMixer mixer; // link to the bgm music mixer
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (portalObjects.Contains(collision.gameObject))
@@ -25,6 +28,8 @@ public class Portal : MonoBehaviour
                 destinationPortal.portalObjects.Add(collision.gameObject);
             }
 
+            SwitchSongs ();
+
             // Teleport the object to the randomly chosen destination
             collision.transform.position = randomDestination.position;
         }
@@ -42,11 +47,29 @@ public class Portal : MonoBehaviour
         if (destinations.Count > 0)
         {
             int randomIndex = Random.Range(0, destinations.Count);
-            Debug.Log("Randomly selected destination: " + randomIndex + " (" + destinations[randomIndex].name + ")");
+            //Debug.Log("Randomly selected destination: " + randomIndex + " (" + destinations[randomIndex].name + ")");
             return destinations[randomIndex];
         }
 
         Debug.LogWarning("No available destinations to teleport to!");
         return null;
+    }
+
+    private void SwitchSongs ()
+    {
+        float baseMusic1Vol;
+        mixer.GetFloat ("Base Music 1 Volume", out baseMusic1Vol);
+        if (baseMusic1Vol == 0f)
+        {
+            mixer.SetFloat ("Base Music 1 Volume", -80f);
+            mixer.SetFloat ("Base Music 2 Volume", 0f);
+            print ("1");
+        }
+        else
+        {
+            mixer.SetFloat ("Base Music 1 Volume", 0f);
+            mixer.SetFloat ("Base Music 2 Volume", -80f);
+            print ("2");
+        }
     }
 }

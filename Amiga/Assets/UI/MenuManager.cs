@@ -86,8 +86,67 @@ public class StaffMenuManager : MonoBehaviour
     public Vector3 AttachmentUIChange (GameObject attachmentUI, Vector3 lastPos)
     {
         Vector3 pos = attachmentUI.transform.localPosition;
-        int loc = PositionToInventorySlot (pos);
+
+        // get target/source indicies in attachmentUIInsts, and target/source slot numbers
+        int targetSlot = PositionToStaffSlot (pos);
+        int targetIndex = -1;
+        bool targetIsAttached = false;
+        if (targetSlot != -1) {
+            targetIndex = targetSlot;
+            targetIsAttached = true;
+        }
+        else
+        {
+            targetSlot = PositionToInventorySlot (pos);
+            if (targetSlot != -1)
+            {
+                targetIndex = targetSlot + staff.maxAttachmentCount;
+            }
+        }
+        int fromSlot = PositionToStaffSlot (lastPos);
+        int fromIndex = -1;
+        bool fromIsAttached = false;
+        if (fromSlot != -1) {
+            fromIndex = fromSlot;
+            fromIsAttached = true;
+        }
+        else
+        {
+            fromSlot = PositionToInventorySlot (lastPos);
+            if (fromSlot != -1)
+            {
+                fromIndex = fromSlot + staff.maxAttachmentCount;
+            }
+        }
+
         Attachment attachment = attachmentUI.GetComponent<AttachmentUIScript> ().attachment;
+        Attachment targetAttachment = targetIsAttached ? staff.attachments[targetSlot] : staff.inventory[targetSlot];
+
+        // update from
+        if (fromIsAttached)
+        {
+            staff.DetachAttachment (fromSlot);
+            staff.AttachAttachment (targetAttachment, fromSlot);
+        }
+        else
+        {
+            staff.DiscardAttachment (fromSlot);
+            staff.StoreAttachment (targetAttachment, fromSlot);
+        }
+
+        // update target
+        if (targetIsAttached)
+        {
+            staff.DetachAttachment (targetSlot);
+            staff.AttachAttachment (attachment, targetSlot);
+        }
+        else
+        {
+            staff.DiscardAttachment (targetSlot);
+            staff.StoreAttachment (attachment, targetSlot);
+        }
+
+        /*
         if (loc != -1)
         {
             int lastLoc = PositionToInventorySlot (lastPos);
@@ -173,6 +232,7 @@ public class StaffMenuManager : MonoBehaviour
                 }
             }
         }
+        */
         return new Vector3 (0f, 0f, 0f);
     }
 
