@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class StaffMenuManager : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class StaffMenuManager : MonoBehaviour
     [SerializeField] private List<GameObject> staffSlots;
     [SerializeField] private MenuInitializer menuInitializer;
     [SerializeField] private GameObject attachmentUITemplate;
+
+    // tilemaps for checking whether an attachment is clipped inside a tile
+    [SerializeField] private Tilemap destructibleTilemap;
+    [SerializeField] private Tilemap baseTilemap;
+    [SerializeField] private Tilemap damagingTilemap;
 
     private List<float> staffSlotXCoords = new List<float> {240f, 160f, 200f, 120f, 80f, 0f, 40f};
     private List<float> staffSlotYCoords = new List<float> {140f, 140f, 20f, 20f, 140f, 160f, 20f};
@@ -120,7 +126,18 @@ public class StaffMenuManager : MonoBehaviour
         }
 
         Attachment attachment = attachmentUI.GetComponent<AttachmentUIScript> ().attachment;
-        Attachment targetAttachment = targetIsAttached ? staff.attachments[targetSlot] : staff.inventory[targetSlot];
+        Attachment targetAttachment = targetIndex != -1 ? (targetIsAttached ? staff.attachments[targetSlot] : staff.inventory[targetSlot]) : null;
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint (attachmentUI.transform.position);
+        worldPos.y -= 1f; // offset, for some reason is necessary
+
+        // misplaced attachment
+        if (targetIndex == -1 && ((pos.x > -305 && pos.x < 305 && pos.y > -210 && pos.y < 210) ||
+                                  destructibleTilemap.HasTile (destructibleTilemap.WorldToCell(worldPos)) ||
+                                  baseTilemap.HasTile (baseTilemap.WorldToCell(worldPos)) ||
+                                  damagingTilemap.HasTile (damagingTilemap.WorldToCell(worldPos))))
+        {
+            return lastPos;
+        }
 
         // update from
         if (fromIsAttached)
@@ -132,6 +149,18 @@ public class StaffMenuManager : MonoBehaviour
         {
             staff.DiscardAttachment (fromSlot);
             staff.StoreAttachment (targetAttachment, fromSlot);
+        }
+
+        // discard attachment
+        if (targetIndex == -1)
+        {
+            worldPos.z = 0f;
+            attachment.gameObject.transform.position = worldPos;
+            attachment.gameObject.transform.rotation = Quaternion.identity;
+            attachment.gameObject.SetActive (true);
+            attachmentUIInsts[fromIndex] = null;
+            GameObject.Destroy (attachmentUI);
+            return new Vector3 (0f, 0f, 0f);
         }
 
         // update target
@@ -146,7 +175,67 @@ public class StaffMenuManager : MonoBehaviour
             staff.StoreAttachment (attachment, targetSlot);
         }
 
-        /*
+        swapPosInAttachmentUIInsts (fromIndex, targetIndex);
+
+        if (attachmentUIInsts[fromIndex] != null) attachmentUIInsts[fromIndex].GetComponent<AttachmentUIScript> ().GoToPosition (lastPos);
+        return targetIsAttached ? StaffSlotToPosition (targetSlot) : InventorySlotToPosition (targetSlot);        
+
+    }
+
+
+    // position <-> slot conversions:
+    public int PositionToInventorySlot (Vector3 pos)
+    {
+        if (pos.x >= -225f - 10f - 25f && pos.x <= 225f + 10f + 25f && pos.y >= -152f - 3f - 25f && pos.y <= -52f + 3f + 25f)
+        {
+            int col = (int) ((pos.x + 260f) / 52f);
+            if (col == 10) col = 9;
+            int row = (int) ((-pos.y - 24f) / 52f);
+            if (row == 3) row = 2;
+            return col % 10 + row * 10;
+        }
+        else
+        {
+            return -1;
+        }
+    }
+
+    public Vector3 InventorySlotToPosition (int slot)
+    {
+        return new Vector3 (-260f + 26f + 52f * (float) (slot % 10), -24 - 26f - 52f * (float) (slot / 10), 0f);
+    }
+
+    public int PositionToStaffSlot (Vector3 pos)
+    {
+        for (int i = 0; i < staff.maxAttachmentCount; ++i)
+        {
+            if (pos.x >= staffSlotXCoords[i] - 26 && pos.x <= staffSlotXCoords[i] + 26 && pos.y >= staffSlotYCoords[i] - 26 && pos.y <= staffSlotYCoords[i] + 26)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public Vector3 StaffSlotToPosition (int slot)
+    {
+        return new Vector3 (staffSlotXCoords[slot], staffSlotYCoords[slot], 0f);
+    }
+
+
+    // swap positions in attachmentUIInsts
+    private void swapPosInAttachmentUIInsts (int a, int b)
+    {
+        GameObject temp = attachmentUIInsts[a];
+        attachmentUIInsts[a] = attachmentUIInsts[b];
+        attachmentUIInsts[b] = temp;
+    }
+}
+
+
+
+// old attachmentUIChange code:
+/*
         if (loc != -1)
         {
             int lastLoc = PositionToInventorySlot (lastPos);
@@ -233,55 +322,4 @@ public class StaffMenuManager : MonoBehaviour
             }
         }
         */
-        return new Vector3 (0f, 0f, 0f);
-    }
-
-
-    // position <-> slot conversions:
-    public int PositionToInventorySlot (Vector3 pos)
-    {
-        if (pos.x >= -225f - 10f - 25f && pos.x <= 225f + 10f + 25f && pos.y >= -152f - 3f - 25f && pos.y <= -52f + 3f + 25f)
-        {
-            int col = (int) ((pos.x + 260f) / 52f);
-            if (col == 10) col = 9;
-            int row = (int) ((-pos.y - 24f) / 52f);
-            if (row == 3) row = 2;
-            return col % 10 + row * 10;
-        }
-        else
-        {
-            return -1;
-        }
-    }
-
-    public Vector3 InventorySlotToPosition (int slot)
-    {
-        return new Vector3 (-260f + 26f + 52f * (float) (slot % 10), -24 - 26f - 52f * (float) (slot / 10), 0f);
-    }
-
-    public int PositionToStaffSlot (Vector3 pos)
-    {
-        for (int i = 0; i < staff.maxAttachmentCount; ++i)
-        {
-            if (pos.x >= staffSlotXCoords[i] - 26 && pos.x <= staffSlotXCoords[i] + 26 && pos.y >= staffSlotYCoords[i] - 26 && pos.y <= staffSlotYCoords[i] + 26)
-            {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    public Vector3 StaffSlotToPosition (int slot)
-    {
-        return new Vector3 (staffSlotXCoords[slot], staffSlotYCoords[slot], 0f);
-    }
-
-
-    // swap positions in attachmentUIInsts
-    private void swapPosInAttachmentUIInsts (int a, int b)
-    {
-        GameObject temp = attachmentUIInsts[a];
-        attachmentUIInsts[a] = attachmentUIInsts[b];
-        attachmentUIInsts[b] = temp;
-    }
-}
+        //return new Vector3 (0f, 0f, 0f);

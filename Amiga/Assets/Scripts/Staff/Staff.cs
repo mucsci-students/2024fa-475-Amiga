@@ -470,6 +470,5 @@ public class Staff : MonoBehaviour
     public void SetSlowmo (float speed)
     {
         Time.timeScale = speed;
-        Time.fixedDeltaTime *= speed;
     }
 }
