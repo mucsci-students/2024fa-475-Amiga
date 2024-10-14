@@ -1,0 +1,374 @@
+fileFormatVersion: 2
+guid: 4f7434f87689b48768e5ca95dc12c9d5
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 154
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tally Mark Sprites_18
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 923
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad720d65b81db420b9d78ee16ffa31a1
+      internalID: -584023120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tally Mark Sprites_19
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 923
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d88be8dc8f83d4043a7ab43f43d82384
+      internalID: -1708567278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tally Mark Sprites_20
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 923
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b4b0a43ffcd41e18c9b82cf31dc5af
+      internalID: 987453044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tally Mark Sprites_21
+      rect:
+        serializedVersion: 2
+        x: 1963
+        y: 923
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f33f34a68c048a381cfa4a7eec69c2
+      internalID: -1351224590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tally Mark Sprites_26
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 769
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d300fe90583444a6c847cf14f8374e06
+      internalID: 1021647087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tally Mark Sprites_27
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 769
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7502c3b3cedf4614bb47d78b7009ab7
+      internalID: 1751902607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tally Mark Sprites_28
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 769
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 971bd5e4c2f824cb2afde82c55251c9d
+      internalID: -1546526914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tally Mark Sprites_29
+      rect:
+        serializedVersion: 2
+        x: 1963
+        y: 769
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a486d3b7f998488f826b040622a81c1
+      internalID: -610859435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tally Mark Sprites_33
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 615
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5669ddfe0219f48479e0d9cd66d302fc
+      internalID: 1239822004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tally Mark Sprites_34
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 615
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7977315a47e56426c99b0f6429146db9
+      internalID: -1982479983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Tally Mark Sprites_0: -641198139
+      Tally Mark Sprites_1: 956027715
+      Tally Mark Sprites_10: 2114109491
+      Tally Mark Sprites_11: -2119589091
+      Tally Mark Sprites_12: -1375062977
+      Tally Mark Sprites_13: 509287288
+      Tally Mark Sprites_14: 103700402
+      Tally Mark Sprites_15: -1564389315
+      Tally Mark Sprites_16: -1974464376
+      Tally Mark Sprites_17: 1161391759
+      Tally Mark Sprites_18: -584023120
+      Tally Mark Sprites_19: -1708567278
+      Tally Mark Sprites_2: -1630994829
+      Tally Mark Sprites_20: 987453044
+      Tally Mark Sprites_21: -1351224590
+      Tally Mark Sprites_22: -1657797777
+      Tally Mark Sprites_23: -1622295636
+      Tally Mark Sprites_24: 136977096
+      Tally Mark Sprites_25: 796042953
+      Tally Mark Sprites_26: 1021647087
+      Tally Mark Sprites_27: 1751902607
+      Tally Mark Sprites_28: -1546526914
+      Tally Mark Sprites_29: -610859435
+      Tally Mark Sprites_3: -443292418
+      Tally Mark Sprites_30: 132555425
+      Tally Mark Sprites_31: -245773497
+      Tally Mark Sprites_32: -1550585302
+      Tally Mark Sprites_33: 1239822004
+      Tally Mark Sprites_34: -1982479983
+      Tally Mark Sprites_35: 1398464056
+      Tally Mark Sprites_36: 770045625
+      Tally Mark Sprites_37: -562825027
+      Tally Mark Sprites_38: 618089697
+      Tally Mark Sprites_39: -677580008
+      Tally Mark Sprites_4: 232510749
+      Tally Mark Sprites_40: -2089929808
+      Tally Mark Sprites_41: 1037387729
+      Tally Mark Sprites_42: 1627158312
+      Tally Mark Sprites_43: 48492217
+      Tally Mark Sprites_44: -1624090890
+      Tally Mark Sprites_45: 2095508913
+      Tally Mark Sprites_46: 2084646172
+      Tally Mark Sprites_47: -2072707553
+      Tally Mark Sprites_48: 914671692
+      Tally Mark Sprites_49: 1524121222
+      Tally Mark Sprites_5: 1111311060
+      Tally Mark Sprites_6: -1179254642
+      Tally Mark Sprites_7: 1622047073
+      Tally Mark Sprites_8: -285465148
+      Tally Mark Sprites_9: -1773706473
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

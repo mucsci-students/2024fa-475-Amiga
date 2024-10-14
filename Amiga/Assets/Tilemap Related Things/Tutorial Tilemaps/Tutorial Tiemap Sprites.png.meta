@@ -1,0 +1,502 @@
+fileFormatVersion: 2
+guid: 7c0293bc7eecc44f686d9a3479036390
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 154
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tutorial Tiemap Sprites_6
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 1231
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7e39680e9ab4dafb037e3df8ef800f
+      internalID: 1026368976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial Tiemap Sprites_12
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1077
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a5db22774314f7e886c28f05560670
+      internalID: 1516608218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial Tiemap Sprites_13
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 1077
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b675d803c984ad6bfa343ca0403564
+      internalID: -809763675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial Tiemap Sprites_16
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 1077
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e3523115cc341288d517846bd01c6c
+      internalID: -557103550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial Tiemap Sprites_17
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 1077
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a3d2db68663248bcbdab6d8a0465c4d
+      internalID: 561382720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial Tiemap Sprites_18
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 1077
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff29d6c15b3c48618530f9d058d1a63
+      internalID: 1441470880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial Tiemap Sprites_23
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 923
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ca3b1dcbd2124f23954379b477b552f
+      internalID: -1446765219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial Tiemap Sprites_24
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 923
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8de6606e44564c5d9cf2e1302bf58ab
+      internalID: -1129213618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial Tiemap Sprites_51
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 307
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8962f8fbfe39b4b72b1da1f54dc39507
+      internalID: 1011545041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial Tiemap Sprites_52
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 307
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa36f12bef4c848498b5a1cc016a3ce0
+      internalID: 28222496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial Tiemap Sprites_53
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 307
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6459160eb3c2498ab1f0baec71d81dc
+      internalID: -1907276938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial Tiemap Sprites_54
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 307
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1125e45399017424bb6c27725f6f3150
+      internalID: -970990218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial Tiemap Sprites_55
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 307
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f85377dd46d644b6a2968003faa773b
+      internalID: -484444444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial Tiemap Sprites_56
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 307
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68f1d271ac394ccd87ff9fc4a5373d6
+      internalID: 729554021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tutorial Tiemap Sprites_58
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 307
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06f2802f340cc4c7da651ffecbb9f36a
+      internalID: -408282402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Tutorial Tiemap Sprites_0: -796636786
+      Tutorial Tiemap Sprites_1: 1332388536
+      Tutorial Tiemap Sprites_10: 753723827
+      Tutorial Tiemap Sprites_11: -1949859647
+      Tutorial Tiemap Sprites_12: 1516608218
+      Tutorial Tiemap Sprites_13: -809763675
+      Tutorial Tiemap Sprites_14: -816484064
+      Tutorial Tiemap Sprites_15: 85357514
+      Tutorial Tiemap Sprites_16: -557103550
+      Tutorial Tiemap Sprites_17: 561382720
+      Tutorial Tiemap Sprites_18: 1441470880
+      Tutorial Tiemap Sprites_19: 1745254497
+      Tutorial Tiemap Sprites_2: -472365783
+      Tutorial Tiemap Sprites_20: -1011228437
+      Tutorial Tiemap Sprites_21: -1826510756
+      Tutorial Tiemap Sprites_22: -1135567349
+      Tutorial Tiemap Sprites_23: -1446765219
+      Tutorial Tiemap Sprites_24: -1129213618
+      Tutorial Tiemap Sprites_25: -718758779
+      Tutorial Tiemap Sprites_26: -1455659442
+      Tutorial Tiemap Sprites_27: -2130847752
+      Tutorial Tiemap Sprites_28: 750316328
+      Tutorial Tiemap Sprites_29: -1232657457
+      Tutorial Tiemap Sprites_3: 2111013651
+      Tutorial Tiemap Sprites_30: 1604904728
+      Tutorial Tiemap Sprites_31: 684788590
+      Tutorial Tiemap Sprites_32: 815327329
+      Tutorial Tiemap Sprites_33: 1273176569
+      Tutorial Tiemap Sprites_34: 1563766193
+      Tutorial Tiemap Sprites_35: 962001154
+      Tutorial Tiemap Sprites_36: 1030150655
+      Tutorial Tiemap Sprites_37: 1385631157
+      Tutorial Tiemap Sprites_38: 396908814
+      Tutorial Tiemap Sprites_39: 400998398
+      Tutorial Tiemap Sprites_4: -511233344
+      Tutorial Tiemap Sprites_40: 440032005
+      Tutorial Tiemap Sprites_41: 263069858
+      Tutorial Tiemap Sprites_42: -1567677688
+      Tutorial Tiemap Sprites_43: -881402144
+      Tutorial Tiemap Sprites_44: -555786185
+      Tutorial Tiemap Sprites_45: -2123350248
+      Tutorial Tiemap Sprites_46: 1996727722
+      Tutorial Tiemap Sprites_47: 1239655844
+      Tutorial Tiemap Sprites_48: 1236892729
+      Tutorial Tiemap Sprites_49: 227061317
+      Tutorial Tiemap Sprites_5: 1157087601
+      Tutorial Tiemap Sprites_50: -558413141
+      Tutorial Tiemap Sprites_51: 1011545041
+      Tutorial Tiemap Sprites_52: 28222496
+      Tutorial Tiemap Sprites_53: -1907276938
+      Tutorial Tiemap Sprites_54: -970990218
+      Tutorial Tiemap Sprites_55: -484444444
+      Tutorial Tiemap Sprites_56: 729554021
+      Tutorial Tiemap Sprites_57: 1277727424
+      Tutorial Tiemap Sprites_58: -408282402
+      Tutorial Tiemap Sprites_59: 662481019
+      Tutorial Tiemap Sprites_6: 1026368976
+      Tutorial Tiemap Sprites_60: -620976212
+      Tutorial Tiemap Sprites_61: -576490662
+      Tutorial Tiemap Sprites_62: 643335615
+      Tutorial Tiemap Sprites_63: 830095660
+      Tutorial Tiemap Sprites_64: 1243329400
+      Tutorial Tiemap Sprites_65: -278015759
+      Tutorial Tiemap Sprites_66: -490657145
+      Tutorial Tiemap Sprites_67: -2117160972
+      Tutorial Tiemap Sprites_68: 2039890817
+      Tutorial Tiemap Sprites_69: 2005672575
+      Tutorial Tiemap Sprites_7: 2065755148
+      Tutorial Tiemap Sprites_70: 1557913486
+      Tutorial Tiemap Sprites_71: -1550602495
+      Tutorial Tiemap Sprites_72: 1463999322
+      Tutorial Tiemap Sprites_8: 1450708839
+      Tutorial Tiemap Sprites_9: 1449574601
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Crystal Lamp
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 453049600, guid: 92a71d3fe2ef048db8e229964623e0d2, type: 3}
+  - {fileID: 59797205, guid: 00e061737db5849229c08c501a62d29b, type: 3}
+  - {fileID: 1967133965, guid: a7a7a08d66b5c4b39ad812cb5d6b20d2, type: 3}
+  - {fileID: 59797205, guid: 00e061737db5849229c08c501a62d29b, type: 3}
+  m_MinSpeed: 5
+  m_MaxSpeed: 6
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+  m_TileAnimationFlags: 0

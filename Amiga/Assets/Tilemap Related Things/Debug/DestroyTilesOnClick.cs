@@ -13,6 +13,9 @@ public class DestroyTilesOnClick : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private float force;
 
+    [SerializeField] private StatueBehavior statue;
+    bool statueDestroyed = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,12 @@ public class DestroyTilesOnClick : MonoBehaviour
         {
             Vector3 debrisPos = destructibleTilemap.WorldToCell (mousePos) + new Vector3 (0.5f, 0.5f, 0f);
             handler.DestroyTile (mousePos, force * (debrisPos - mousePos));
+
+            if (!statueDestroyed)
+            {
+                statue.DestroyStatue (mousePos, force * (statue.GetComponent<Transform> ().position - mousePos));
+                statueDestroyed = true;
+            }
         }
     }
 }

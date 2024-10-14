@@ -12,7 +12,7 @@ public class Portal : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (portalObjects.Contains(collision.gameObject))
+        if (!collision.gameObject.CompareTag ("Player") || portalObjects.Contains(collision.gameObject))
         {
             return;  // Avoid re-teleporting the same object
         }
@@ -55,6 +55,7 @@ public class Portal : MonoBehaviour
         return null;
     }
 
+    // changes the current bgm to the other bgm. The tutorial music becomes muted, if it wasn't already
     private void SwitchSongs ()
     {
         float baseMusic1Vol;
@@ -63,13 +64,13 @@ public class Portal : MonoBehaviour
         {
             mixer.SetFloat ("Base Music 1 Volume", -80f);
             mixer.SetFloat ("Base Music 2 Volume", 0f);
-            print ("1");
+            mixer.SetFloat ("Tutorial Music Volume", -80f);
         }
         else
         {
             mixer.SetFloat ("Base Music 1 Volume", 0f);
             mixer.SetFloat ("Base Music 2 Volume", -80f);
-            print ("2");
+            mixer.SetFloat ("Tutorial Music Volume", -80f);
         }
     }
 }

@@ -205,12 +205,12 @@ public class Staff : MonoBehaviour
         bulletCount = 1;
         bulletSpeed = 7.0f;
         bulletSize = 1.0f;
-        bulletLife = 3.0f;
+        bulletLife = 1.0f;
 
         armorDefense = 50.0f;
         currentArmorDefense = 50.0f;
         armorRecoverySpeed = 5.0f;
-        jumpHeight = 5;
+        jumpHeight = 10;
         floating = 0;
         slowmoEffect = 1f;
         maxMana = 100.0f;

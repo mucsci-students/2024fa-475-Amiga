@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: 4552d5217fa1c42a29c40ab71636b768
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 154
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tallymark Sprites_30
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 615
+        width: 154
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 158aac1ea853348649f32a29caa9924e
+      internalID: -786528481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Tallymark Sprites_0: -962548186
+      Tallymark Sprites_1: -960785248
+      Tallymark Sprites_10: 1868688244
+      Tallymark Sprites_11: 633239450
+      Tallymark Sprites_12: -1679611251
+      Tallymark Sprites_13: 1436186974
+      Tallymark Sprites_14: -1811651050
+      Tallymark Sprites_15: 678691154
+      Tallymark Sprites_16: 13617018
+      Tallymark Sprites_17: -2076323521
+      Tallymark Sprites_18: 2112223880
+      Tallymark Sprites_19: 1018674645
+      Tallymark Sprites_2: -542990419
+      Tallymark Sprites_20: 164159675
+      Tallymark Sprites_21: -489468854
+      Tallymark Sprites_22: 1094242935
+      Tallymark Sprites_23: -685965888
+      Tallymark Sprites_24: -225939780
+      Tallymark Sprites_25: 263059046
+      Tallymark Sprites_26: 879448299
+      Tallymark Sprites_27: -1007143994
+      Tallymark Sprites_28: 1492945255
+      Tallymark Sprites_29: 1097367025
+      Tallymark Sprites_3: 647392147
+      Tallymark Sprites_30: -786528481
+      Tallymark Sprites_31: -2041588631
+      Tallymark Sprites_32: -1309062989
+      Tallymark Sprites_33: 1348880837
+      Tallymark Sprites_34: 695842746
+      Tallymark Sprites_35: -1113157542
+      Tallymark Sprites_36: 939032184
+      Tallymark Sprites_37: 918652502
+      Tallymark Sprites_38: 1982152663
+      Tallymark Sprites_39: -1755908589
+      Tallymark Sprites_4: -1595787476
+      Tallymark Sprites_40: 1673815967
+      Tallymark Sprites_41: -1953095459
+      Tallymark Sprites_42: 1186270624
+      Tallymark Sprites_43: -1310879451
+      Tallymark Sprites_44: 1685098051
+      Tallymark Sprites_45: -1877509073
+      Tallymark Sprites_46: 1191146530
+      Tallymark Sprites_47: 1696029151
+      Tallymark Sprites_48: -1225337408
+      Tallymark Sprites_49: -588784204
+      Tallymark Sprites_5: 857721295
+      Tallymark Sprites_6: -1030121020
+      Tallymark Sprites_7: -1093520752
+      Tallymark Sprites_8: -1894193957
+      Tallymark Sprites_9: 1800240816
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

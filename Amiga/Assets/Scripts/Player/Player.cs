@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
         {
             if (rb.gravityScale == 0.0f)
             {
-                rb.gravityScale = 1.0f;
+                rb.gravityScale = 2.0f;
             }
         }
 
@@ -98,8 +98,8 @@ public class Player : MonoBehaviour
             transform.Translate(movement);
         }
 
-        // Check for jumping input using 'Space'
-        if (staff.floating <= 0 && isGrounded && Input.GetKeyDown(KeyCode.Space))
+        // Check for jumping input using 'Space', 'W' or the Up Arrow
+        if (staff.floating <= 0 && isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))) 
         {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * staff.jumpHeight, ForceMode2D.Impulse);
         }

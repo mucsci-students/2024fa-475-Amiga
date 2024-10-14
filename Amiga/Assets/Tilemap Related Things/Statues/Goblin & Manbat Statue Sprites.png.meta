@@ -1,0 +1,423 @@
+fileFormatVersion: 2
+guid: aae241976b8fd4f928c460eed3ec4ee8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Goblin & Manbat Statue Sprites_10
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 1240
+        width: 83
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a73ef0cd348a460b8532968ce3e9427
+      internalID: -1679661907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin & Manbat Statue Sprites_11
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 1240
+        width: 91
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abd6149d639a848e2974bd7670dbbca3
+      internalID: -511539287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin & Manbat Statue Sprites_13
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 1233
+        width: 98
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 948ce15d1ac95491d999eff41f4b680b
+      internalID: -1625395916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin & Manbat Statue Sprites_14
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 1240
+        width: 93
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d52261365a14c78a443a3c00a9ad90
+      internalID: 1940452042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin & Manbat Statue Sprites_15
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 1240
+        width: 91
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31159083781e14ece85394c4b7ec61b5
+      internalID: 384326365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin & Manbat Statue Sprites_16
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 1245
+        width: 80
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44999b92627014587be153eaff311c3f
+      internalID: 1245701766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin & Manbat Statue Sprites_20
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 1084
+        width: 114
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03165cc470138472f8e842e8725e4745
+      internalID: 1368623891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin & Manbat Statue Sprites_21
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1088
+        width: 98
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de141f835595e4560b00a65cc698f120
+      internalID: -1262098816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin & Manbat Statue Sprites_22
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1090
+        width: 84
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7921aef619ca74ceaa98d9dc8684abb9
+      internalID: -1223261296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin & Manbat Statue Sprites_24
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 703
+        width: 251
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc438b51fcb93426ba03c6d47f03925e
+      internalID: -799852840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin & Manbat Statue Sprites_27
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 698
+        width: 244
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6977e6dcdab434edbaa2047b937f5842
+      internalID: -1205224523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin & Manbat Statue Sprites_29
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 679
+        width: 220
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a05a457d4a7ff48f9903af41fcc5fa52
+      internalID: 1104954692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Goblin & Manbat Statue Sprites_30
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 691
+        width: 224
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f91cd13fb69a41a2aab2583ecc95237
+      internalID: 566706838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Goblin & Manbat Statue Sprites_0: -1423177504
+      Goblin & Manbat Statue Sprites_1: 1167677397
+      Goblin & Manbat Statue Sprites_10: -1679661907
+      Goblin & Manbat Statue Sprites_11: -511539287
+      Goblin & Manbat Statue Sprites_12: -1619737579
+      Goblin & Manbat Statue Sprites_13: -1625395916
+      Goblin & Manbat Statue Sprites_14: 1940452042
+      Goblin & Manbat Statue Sprites_15: 384326365
+      Goblin & Manbat Statue Sprites_16: 1245701766
+      Goblin & Manbat Statue Sprites_17: 1727231011
+      Goblin & Manbat Statue Sprites_18: 1252649754
+      Goblin & Manbat Statue Sprites_19: -706561705
+      Goblin & Manbat Statue Sprites_2: -1783473996
+      Goblin & Manbat Statue Sprites_20: 1368623891
+      Goblin & Manbat Statue Sprites_21: -1262098816
+      Goblin & Manbat Statue Sprites_22: -1223261296
+      Goblin & Manbat Statue Sprites_23: -537244614
+      Goblin & Manbat Statue Sprites_24: -799852840
+      Goblin & Manbat Statue Sprites_25: 1579328368
+      Goblin & Manbat Statue Sprites_26: 216618980
+      Goblin & Manbat Statue Sprites_27: -1205224523
+      Goblin & Manbat Statue Sprites_28: -1333333085
+      Goblin & Manbat Statue Sprites_29: 1104954692
+      Goblin & Manbat Statue Sprites_3: -804426542
+      Goblin & Manbat Statue Sprites_30: 566706838
+      Goblin & Manbat Statue Sprites_31: 1596226149
+      Goblin & Manbat Statue Sprites_32: -440206339
+      Goblin & Manbat Statue Sprites_33: -617142440
+      Goblin & Manbat Statue Sprites_34: -1895374929
+      Goblin & Manbat Statue Sprites_35: 1347656959
+      Goblin & Manbat Statue Sprites_4: 1482706899
+      Goblin & Manbat Statue Sprites_5: 306279726
+      Goblin & Manbat Statue Sprites_6: 1205132572
+      Goblin & Manbat Statue Sprites_7: 1295687466
+      Goblin & Manbat Statue Sprites_8: -103535581
+      Goblin & Manbat Statue Sprites_9: -1923431801
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

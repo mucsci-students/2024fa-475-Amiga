@@ -18,6 +18,8 @@ public class StaffMenuManager : MonoBehaviour
     [SerializeField] private Tilemap baseTilemap;
     [SerializeField] private Tilemap damagingTilemap;
 
+    [SerializeField] private UISFXController sfxPlayer;
+
     private List<float> staffSlotXCoords = new List<float> {240f, 160f, 200f, 120f, 80f, 0f, 40f};
     private List<float> staffSlotYCoords = new List<float> {140f, 140f, 20f, 20f, 140f, 160f, 20f};
 
@@ -136,6 +138,7 @@ public class StaffMenuManager : MonoBehaviour
                                   baseTilemap.HasTile (baseTilemap.WorldToCell(worldPos)) ||
                                   damagingTilemap.HasTile (damagingTilemap.WorldToCell(worldPos))))
         {
+            sfxPlayer.PlayMissSlot ();
             return lastPos;
         }
 
@@ -160,6 +163,8 @@ public class StaffMenuManager : MonoBehaviour
             attachment.gameObject.SetActive (true);
             attachmentUIInsts[fromIndex] = null;
             GameObject.Destroy (attachmentUI);
+
+            sfxPlayer.PlayDrop ();
             return new Vector3 (0f, 0f, 0f);
         }
 
@@ -168,11 +173,15 @@ public class StaffMenuManager : MonoBehaviour
         {
             staff.DetachAttachment (targetSlot);
             staff.AttachAttachment (attachment, targetSlot);
+
+            sfxPlayer.PlayAttach ();
         }
         else
         {
             staff.DiscardAttachment (targetSlot);
             staff.StoreAttachment (attachment, targetSlot);
+
+            sfxPlayer.PlayMoveSlot ();
         }
 
         swapPosInAttachmentUIInsts (fromIndex, targetIndex);

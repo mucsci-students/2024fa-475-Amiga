@@ -10,6 +10,7 @@ public class AttachmentUIScript : MonoBehaviour
     [SerializeField] private Canvas canvas;
     [SerializeField] StaffMenuManager manager;
     [SerializeField] private List<Sprite> sprites;
+    [SerializeField] private UISFXController sfxPlayer;
     public Attachment attachment;
 
     private Vector3 lastPosition;
@@ -22,6 +23,10 @@ public class AttachmentUIScript : MonoBehaviour
     public void StartOfDrag ()
     {
         lastPosition = transform.localPosition;
+        if (manager.PositionToStaffSlot (lastPosition) == -1)
+            sfxPlayer.PlayRemoveSlot ();
+        else
+            sfxPlayer.PlayDetach ();
     }
 
     public void DragHandler (BaseEventData data)

@@ -14,8 +14,8 @@ public class TilemapHandler : MonoBehaviour
     [SerializeField] private Tilemap backgroundTilemap;
 
     private Tilemap destructibleTilemap;
-    private int currentDebrisLayer = 1; // each debris should get its own layer
-    private int maxDebrisLayer = 100; // 1 <= currentDebrisLayer <= 100
+    public int currentDebrisLayer = 1; // each debris should get its own layer
+    public int maxDebrisLayer = 100; // 1 <= currentDebrisLayer <= 100
 
     void Start()
     {
@@ -82,8 +82,18 @@ public class TilemapHandler : MonoBehaviour
     {
         if(foregroundTilemap != null && backgroundTilemap != null)
         {
+            // destroy above
             foregroundTilemap.SetTile (position + new Vector3Int (0, 1, 0), null);
             backgroundTilemap.SetTile (position + new Vector3Int (0, 1, 0), null);
+            // destroy below
+            foregroundTilemap.SetTile (position + new Vector3Int (0, -1, 0), null);
+            backgroundTilemap.SetTile (position + new Vector3Int (0, -1, 0), null);
+            // destroy the right
+            foregroundTilemap.SetTile (position + new Vector3Int (1, 0, 0), null);
+            backgroundTilemap.SetTile (position + new Vector3Int (1, 0, 0), null);
+            // destroy the left
+            foregroundTilemap.SetTile (position + new Vector3Int (-1, 0, 0), null);
+            backgroundTilemap.SetTile (position + new Vector3Int (-1, 0, 0), null);
         }
     }
 

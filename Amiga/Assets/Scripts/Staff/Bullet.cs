@@ -72,6 +72,7 @@ public class Bullet : MonoBehaviour
             return;
         }
         // Check if the bullet hits a tilemap and destroy the tile
+        // TODO: only destroy tile if the attachment is attached
         else if (collision.gameObject.GetComponent<Tilemap>() != null)
         {
             Vector2 contactPoint = collision.ClosestPoint(transform.position);  // Get the closest point of contact
@@ -81,7 +82,7 @@ public class Bullet : MonoBehaviour
             transform.right.x > 0 ? 0.05f : -0.05f,  // Adjust based on horizontal direction
             transform.right.y > 0 ? 0.05f : -0.05f);  // Adjust based on vertical direction);
 
-            handler.DestroyTile(adjustedImpactPos, transform.up);  // Destroy the tile at the contact point
+            handler.DestroyTile(adjustedImpactPos, transform.right * 3);  // Destroy the tile at the contact point
             Destroy(gameObject);
         }
         // Check if the bullet hits an enemy and apply damage
@@ -89,6 +90,19 @@ public class Bullet : MonoBehaviour
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(damage);
             Destroy(gameObject);
+        }
+        // Check if the bullet hits a statue and destroy the statue
+        // Bullets should always destroy statues, even if the attachment is not attached
+        else if (collision.gameObject.GetComponent<StatueBehavior> () != null)
+        {
+            Vector2 contactPoint = collision.ClosestPoint(transform.position);
+            
+            Vector3 adjustedImpactPos = contactPoint + new Vector2(
+            transform.right.x > 0 ? 0.05f : -0.05f,
+            transform.right.y > 0 ? 0.05f : -0.05f);
+
+            collision.gameObject.GetComponent<StatueBehavior> ().DestroyStatue (adjustedImpactPos, transform.right * 3);
+            Destroy (gameObject);
         }
     }
 }
