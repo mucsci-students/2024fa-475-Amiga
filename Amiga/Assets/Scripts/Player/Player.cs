@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
 
     public bool isGrounded;
 
-    private Animator animator;
+    public Animator anim;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
 
@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 
     private void Start ()
     {
-        animator = GetComponent<Animator> ();
+        anim = GetComponent<Animator> ();
         spriteRenderer = GetComponent<SpriteRenderer> ();
         rb = GetComponent<Rigidbody2D> ();
     }
@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
         float moveY = 0.0f;
 
         // update animation
-        animator.SetFloat ("Speed", 1.0f + Mathf.Abs (moveX) * (defaultSpeed + staff.speedBoost) * 0.1f);
+        anim.SetFloat ("Speed", 1.0f + Mathf.Abs (moveX) * (defaultSpeed + staff.speedBoost) * 0.1f);
         if ((moveX < 0 && !spriteRenderer.flipX) || (moveX > 0 && spriteRenderer.flipX))
             spriteRenderer.flipX = moveX < 0;
 
@@ -117,12 +117,12 @@ public class Player : MonoBehaviour
         }
         if (Input.GetMouseButton (0)) // update animator
         {
-            animator.SetBool ("Is Attacking", true);
+            anim.SetBool ("Is Attacking", true);
             staff.UpdatePosition (true, spriteRenderer.flipX);
         } 
         else
         {
-            animator.SetBool ("Is Attacking", false);
+            anim.SetBool ("Is Attacking", false);
             staff.UpdatePosition (false, spriteRenderer.flipX);
         }
     }
@@ -153,7 +153,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        animator.SetBool ("Is Jumping", false);
+        anim.SetBool ("Is Jumping", false);
 
         if (collision.gameObject.GetComponent<Attachment>() != null)
         {
@@ -194,7 +194,7 @@ public class Player : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        animator.SetBool ("Is Jumping", true);
+        anim.SetBool ("Is Jumping", true);
 
         if (collision.gameObject.GetComponent<Tilemap>() != null)
         {

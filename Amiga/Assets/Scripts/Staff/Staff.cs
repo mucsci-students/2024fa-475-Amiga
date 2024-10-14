@@ -13,6 +13,11 @@ public class Staff : MonoBehaviour
     public GameObject bulletPrefab;
 
     /// <summary>
+    /// Reference to the player
+    /// </summary>
+    private Player player;
+
+    /// <summary>
     /// Reference to the tilemap handler
     /// </summary>
     public TilemapHandler handler;
@@ -221,6 +226,8 @@ public class Staff : MonoBehaviour
         maxHealth = 100.0f;
         currentHealth = maxHealth;
         healthRecoverySpeed = 5.0f;
+
+        player = transform.parent.gameObject.GetComponent<Player> ();
     }
 
     void Update()
@@ -426,6 +433,7 @@ public class Staff : MonoBehaviour
         if (currentArmorDefense > 0.0f)
         {
             currentArmorDefense = Mathf.Max(0.0f, currentArmorDefense - damage);
+            player.anim.SetTrigger ("Shield Damage"); // play a shielding animation
         }
         else if (currentHealth <= damage)
         {
@@ -434,6 +442,7 @@ public class Staff : MonoBehaviour
         else
         {
             currentHealth -= damage;
+            player.anim.SetTrigger ("Take Damage"); // play a hurting animation
         }
         return true;
     }

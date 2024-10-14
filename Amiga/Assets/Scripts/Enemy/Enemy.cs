@@ -42,6 +42,7 @@ public abstract class Enemy : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         health -= damage;
+        anim.SetTrigger ("Take Damage");
     }
 
     /// <summary>

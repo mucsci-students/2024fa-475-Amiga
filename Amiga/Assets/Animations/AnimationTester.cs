@@ -21,8 +21,9 @@ public class AnimationTester : MonoBehaviour
     void Update()
     {
         float xInput = Mathf.Abs (Input.GetAxis ("Horizontal"));
-        bool mouseDown = Input.GetMouseButton (0);
-        bool spaceDown = Input.GetKey (KeyCode.Space);
+        bool mouse = Input.GetMouseButton (0);
+        bool mouseDown = Input.GetMouseButtonDown (0);
+        bool space = Input.GetKey (KeyCode.Space);
 
         // Speed should be related to the curent movement speed of the enemy
         //  1 <= Speed <= 2 for realistic animations
@@ -33,14 +34,26 @@ public class AnimationTester : MonoBehaviour
         wizard.SetFloat ("Speed", 1 + xInput);
 
         // Is Attacking should be true while the enemy is attacking
-        goblin.SetBool ("Is Attacking", mouseDown);
-        troll.SetBool ("Is Attacking", mouseDown);
-        wizard.SetBool ("Is Attacking", mouseDown);
+        goblin.SetBool ("Is Attacking", mouse);
+        troll.SetBool ("Is Attacking", mouse);
+        wizard.SetBool ("Is Attacking", mouse);
 
         // Is Charging should be true while the enemy is charging its attack
-        darkElf.SetBool ("Is Charging", mouseDown);
+        darkElf.SetBool ("Is Charging", mouse);
 
         // Is Jumping should be true while the enemy is in the air
-        wizard.SetBool ("Is Jumping", spaceDown);
+        wizard.SetBool ("Is Jumping", space);
+
+        if (mouseDown) 
+        {
+            // Take Damage should be triggered whenever the enemy/player takes damage
+            goblin.SetTrigger ("Take Damage");
+            manbat.SetTrigger ("Take Damage");
+            troll.SetTrigger ("Take Damage");
+            darkElf.SetTrigger ("Take Damage");
+
+            // Shield Damage should be triggered whenever the player's shield absorbs the damage
+            wizard.SetTrigger ("Shield Damage");
+        }
     }
 }
