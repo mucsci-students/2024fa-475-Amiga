@@ -12,6 +12,7 @@ public class Manbat : AirEnemy
     // Start is called before the first frame update
     void Start()
     {
+
         // Start invoking the Attack method every 1 second
         InvokeRepeating(nameof(Attack), 1.0f, 1.0f);
 
@@ -23,10 +24,13 @@ public class Manbat : AirEnemy
         // Range:  far
         // DPS:    medium
         health = 20.0f;
-        speed = 2.0f;
-        range = 25.0f;
+        speed = 4.0f;
+        range = 10.0f;
         dps = 10.0f;
         direction = new Vector2(1, 0);
+        flipX = false;
+
+        anim.SetFloat ("Speed", 1 + speed / 4f);
     }
 
     // Update is called once per frame

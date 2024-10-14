@@ -7,6 +7,7 @@ public class Goblin : GroundEnemy
     // Start is called before the first frame update
     void Start()
     {
+
         // Start invoking the Attack method every 1 second
         InvokeRepeating(nameof(Attack), 1.0f, 1.0f);
 
@@ -16,10 +17,13 @@ public class Goblin : GroundEnemy
         // Range:  medium
         // DPS:    medium
         health = 20.0f;
-        speed = 1.0f;
-        range = 10.0f;
+        speed = 2.0f;
+        range = 1.75f;
         dps = 10.0f;
         direction = 1;
+        flipX = false;
+
+        anim.SetFloat ("Speed", 1 + speed / 4f);
     }
 
     // Update is called once per frame
@@ -35,7 +39,6 @@ public class Goblin : GroundEnemy
     /// </summary>
     public virtual void Attack()
     {
-        // TODO: Attack animation goes here
 
         // Calculate the distance between the two GameObjects
         float distance = Vector3.Distance(transform.position, player.transform.position);
@@ -44,6 +47,11 @@ public class Goblin : GroundEnemy
         if (distance < range)
         {
             player.GetComponent<Player>().TakeDamage(dps);
+            anim.SetBool ("Is Attacking", true);
+        }
+        else
+        {
+            anim.SetBool ("Is Attacking", false);
         }
     }
 }

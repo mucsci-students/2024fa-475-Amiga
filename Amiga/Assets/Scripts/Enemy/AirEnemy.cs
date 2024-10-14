@@ -15,7 +15,7 @@ public abstract class AirEnemy : Enemy
     {
         // Calculate direction from enemy to player
         direction = (Vector2)(player.transform.position - transform.position).normalized;
-
         transform.position = (Vector2)transform.position + (speed * Time.deltaTime * direction);
+        spriteRenderer.flipX = direction.x < 0 ? !flipX : flipX;
     }
 }

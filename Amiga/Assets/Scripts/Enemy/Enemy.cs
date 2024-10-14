@@ -26,6 +26,15 @@ public abstract class Enemy : MonoBehaviour
     /// <summary> The damage per second of the enemy. </summary>
     public float dps;
 
+    /// <summary> The enemy's animator component. </summary>
+    public Animator anim;
+
+    /// <summary> The enemy's animator component. </summary>
+    public SpriteRenderer spriteRenderer;
+
+    /// <summary> Whether the enemy's sprite should be flipped or not. </summary>
+    public bool flipX;
+
     /// <summary>
     /// Take given amount of damage.
     /// </summary>
@@ -56,5 +65,11 @@ public abstract class Enemy : MonoBehaviour
 
         // Add a Collider2D component
         gameObject.AddComponent<BoxCollider2D>();
+
+        // Get the Animator component
+        anim = GetComponent<Animator> ();
+
+        // Get the Sprite Renderer componnent
+        spriteRenderer = GetComponent<SpriteRenderer> ();
     }
 }

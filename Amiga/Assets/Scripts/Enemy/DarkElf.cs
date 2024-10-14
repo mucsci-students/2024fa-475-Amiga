@@ -10,9 +10,13 @@ public class DarkElf : GroundEnemy
     /// </summary>
     public GameObject enemyBulletPrefab;
 
+    private float chargeTime = 1.0f; // how long the elf's weapon takes to charge, in seconds
+    private float startTimeOfCharge = -1f;
+
     // Start is called before the first frame update
     void Start()
     {
+
         // Start invoking the Attack method every 1 second
         InvokeRepeating(nameof(Attack), 1.0f, 1.0f);
 
@@ -22,10 +26,13 @@ public class DarkElf : GroundEnemy
         // Range:  far
         // DPS:    high
         health = 10.0f;
-        speed = 1.0f;
-        range = 25.0f;
+        speed = 2.0f;
+        range = 15.0f;
         dps = 20.0f;
         direction = 1;
+        flipX = true;
+
+        anim.SetFloat ("Speed", 1 + speed / 4f);
     }
 
     // Update is called once per frame
@@ -41,13 +48,16 @@ public class DarkElf : GroundEnemy
     /// </summary>
     public virtual void Attack()
     {
-        // TODO: Attack animation goes here
-
         // Calculate the distance between the two GameObjects
         float distance = Vector3.Distance(transform.position, player.transform.position);
 
         // Check if the distance is less than the attack range
-        if (distance < range)
+        if (distance < range && startTimeOfCharge == -1)
+        {
+            startTimeOfCharge = Time.time;
+            anim.SetBool ("Is Charging", true);
+        }
+        else if (startTimeOfCharge + chargeTime < Time.time)
         {
             // Calculate direction from enemy to player
             Vector2 direction = (Vector2)(player.transform.position - transform.position).normalized;
@@ -58,6 +68,9 @@ public class DarkElf : GroundEnemy
 
             // Set bullet properties
             enemyBullet.GetComponent<EnemyBullet>().Initialize(dps, direction);
+
+            startTimeOfCharge = -1f;
+            anim.SetBool ("Is Charging", false);
         }
     }
 }

@@ -15,10 +15,12 @@ public abstract class GroundEnemy : Enemy
         if (player.transform.position.x < transform.position.x)
         {
             direction = -1;
+            spriteRenderer.flipX = !flipX;
         }
         else
         {
             direction = 1;
+            spriteRenderer.flipX = flipX;
         }
         transform.position = (Vector2)transform.position + new Vector2(speed * Time.deltaTime * direction, 0);
     }

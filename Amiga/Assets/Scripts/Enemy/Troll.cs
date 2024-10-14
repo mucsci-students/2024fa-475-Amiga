@@ -7,6 +7,7 @@ public class Troll : GroundEnemy
     // Start is called before the first frame update
     void Start()
     {
+
         // Start invoking the Attack method every 1 second
         InvokeRepeating(nameof(Attack), 1.0f, 1.0f);
 
@@ -16,10 +17,13 @@ public class Troll : GroundEnemy
         // Range:  short
         // DPS:    high
         health = 50.0f;
-        speed = 0.5f;
-        range = 5.0f;
+        speed = 1.0f;
+        range = 2.25f;
         dps = 40.0f;
         direction = 1;
+        flipX = true;
+
+        anim.SetFloat ("Speed", 1 + speed / 4f);
     }
 
     // Update is called once per frame
@@ -45,6 +49,11 @@ public class Troll : GroundEnemy
         if (distance < range)
         {
             player.GetComponent<Player>().TakeDamage(dps);
+            anim.SetBool ("Is Attacking", true);
+        }
+        else
+        {
+            anim.SetBool ("Is Attacking", false);
         }
     }
 }
