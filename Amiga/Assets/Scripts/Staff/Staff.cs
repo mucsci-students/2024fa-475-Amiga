@@ -428,9 +428,9 @@ public class Staff : MonoBehaviour
     /// </summary>
     /// <param name="damage"> The amount of damage taken. </param>
     /// <returns> true for alive, false for dead </returns>
-    public virtual bool TakeDamage(float damage)
+    public virtual bool TakeDamage(float damage, bool skipArmor = false)
     {
-        if (currentArmorDefense > 0.0f)
+        if (!skipArmor && currentArmorDefense > 0.0f)
         {
             currentArmorDefense = Mathf.Max(0.0f, currentArmorDefense - damage);
             player.anim.SetTrigger ("Shield Damage"); // play a shielding animation

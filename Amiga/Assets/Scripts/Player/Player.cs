@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     /// </summary>
     public Staff staff;
 
-    public bool isGrounded;
+    public int isGrounded;
 
     public Animator anim;
     private SpriteRenderer spriteRenderer;
@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
         }
 
         // Check for jumping input using 'Space', 'W' or the Up Arrow
-        if (staff.floating <= 0 && isGrounded && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))) 
+        if (staff.floating <= 0 && isGrounded > 0 && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))) 
         {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * staff.jumpHeight, ForceMode2D.Impulse);
         }
@@ -131,9 +131,9 @@ public class Player : MonoBehaviour
     /// Take given amount of damage.
     /// </summary>
     /// <param name="damage"> The amount of damage taken. </param>
-    public virtual void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage, bool skipArmor = false)
     {
-        if (staff.TakeDamage(damage))
+        if (staff.TakeDamage(damage, skipArmor))
         {
             // Damage taken
         }
@@ -172,33 +172,29 @@ public class Player : MonoBehaviour
                     collision.gameObject.SetActive(false);
                 }
             }
-
-
-            //staff.AttachAttachment(collision.gameObject.GetComponent<Attachment>(), staff.GetNextAttachmentIndex());
-
-            // TODO: move this to backpack instead of set to inactive
-            //collision.gameObject.SetActive(false);
         }
         else if (collision.gameObject.GetComponent<Tilemap>() != null)
         {
-            isGrounded = true;
+            ++isGrounded;
             
             // take damage if lava
             if (String.Equals (collision.gameObject.name, "Damaging Tilemap"))
             {
                 GetComponent<Rigidbody2D>().AddForce(Vector2.up * staff.jumpHeight, ForceMode2D.Impulse); // jump
-                TakeDamage (lavaDamage);
+                TakeDamage (lavaDamage, true);
             }
         }
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        anim.SetBool ("Is Jumping", true);
-
         if (collision.gameObject.GetComponent<Tilemap>() != null)
         {
-            isGrounded = false;
+            --isGrounded;
+        }
+        if (isGrounded == 0)
+        {
+            anim.SetBool("Is Jumping", true);
         }
     }
 }
