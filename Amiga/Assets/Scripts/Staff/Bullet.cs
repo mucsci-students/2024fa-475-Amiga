@@ -30,12 +30,6 @@ public class Bullet : MonoBehaviour
     /// </summary>
     public float life;
 
-    void Awake()
-    {
-        // Add a Collider2D component
-        //gameObject.GetComponent<CircleCollider2D>().isTrigger = true;
-    }
-
     public void Initialize(float damage, float speed, float size, float life, Vector2 direction)
     {
         this.damage = damage;

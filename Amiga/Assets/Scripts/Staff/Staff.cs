@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class Staff : MonoBehaviour
 {
@@ -209,7 +210,7 @@ public class Staff : MonoBehaviour
         bulletDamage = 10.0f;
         bulletCount = 1;
         bulletSpeed = 7.0f;
-        bulletSize = 1.0f;
+        bulletSize = 0.5f;
         bulletLife = 1.0f;
 
         armorDefense = 50.0f;
@@ -232,14 +233,6 @@ public class Staff : MonoBehaviour
 
     void Update()
     {
-        // Get the mouse position in world space
-        //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        // Calculate direction from staff to mouse
-        //Vector2 direction = (mousePosition - (Vector2)transform.position).normalized;
-
-        //transform.up = direction;
-
         Recover();
 
         hpDisplay.GetComponent<HP>().UpdateHP(currentHealth, maxHealth);
@@ -251,6 +244,25 @@ public class Staff : MonoBehaviour
         {
             Time.timeScale += Time.deltaTime;
         }
+    }
+
+    /// <summary>
+    /// Reset all stats of staff except for staff level.
+    /// </summary>
+    public void Reset()
+    {
+        for (int i = 0; i < attachments.Count; ++i)
+        {
+            DetachAttachment(i);
+        }
+        for (int i = 0; i < inventory.Count; ++i)
+        {
+            DiscardAttachment(i);
+        }
+
+        currentArmorDefense = armorDefense;
+        currentHealth = maxHealth;
+        currentMana = maxMana;
     }
 
     /// <summary>
@@ -414,7 +426,6 @@ public class Staff : MonoBehaviour
 
     /// <summary>
     /// Recover all properties.
-    /// Should be called every second.
     /// </summary>
     public void Recover()
     {
@@ -428,9 +439,9 @@ public class Staff : MonoBehaviour
     /// </summary>
     /// <param name="damage"> The amount of damage taken. </param>
     /// <returns> true for alive, false for dead </returns>
-    public virtual bool TakeDamage(float damage)
+    public virtual bool TakeDamage(float damage, bool skipArmor = false)
     {
-        if (currentArmorDefense > 0.0f)
+        if (!skipArmor && currentArmorDefense > 0.0f)
         {
             currentArmorDefense = Mathf.Max(0.0f, currentArmorDefense - damage);
             player.anim.SetTrigger ("Shield Damage"); // play a shielding animation
@@ -457,6 +468,7 @@ public class Staff : MonoBehaviour
             attachments.Add (null);
             attachments.Add (null);
             spriteRenderer.sprite = sprites[staffLevel];
+            GetComponent<AudioSource> ().Play ();
         }
     }
 
