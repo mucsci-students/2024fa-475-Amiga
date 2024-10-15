@@ -121,8 +121,10 @@ public class Player : MonoBehaviour
         // If left button is clicked
         if (Input.GetMouseButtonDown(0) && (Input.mousePosition.x < 1335 || Input.mousePosition.x > 1435 || Input.mousePosition.y < 1025 | Input.mousePosition.y > 1130))
         {
-            staff.Launch();
-            src.PlayOneShot (shootSound); // play spell casting sound 
+            if (staff.Launch())
+            {
+                src.PlayOneShot (shootSound); // play spell casting sound 
+            }
         }
 
         // update animator

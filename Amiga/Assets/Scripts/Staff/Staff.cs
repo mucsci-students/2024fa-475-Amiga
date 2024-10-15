@@ -179,7 +179,6 @@ public class Staff : MonoBehaviour
     /// </summary>
     public float healthRecoverySpeed;
 
-
     void Start()
     {
 
@@ -377,18 +376,24 @@ public class Staff : MonoBehaviour
     /// <summary>
     /// Lauch bullets toward the mouse position.
     /// </summary>
-    public void Launch()
+    public bool Launch()
     {
         // Get the mouse position in world space
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+        // Adjust the staff position(Not sure why it is below the center of the sprite
+        Vector2 staffPosition = (Vector2)transform.position + new Vector2(0.0f, 1.22f);
+
         // Calculate direction from player to mouse
-        Vector2 direction = (mousePosition - (Vector2)transform.position).normalized;
+        Vector2 direction = (mousePosition - staffPosition).normalized;
+
+        bool launched = false;
 
         if (manaCost <= 0)
         {
             for (int i = 0; i < bulletCount; ++i)
             {
+                launched = true;
                 Shoot(direction);
                 currentMana = Mathf.Max(maxMana, currentMana - manaCost);
             }
@@ -397,12 +402,15 @@ public class Staff : MonoBehaviour
         {
             for (int i = 0; i < Mathf.Min(bulletCount, currentMana / manaCost); ++i)
             {
+                launched = true;
                 Shoot(direction);
                 currentMana -= manaCost;
             }
         }
 
         SetSlowmo (slowmoEffect);
+
+        return launched;
     }
 
     /// <summary>
