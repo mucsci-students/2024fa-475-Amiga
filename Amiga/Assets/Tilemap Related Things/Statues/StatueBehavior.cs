@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class StatueBehavior : MonoBehaviour
 {
     [SerializeField] private GameObject debrisPrefab;
     [SerializeField] private List<Sprite> spriteMasks;
     [SerializeField] private TilemapHandler tilemapHandler; // Handler to get current debris layer, increment it
+    [SerializeField] private List<AudioClip> shatterSounds;
+    private AudioSource src;
     private SpriteRenderer spriteRenderer;
 
     private void Start ()
     {
+        src = GetComponent<AudioSource> ();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -54,6 +58,10 @@ public class StatueBehavior : MonoBehaviour
             rb.AddForceAtPosition(impactDir, impactPos, ForceMode2D.Impulse);
         }
 
-        Destroy(gameObject);
+        src.clip = shatterSounds[Random.Range (0, shatterSounds.Count)];
+        src.Play ();
+        GetComponent<SpriteRenderer> ().enabled = false;
+        GetComponent<Collider2D> ().enabled = false;
+        Destroy(gameObject, src.clip.length);
     }
 }

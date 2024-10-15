@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class Staff : MonoBehaviour
 {
@@ -467,6 +468,7 @@ public class Staff : MonoBehaviour
             attachments.Add (null);
             attachments.Add (null);
             spriteRenderer.sprite = sprites[staffLevel];
+            GetComponent<AudioSource> ().Play ();
         }
     }
 

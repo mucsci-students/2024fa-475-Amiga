@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Troll : GroundEnemy
 {
+
+    [SerializeField] private List<AudioClip> attackSounds;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,7 @@ public class Troll : GroundEnemy
         // DPS:    high
         health = 50.0f;
         speed = 1.0f;
-        range = 2.25f;
+        range = 2.5f;
         dps = 40.0f;
         direction = 1;
         flipX = true;
@@ -40,8 +43,6 @@ public class Troll : GroundEnemy
     /// </summary>
     public virtual void Attack()
     {
-        // TODO: Attack animation goes here
-
         // Calculate the distance between the two GameObjects
         float distance = Vector3.Distance(transform.position, player.transform.position);
 
@@ -49,11 +50,9 @@ public class Troll : GroundEnemy
         if (distance < range)
         {
             player.GetComponent<Player>().TakeDamage(dps);
-            anim.SetBool ("Is Attacking", true);
-        }
-        else
-        {
-            anim.SetBool ("Is Attacking", false);
+            anim.SetTrigger ("Attack");
+            attackSrc.clip = attackSounds[Random.Range (0, attackSounds.Count)];
+            attackSrc.Play ();
         }
     }
 }

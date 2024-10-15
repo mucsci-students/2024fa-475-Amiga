@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.Audio;
 
 public class EnemyBullet : MonoBehaviour
 {
@@ -31,6 +32,25 @@ public class EnemyBullet : MonoBehaviour
     /// </summary>
     public float life;
 
+    /// <summary>
+    /// Whether the bullet is still alive or not.
+    /// 
+    /// To keep the bullet's impact sound playing, it hides itself
+    /// whenever it collides with the player but does not destroy
+    /// itself until the audio is finished playing.
+    /// </summary>
+    public bool dead = false;
+
+    /// <summary>
+    /// The audio source component.
+    /// </summary>
+    public AudioSource src;
+
+    /// <summary>
+    /// The sounds that this bullet can make when it hits something.
+    /// </summary>
+    public List<AudioClip> sounds;
+
     public void Initialize(float damage, Vector2 direction)
     {
         this.damage = damage;
@@ -46,13 +66,16 @@ public class EnemyBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Move bullet by modifying its position directly
-        transform.position += speed * Time.deltaTime * transform.right;
-
-        life -= Time.deltaTime;
-        if (life <= 0.0f)
+        if (!dead)
         {
-            Destroy(gameObject);
+            // Move bullet by modifying its position directly
+            transform.position += speed * Time.deltaTime * transform.right;
+
+            life -= Time.deltaTime;
+            if (life <= 0.0f)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -62,7 +85,12 @@ public class EnemyBullet : MonoBehaviour
         if (collision.gameObject.name.Equals("Player"))
         {
             player.GetComponent<Player>().TakeDamage(damage);
-            Destroy(gameObject);
+            src.clip = sounds[Random.Range (0, sounds.Count)];
+            src.Play ();
+            GetComponent<SpriteRenderer> ().enabled = false;
+            GetComponent<Collider2D> ().enabled = false;
+            dead = true;
+            Destroy(gameObject, src.clip.length);
         }
     }
 }
