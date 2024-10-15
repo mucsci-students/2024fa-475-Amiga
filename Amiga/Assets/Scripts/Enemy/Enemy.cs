@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public abstract class Enemy : MonoBehaviour
 {
@@ -29,11 +30,20 @@ public abstract class Enemy : MonoBehaviour
     /// <summary> The enemy's animator component. </summary>
     public Animator anim;
 
-    /// <summary> The enemy's animator component. </summary>
+    /// <summary> The enemy's sprite renderer component. </summary>
     public SpriteRenderer spriteRenderer;
 
     /// <summary> Whether the enemy's sprite should be flipped or not. </summary>
     public bool flipX;
+
+    /// <summary> The enemy's 1st audio source component (for vocal sounds). </summary>
+    public AudioSource vocalSrc;
+
+    /// <summary> The enemy's 2nd audio source component (for attacking sounds). </summary>
+    public AudioSource attackSrc;
+
+    /// <summary> The enemy's voice lines. </summary>
+    public List<AudioClip> vocalSounds;
 
     /// <summary>
     /// Take given amount of damage.
@@ -42,7 +52,10 @@ public abstract class Enemy : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         health -= damage;
+
         anim.SetTrigger ("Take Damage");
+        vocalSrc.clip = vocalSounds[Random.Range (0, vocalSounds.Count)];
+        vocalSrc.Play ();
     }
 
     /// <summary>
