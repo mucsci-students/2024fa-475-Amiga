@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
 
         // Add Rigidbody2D component
         //Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();

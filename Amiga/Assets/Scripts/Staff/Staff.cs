@@ -210,7 +210,7 @@ public class Staff : MonoBehaviour
         bulletDamage = 10.0f;
         bulletCount = 1;
         bulletSpeed = 7.0f;
-        bulletSize = 1.0f;
+        bulletSize = 0.5f;
         bulletLife = 1.0f;
 
         armorDefense = 50.0f;
