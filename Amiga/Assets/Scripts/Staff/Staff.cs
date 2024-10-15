@@ -232,14 +232,6 @@ public class Staff : MonoBehaviour
 
     void Update()
     {
-        // Get the mouse position in world space
-        //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        // Calculate direction from staff to mouse
-        //Vector2 direction = (mousePosition - (Vector2)transform.position).normalized;
-
-        //transform.up = direction;
-
         Recover();
 
         hpDisplay.GetComponent<HP>().UpdateHP(currentHealth, maxHealth);
@@ -251,6 +243,25 @@ public class Staff : MonoBehaviour
         {
             Time.timeScale += Time.deltaTime;
         }
+    }
+
+    /// <summary>
+    /// Reset all stats of staff except for staff level.
+    /// </summary>
+    public void Reset()
+    {
+        for (int i = 0; i < attachments.Count; ++i)
+        {
+            DetachAttachment(i);
+        }
+        for (int i = 0; i < inventory.Count; ++i)
+        {
+            DiscardAttachment(i);
+        }
+
+        currentArmorDefense = armorDefense;
+        currentHealth = maxHealth;
+        currentMana = maxMana;
     }
 
     /// <summary>
@@ -414,7 +425,6 @@ public class Staff : MonoBehaviour
 
     /// <summary>
     /// Recover all properties.
-    /// Should be called every second.
     /// </summary>
     public void Recover()
     {

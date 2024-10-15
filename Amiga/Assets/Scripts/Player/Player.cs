@@ -23,19 +23,6 @@ public class Player : MonoBehaviour
     private float defaultSpeed = 5.0f;
     private int lavaDamage = 20; // the amount of damage damaging tiles such as lave do
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-
-        // Add Rigidbody2D component
-        //Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
-        //rb.gravityScale = 9.8f;
-        //rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-
-        // Add a Collider2D component
-        //gameObject.AddComponent<BoxCollider2D>();
-    }
-
     private void Start ()
     {
         anim = GetComponent<Animator> ();
@@ -148,7 +135,12 @@ public class Player : MonoBehaviour
     /// </summary>
     public virtual void Die()
     {
-        // Reload the current scene
+        // Move to the original position
+        transform.localPosition = new Vector3(-166.88f, 60.59f, 0);
+
+        staff.Reset();
+
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
