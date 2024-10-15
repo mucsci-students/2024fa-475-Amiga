@@ -179,7 +179,6 @@ public class Staff : MonoBehaviour
     /// </summary>
     public float healthRecoverySpeed;
 
-
     void Start()
     {
 
@@ -382,8 +381,11 @@ public class Staff : MonoBehaviour
         // Get the mouse position in world space
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+        // Adjust the staff position(Not sure why it is below the center of the sprite
+        Vector2 staffPosition = (Vector2)transform.position + new Vector2(0.0f, 1.22f);
+
         // Calculate direction from player to mouse
-        Vector2 direction = (mousePosition - (Vector2)transform.position).normalized;
+        Vector2 direction = (mousePosition - staffPosition).normalized;
 
         if (manaCost <= 0)
         {

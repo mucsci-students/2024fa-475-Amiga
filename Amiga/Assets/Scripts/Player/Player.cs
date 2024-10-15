@@ -59,6 +59,9 @@ public class Player : MonoBehaviour
             Move();
             Attack();
         }
+
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Debug.Log($"Mouse Position: {mousePosition}, Staff Position: {(Vector2)transform.position}");
     }
 
     /// <summary>
