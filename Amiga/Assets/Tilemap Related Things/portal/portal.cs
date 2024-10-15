@@ -9,6 +9,7 @@ public class Portal : MonoBehaviour
     [SerializeField] private List<Transform> destinations;  // List of possible destinations
 
     [SerializeField] private AudioMixer mixer; // link to the bgm music mixer
+    [SerializeField] private AudioSource src;
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -56,8 +57,10 @@ public class Portal : MonoBehaviour
     }
 
     // changes the current bgm to the other bgm. The tutorial music becomes muted, if it wasn't already
+    // also plays the portal sound effect
     private void SwitchSongs ()
     {
+        src.Play ();
         float baseMusic1Vol;
         mixer.GetFloat ("Base Music 1 Volume", out baseMusic1Vol);
         if (baseMusic1Vol == 0f)

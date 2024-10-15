@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.Audio;
 
 public class TilemapHandler : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class TilemapHandler : MonoBehaviour
     [SerializeField] private List<Sprite> spriteMasks;
     [SerializeField] private Tilemap foregroundTilemap;
     [SerializeField] private Tilemap backgroundTilemap;
+    [SerializeField] private List<AudioClip> crumbleSounds;
 
+    private AudioSource src;
     private Tilemap destructibleTilemap;
     public int currentDebrisLayer = 1; // each debris should get its own layer
     public int maxDebrisLayer = 100; // 1 <= currentDebrisLayer <= 100
@@ -20,6 +23,7 @@ public class TilemapHandler : MonoBehaviour
     void Start()
     {
         destructibleTilemap = GetComponent<Tilemap> ();
+        src = GetComponent<AudioSource> ();
     }
 
     // Destroys a tile at a location and replaces it with debris
@@ -71,6 +75,10 @@ public class TilemapHandler : MonoBehaviour
                 // adjust its size & add the force of impact
                 debris.transform.localScale *= 0.9f;
                 rb.AddForceAtPosition (impactDir, impactPos, ForceMode2D.Impulse);
+
+                // play a crumbling sound effect
+                src.clip = crumbleSounds[Random.Range (0, crumbleSounds.Count)];
+                src.Play ();
 
             }
 

@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Goblin : GroundEnemy
 {
+
+    [SerializeField] private List<AudioClip> attackSounds;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +22,7 @@ public class Goblin : GroundEnemy
         // DPS:    medium
         health = 20.0f;
         speed = 2.0f;
-        range = 1.75f;
+        range = 1.5f;
         dps = 10.0f;
         direction = 1;
         flipX = false;
@@ -47,11 +51,9 @@ public class Goblin : GroundEnemy
         if (distance < range)
         {
             player.GetComponent<Player>().TakeDamage(dps);
-            anim.SetBool ("Is Attacking", true);
-        }
-        else
-        {
-            anim.SetBool ("Is Attacking", false);
+            anim.SetTrigger ("Attack");
+            attackSrc.clip = attackSounds[Random.Range (0, attackSounds.Count)];
+            attackSrc.Play ();
         }
     }
 }

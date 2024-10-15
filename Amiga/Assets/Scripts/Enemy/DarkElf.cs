@@ -13,6 +13,9 @@ public class DarkElf : GroundEnemy
     private float chargeTime = 1.0f; // how long the elf's weapon takes to charge, in seconds
     private float startTimeOfCharge = -1f;
 
+    [SerializeField] AudioClip chargingSound;
+    [SerializeField] List<AudioClip> shootSounds;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,8 +59,10 @@ public class DarkElf : GroundEnemy
         {
             startTimeOfCharge = Time.time;
             anim.SetBool ("Is Charging", true);
+            attackSrc.clip = chargingSound;
+            attackSrc.Play ();
         }
-        else if (startTimeOfCharge + chargeTime < Time.time)
+        else if (startTimeOfCharge != -1 && startTimeOfCharge + chargeTime < Time.time)
         {
             // Calculate direction from enemy to player
             Vector2 direction = (Vector2)(player.transform.position - transform.position).normalized;
@@ -71,6 +76,8 @@ public class DarkElf : GroundEnemy
 
             startTimeOfCharge = -1f;
             anim.SetBool ("Is Charging", false);
+            attackSrc.clip = shootSounds[Random.Range (0, shootSounds.Count)];
+            attackSrc.Play ();
         }
     }
 }

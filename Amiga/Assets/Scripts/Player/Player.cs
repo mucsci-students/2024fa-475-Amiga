@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.Audio;
 
 public class Player : MonoBehaviour
 {
@@ -17,11 +18,17 @@ public class Player : MonoBehaviour
     public bool isGrounded;
 
     public Animator anim;
+    private AudioSource src;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
 
     private float defaultSpeed = 5.0f;
-    private int lavaDamage = 20; // the amount of damage damaging tiles such as lave do
+    private int lavaDamage = 20; // the amount of damage that damaging tiles such as lava do
+
+    public AudioClip shootSound; // the sound of the bullet being shot
+    public AudioClip attachSound; // the sound to play when the staff picks up an attachment & attaches it
+    public AudioClip pickupSound; // the sound to play when the staff picks up an attachment & puts it in the inventory
+    public AudioClip sizzleSound; // the sound to play when the player touches lava
 
     private void Awake()
     {
@@ -41,6 +48,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator> ();
         spriteRenderer = GetComponent<SpriteRenderer> ();
         rb = GetComponent<Rigidbody2D> ();
+        src = GetComponent<AudioSource> ();
     }
 
     // Update is called once per frame
@@ -114,8 +122,11 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && (Input.mousePosition.x < 1335 || Input.mousePosition.x > 1435 || Input.mousePosition.y < 1025 | Input.mousePosition.y > 1130))
         {
             staff.Launch();
+            src.PlayOneShot (shootSound); // play spell casting sound 
         }
-        if (Input.GetMouseButton (0)) // update animator
+
+        // update animator
+        if (Input.GetMouseButton (0))
         {
             anim.SetBool ("Is Attacking", true);
             staff.UpdatePosition (true, spriteRenderer.flipX);
@@ -161,6 +172,7 @@ public class Player : MonoBehaviour
             if (slotIndex != -1)
             {
                 staff.AttachAttachment(collision.gameObject.GetComponent<Attachment>(), slotIndex);
+                src.PlayOneShot (attachSound);
                 collision.gameObject.SetActive(false);
             }
             else
@@ -169,6 +181,7 @@ public class Player : MonoBehaviour
                 if (slotIndex != -1)
                 {
                     staff.StoreAttachment(collision.gameObject.GetComponent<Attachment>(), slotIndex);
+                    src.PlayOneShot (pickupSound);
                     collision.gameObject.SetActive(false);
                 }
             }
@@ -188,6 +201,7 @@ public class Player : MonoBehaviour
             {
                 GetComponent<Rigidbody2D>().AddForce(Vector2.up * staff.jumpHeight, ForceMode2D.Impulse); // jump
                 TakeDamage (lavaDamage);
+                src.PlayOneShot (sizzleSound);
             }
         }
     }
