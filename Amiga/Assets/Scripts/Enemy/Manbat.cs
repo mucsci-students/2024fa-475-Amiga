@@ -9,6 +9,8 @@ public class Manbat : AirEnemy
     /// </summary>
     public GameObject enemyBulletPrefab;
 
+    [SerializeField] private List<AudioClip> attackSounds;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,6 +65,9 @@ public class Manbat : AirEnemy
 
             // Set bullet properties
             enemyBullet.GetComponent<EnemyBullet>().Initialize(dps, direction);
+
+            attackSrc.clip = attackSounds[Random.Range (0, attackSounds.Count)];
+            attackSrc.Play ();
         }
     }
 }

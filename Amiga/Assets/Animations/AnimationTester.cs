@@ -33,9 +33,7 @@ public class AnimationTester : MonoBehaviour
         darkElf.SetFloat ("Speed", 1 + xInput);
         wizard.SetFloat ("Speed", 1 + xInput);
 
-        // Is Attacking should be true while the enemy is attacking
-        goblin.SetBool ("Is Attacking", mouse);
-        troll.SetBool ("Is Attacking", mouse);
+        // Is Attacking should be true while the player is attacking
         wizard.SetBool ("Is Attacking", mouse);
 
         // Is Charging should be true while the enemy is charging its attack
@@ -46,6 +44,10 @@ public class AnimationTester : MonoBehaviour
 
         if (mouseDown) 
         {
+            // Attacking should be triggered whenever the enemy attacks
+            goblin.SetTrigger ("Attack");
+            troll.SetTrigger ("Attack");
+
             // Take Damage should be triggered whenever the enemy/player takes damage
             goblin.SetTrigger ("Take Damage");
             manbat.SetTrigger ("Take Damage");
