@@ -146,7 +146,10 @@ public class Player : MonoBehaviour
     {
         if (staff.TakeDamage(damage, skipArmor))
         {
-            gameManager.GetComponent<GameManager>().DisplayHurtText();
+            if (!skipArmor)
+            {
+                gameManager.GetComponent<GameManager>().DisplayHurtText();
+            }
         }
         else
         {
