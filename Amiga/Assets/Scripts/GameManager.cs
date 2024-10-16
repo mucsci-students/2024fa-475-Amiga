@@ -12,12 +12,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        // Example: Trigger enemy spawn when the "P" key is pressed
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            GameEvents.TriggerEnemySpawn();
-        }
-
         if (Input.GetKeyDown(KeyCode.Q))
         {
             DisplayText("Testing...");
