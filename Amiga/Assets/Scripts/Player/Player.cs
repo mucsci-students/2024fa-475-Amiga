@@ -167,6 +167,7 @@ public class Player : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
         gameManager.GetComponent<GameManager>().DisplayDeathText();
+        gameManager.GetComponent<GameManager>().Reset();
 
         isDead = false;
     }

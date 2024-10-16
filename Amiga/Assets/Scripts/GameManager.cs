@@ -47,6 +47,12 @@ public class GameManager : MonoBehaviour
         ++enemyKilled;
     }
 
+    public void Reset()
+    {
+        level = 0;
+        enemyKilled = 0;
+    }
+
     public void DisplayText(string text)
     {
         textDisplay.GetComponent<TextDisplay>().TriggerText(text);
