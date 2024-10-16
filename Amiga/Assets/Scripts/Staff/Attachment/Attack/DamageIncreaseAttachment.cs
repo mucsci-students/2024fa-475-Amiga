@@ -9,4 +9,9 @@ public class DamageIncreaseAttachment : AttackAttachment
     {
         bulletDamageIncrease = 10;
     }
+
+    public override string GetDescription()
+    {
+        return "Increase Bullet Damage by 10";
+    }
 }

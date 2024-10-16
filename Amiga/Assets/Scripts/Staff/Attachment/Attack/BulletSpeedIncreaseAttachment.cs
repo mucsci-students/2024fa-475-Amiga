@@ -9,4 +9,9 @@ public class BulletSpeedIncreaseAttachment : AttackAttachment
     {
         bulletSpeedIncrease = 7.0f;
     }
+
+  public override string GetDescription()
+    {
+        return "Increase Bullet Speed by 7";
+    }
 }

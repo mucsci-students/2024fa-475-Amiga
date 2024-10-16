@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpecialAttachment : Attachment
+public abstract class SpecialAttachment : Attachment
 {
     /// <summary>
     /// The jump height increase amount of the attachment.

@@ -9,4 +9,9 @@ public class BulletSizeIncrease : AttackAttachment
     {
         bulletSizeIncrease = 1.0f;
     }
+
+    public override string GetDescription()
+    {
+        return "This attachment is deprecated!";
+    }
 }
