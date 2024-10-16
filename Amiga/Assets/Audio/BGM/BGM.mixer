@@ -159,6 +159,8 @@ AudioMixerController:
     name: Base Music 1 Volume
   - guid: 96ca5c00c50c64f439ce6a71a4b31dec
     name: Base Music 2 Volume
+  - guid: 7436d8eaac6164f5895a3a9cd567c665
+    name: Master
   - guid: 19106230e1f42468780615c4131fc303
     name: BGM Highpass
   - guid: 663c26172d07a466c91bccce68a2593b

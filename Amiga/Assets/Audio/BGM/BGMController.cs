@@ -7,6 +7,7 @@ public class BGMController : MonoBehaviour
 {
 
     [SerializeField] private AudioMixer mixer;
+    [SerializeField] private AudioMixer sfxMixer;
 
     private Coroutine interpolationCoroutine;
 
@@ -64,5 +65,15 @@ public class BGMController : MonoBehaviour
         mixer.SetFloat ("Base Music 1 Volume", b1Vol * volumeFactor);
         mixer.SetFloat ("Base Music 2 Volume", b2Vol * volumeFactor);
         mixer.SetFloat ("Tutorial Music Volume", tutVol * volumeFactor);
+    }
+
+    public void SetMusicVolume (float volume)
+    {
+        mixer.SetFloat ("Master", volume == -30 ? -80 : volume);
+    }
+
+    public void SetSFXVolume (float volume)
+    {
+        sfxMixer.SetFloat ("Master", volume == -30 ? -80 : volume);
     }
 }
