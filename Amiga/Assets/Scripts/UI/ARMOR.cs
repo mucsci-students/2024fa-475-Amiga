@@ -28,7 +28,7 @@ public class ARMOR : MonoBehaviour
     void Update()
     {
         // Calculate the current HP ratio (value between 0 and 1)
-        float armorRatio = Mathf.Clamp(currentARMOR / maxARMOR, 0.0f, 1.0f);
+        float armorRatio = maxARMOR < 1.0f ? 0.0f : Mathf.Clamp(currentARMOR / maxARMOR, 0.0f, 1.0f);
 
         transform.position = new Vector3(xPos - (1.0f - armorRatio) * 215.0f, transform.position.y, transform.position.z);
     }

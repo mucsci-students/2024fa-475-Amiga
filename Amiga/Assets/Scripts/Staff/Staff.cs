@@ -217,8 +217,8 @@ public class Staff : MonoBehaviour
         bulletSize = 0.5f;
         bulletLife = 1.0f;
 
-        armorDefense = 50.0f;
-        currentArmorDefense = 50.0f;
+        armorDefense = 0.0f; // Start with no armor
+        currentArmorDefense = 0.0f;
         armorRecoverySpeed = 5.0f;
         armorRecoveryWaited = 0.0f;
 
