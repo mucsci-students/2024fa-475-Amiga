@@ -37,6 +37,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void NextLevel()
+    {
+        ++level;
+    }
+
+    public void NextKill()
+    {
+        ++enemyKilled;
+    }
+
     public void DisplayText(string text)
     {
         textDisplay.GetComponent<TextDisplay>().TriggerText(text);

@@ -10,6 +10,11 @@ using UnityEngine.Audio;
 public class Player : MonoBehaviour
 {
     /// <summary>
+    /// Reference to the game manager.
+    /// </summary>
+    public GameObject gameManager;
+
+    /// <summary>
     /// The staff used by the player.
     /// All mutable properties are defined in staff.
     /// </summary>
@@ -29,19 +34,6 @@ public class Player : MonoBehaviour
     public AudioClip attachSound; // the sound to play when the staff picks up an attachment & attaches it
     public AudioClip pickupSound; // the sound to play when the staff picks up an attachment & puts it in the inventory
     public AudioClip sizzleSound; // the sound to play when the player touches lava
-
-    private void Awake()
-    {
-        //DontDestroyOnLoad(gameObject);
-
-        // Add Rigidbody2D component
-        //Rigidbody2D rb = gameObject.GetComponent<Rigidbody2D>();
-        //rb.gravityScale = 9.8f;
-        //rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-
-        // Add a Collider2D component
-        //gameObject.AddComponent<BoxCollider2D>();
-    }
 
     private void Start ()
     {

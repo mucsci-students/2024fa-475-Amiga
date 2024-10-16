@@ -65,6 +65,8 @@ public abstract class Enemy : MonoBehaviour
     {
         if (health <= 0.0f)
         {
+            player.GetComponent<Player>().gameManager.GetComponent<GameManager>().NextKill();
+
             Attachment attachment = attachmentGenerator.GetComponent<RandomAttachmentPrefab>().GenerateAttachement();
             Instantiate(attachment, transform.position, Quaternion.identity);
 
