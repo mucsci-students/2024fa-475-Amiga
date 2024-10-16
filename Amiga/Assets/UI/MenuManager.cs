@@ -239,6 +239,16 @@ public class StaffMenuManager : MonoBehaviour
         attachmentUIInsts[a] = attachmentUIInsts[b];
         attachmentUIInsts[b] = temp;
     }
+
+    public void GetAttachmentDescriptionForPosition (Vector2 pos)
+    {
+        int slot = PositionToStaffSlot (pos);
+        if (slot == -1)
+        {
+            slot = PositionToInventorySlot (pos);
+            
+        }
+    }
 }
 
 
