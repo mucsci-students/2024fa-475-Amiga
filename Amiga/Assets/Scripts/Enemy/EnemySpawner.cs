@@ -22,7 +22,7 @@ public class EnemySpawner : MonoBehaviour
     /// <summary>
     /// Radius for proximity check
     /// </summary>
-    public float spawnRadius = 5.0f;
+    public float spawnRadius = 10.0f;
 
     /// <summary>
     /// Flag to ensure spawning only once per proximity

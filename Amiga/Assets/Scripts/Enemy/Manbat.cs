@@ -25,10 +25,13 @@ public class Manbat : AirEnemy
         // Speed:  fast
         // Range:  far
         // DPS:    medium
-        health = 20.0f;
+        int level = player.GetComponent<Player>().gameManager.GetComponent<GameManager>().level;
+        // Don't grow too fast
+        float ration = 1.0f + 0.1f * level;
+        health = 20.0f * ration;
         speed = 4.0f;
         range = 10.0f;
-        dps = 10.0f;
+        dps = 10.0f * ration;
         direction = new Vector2(1, 0);
         flipX = false;
 

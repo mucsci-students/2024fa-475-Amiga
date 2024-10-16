@@ -19,10 +19,13 @@ public class Troll : GroundEnemy
         // Speed:  slow
         // Range:  short
         // DPS:    high
-        health = 50.0f;
-        speed = 1.0f;
+        int level = player.GetComponent<Player>().gameManager.GetComponent<GameManager>().level;
+        // Don't grow too fast
+        float ration = 1.0f + 0.1f * level;
+        health = 50.0f * ration;
+        speed = 1.0f * ration;
         range = 2.5f;
-        dps = 40.0f;
+        dps = 40.0f * ration;
         direction = 1;
         flipX = true;
 
