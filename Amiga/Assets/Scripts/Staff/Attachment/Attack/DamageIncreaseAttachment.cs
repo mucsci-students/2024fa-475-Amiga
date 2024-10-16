@@ -14,4 +14,9 @@ public class DamageIncreaseAttachment : AttackAttachment
     {
         return "Increase Bullet Damage by 10";
     }
+
+    public override void Buff(float ratio)
+    {
+        bulletDamageIncrease = (int)(bulletDamageIncrease * ratio);
+    }
 }

@@ -33,6 +33,8 @@ public class Portal : MonoBehaviour
 
             // Teleport the object to the randomly chosen destination
             collision.transform.position = randomDestination.position;
+
+            collision.gameObject.GetComponent<Player>().gameManager.GetComponent<GameManager>().NextLevel();
         }
     }
 

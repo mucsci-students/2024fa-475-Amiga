@@ -66,7 +66,6 @@ public class Bullet : MonoBehaviour
             return;
         }
         // Check if the bullet hits a tilemap and destroy the tile
-        // TODO: only destroy tile if the attachment is attached
         else if (collision.gameObject.GetComponent<Tilemap>() != null)
         {
             Vector2 contactPoint = collision.ClosestPoint(transform.position);  // Get the closest point of contact

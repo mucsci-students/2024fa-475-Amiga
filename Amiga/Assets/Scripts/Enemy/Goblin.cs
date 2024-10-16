@@ -20,10 +20,13 @@ public class Goblin : GroundEnemy
         // Speed:  medium
         // Range:  medium
         // DPS:    medium
-        health = 20.0f;
-        speed = 2.0f;
+        int level = player.GetComponent<Player>().gameManager.GetComponent<GameManager>().level;
+        // Don't grow too fast
+        float ratio = 1.0f + 0.1f * level;
+        health = 20.0f * ratio;
+        speed = 2.0f * ratio;
         range = 1.5f;
-        dps = 10.0f;
+        dps = 10.0f * ratio;
         direction = 1;
         flipX = false;
 

@@ -13,4 +13,9 @@ public class ManaRecoverySpeedIncreaseAttachment : SpecialAttachment
     {
         return "Increase Mana Recovery Speed by 10";
     }
+
+    public override void Buff(float ratio)
+    {
+        manaRecoverySpeedIncrease = (int)(manaRecoverySpeedIncrease * ratio);
+    }
 }

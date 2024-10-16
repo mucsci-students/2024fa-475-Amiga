@@ -13,4 +13,9 @@ public class JumpHeightIncreaseAttachment : SpecialAttachment
     {
         return "Increase Jump Height by 5";
     }
+
+    public override void Buff(float ratio)
+    {
+        jumpHeightIncrease = (int)(jumpHeightIncrease * ratio);
+    }
 }

@@ -13,4 +13,9 @@ public class ArmorDefenseIncreaseAttachment : DefenseAttachment
     {
         return "Increase Armor by 10";
     }
+
+    public override void Buff(float ratio)
+    {
+        armorDefenseIncrease = (int)(armorDefenseIncrease * ratio);
+    }
 }

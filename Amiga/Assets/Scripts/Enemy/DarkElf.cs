@@ -28,10 +28,13 @@ public class DarkElf : GroundEnemy
         // Speed:  medium
         // Range:  far
         // DPS:    high
-        health = 10.0f;
+        int level = player.GetComponent<Player>().gameManager.GetComponent<GameManager>().level;
+        // Don't grow too fast
+        float ratio = 1.0f + 0.1f * level;
+        health = 10.0f * ratio;
         speed = 2.0f;
         range = 15.0f;
-        dps = 20.0f;
+        dps = 20.0f * ratio;
         direction = 1;
         flipX = true;
 
