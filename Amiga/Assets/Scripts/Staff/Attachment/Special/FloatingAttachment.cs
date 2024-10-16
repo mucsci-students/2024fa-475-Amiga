@@ -14,4 +14,8 @@ public class FloatingAttachment : SpecialAttachment
     {
         return "Enable Floating";
     }
+
+    public override void Buff(float ratio)
+    {
+    }
 }

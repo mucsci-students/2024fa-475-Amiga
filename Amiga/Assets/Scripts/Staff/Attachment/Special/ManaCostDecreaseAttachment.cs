@@ -13,4 +13,9 @@ public class ManaCostDecreaseAttachment : SpecialAttachment
     {
         return "Decrease Mana Cost by 10";
     }
+
+    public override void Buff(float ratio)
+    {
+        manaCostDecrease = (int)(manaCostDecrease * ratio);
+    }
 }

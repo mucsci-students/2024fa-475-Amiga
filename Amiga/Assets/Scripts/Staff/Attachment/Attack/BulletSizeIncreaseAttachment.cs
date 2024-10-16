@@ -14,4 +14,9 @@ public class BulletSizeIncrease : AttackAttachment
     {
         return "This attachment is deprecated!";
     }
+
+    public override void Buff(float ratio)
+    {
+        bulletSizeIncrease *= ratio;
+    }
 }

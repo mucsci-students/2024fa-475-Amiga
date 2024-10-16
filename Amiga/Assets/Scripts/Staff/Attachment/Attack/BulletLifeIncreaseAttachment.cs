@@ -14,4 +14,9 @@ public class BulletLifeIncrease : AttackAttachment
     {
         return "Increase Bullet Life by 1";
     }
+
+    public override void Buff(float ratio)
+    {
+        bulletLifeIncrease *= ratio;
+    }
 }

@@ -14,4 +14,9 @@ public class BulletCountIncrease : AttackAttachment
     {
         return "Increase Bullet Count by 1";
     }
+
+    public override void Buff(float ratio)
+    {
+        bulletCountIncrease = (int)(bulletCountIncrease * ratio);
+    }
 }
