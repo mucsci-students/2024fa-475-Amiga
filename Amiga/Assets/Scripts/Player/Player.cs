@@ -146,7 +146,10 @@ public class Player : MonoBehaviour
     {
         if (staff.TakeDamage(damage, skipArmor))
         {
-            gameManager.GetComponent<GameManager>().DisplayHurtText();
+            if (!skipArmor)
+            {
+                gameManager.GetComponent<GameManager>().DisplayHurtText();
+            }
         }
         else
         {
@@ -167,6 +170,7 @@ public class Player : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
         gameManager.GetComponent<GameManager>().DisplayDeathText();
+        gameManager.GetComponent<GameManager>().Reset();
 
         isDead = false;
     }

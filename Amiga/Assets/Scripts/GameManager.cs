@@ -10,6 +10,14 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public GameObject textDisplay;
 
+    [SerializeField]
+    public string[] lavaText =
+    {
+        "\"He\" felt hot...",
+        "\"He doesn't like it...\"",
+        "Really hot...?",
+        "Naught boy..."
+    };
 
     //LEVEL META DATA-----------------------------------------
 
@@ -25,6 +33,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        textDisplay = GameObject.Find("Text Display");
+
         level = 0;
         enemyKilled = 0;
     }
@@ -47,9 +57,21 @@ public class GameManager : MonoBehaviour
         ++enemyKilled;
     }
 
+    public void Reset()
+    {
+        level = 0;
+        enemyKilled = 0;
+    }
+
     public void DisplayText(string text)
     {
         textDisplay.GetComponent<TextDisplay>().TriggerText(text);
+    }
+
+    public string RandomText(string[] candidate)
+    {
+        int index = Random.Range(0, candidate.Length);
+        return candidate[index];
     }
 
     /// <summary>
@@ -57,8 +79,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void DisplayLavaText()
     {
-        string text = "\"He\" felt hot...";
-        textDisplay.GetComponent<TextDisplay>().TriggerText(text);
+        textDisplay.GetComponent<TextDisplay>().TriggerText(RandomText(lavaText));
     }
 
     /// <summary>
