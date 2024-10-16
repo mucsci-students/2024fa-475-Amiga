@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
 
     public int isGrounded;
 
+    public bool isDead;
+
     public Animator anim;
     private AudioSource src;
     private SpriteRenderer spriteRenderer;
@@ -48,6 +50,10 @@ public class Player : MonoBehaviour
     {
         if (Time.timeScale > 0)
         {
+            if (isDead)
+            {
+                Die();
+            }
             Move();
             Attack();
         }
@@ -140,11 +146,11 @@ public class Player : MonoBehaviour
     {
         if (staff.TakeDamage(damage, skipArmor))
         {
-            // Damage taken
+            gameManager.GetComponent<GameManager>().DisplayHurtText();
         }
         else
         {
-            Die();
+            isDead = true;
         }
     }
 
@@ -159,6 +165,10 @@ public class Player : MonoBehaviour
         staff.Reset();
 
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+        gameManager.GetComponent<GameManager>().DisplayDeathText();
+
+        isDead = false;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -173,6 +183,8 @@ public class Player : MonoBehaviour
                 staff.AttachAttachment(collision.gameObject.GetComponent<Attachment>(), slotIndex);
                 src.PlayOneShot (attachSound);
                 collision.gameObject.SetActive(false);
+
+                gameManager.GetComponent<GameManager>().DisplayCollectAttachmentText();
             }
             else
             {
@@ -182,6 +194,8 @@ public class Player : MonoBehaviour
                     staff.StoreAttachment(collision.gameObject.GetComponent<Attachment>(), slotIndex);
                     src.PlayOneShot (pickupSound);
                     collision.gameObject.SetActive(false);
+
+                    gameManager.GetComponent<GameManager>().DisplayCollectAttachmentText();
                 }
             }
         }
@@ -195,6 +209,8 @@ public class Player : MonoBehaviour
                 GetComponent<Rigidbody2D>().AddForce(Vector2.up * staff.jumpHeight, ForceMode2D.Impulse); // jump
                 TakeDamage (lavaDamage, true);
                 src.PlayOneShot (sizzleSound);
+
+                gameManager.GetComponent<GameManager>().DisplayLavaText();
             }
         }
     }

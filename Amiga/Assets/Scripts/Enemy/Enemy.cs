@@ -75,6 +75,8 @@ public abstract class Enemy : MonoBehaviour
             attachment.Buff(ratio);
 
             Destroy(gameObject);
+
+            player.GetComponent<Player>().gameManager.GetComponent<GameManager>().DisplayKillText();
         }
     }
 

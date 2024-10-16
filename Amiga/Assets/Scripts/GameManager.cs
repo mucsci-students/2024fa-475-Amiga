@@ -57,7 +57,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void DisplayLavaText()
     {
-
+        string text = "\"He\" felt hot...";
+        textDisplay.GetComponent<TextDisplay>().TriggerText(text);
     }
 
     /// <summary>
@@ -65,7 +66,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void DisplayHurtText()
     {
-
+        string text = "Is it painful...";
+        textDisplay.GetComponent<TextDisplay>().TriggerText(text);
     }
 
     /// <summary>
@@ -73,7 +75,9 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void DisplayDeathText()
     {
-
+        //string text = "Poor man...";
+        string text = "This one looks stronger...";
+        textDisplay.GetComponent<TextDisplay>().TriggerText(text);
     }
 
     /// <summary>
@@ -81,7 +85,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void DisplayKillText()
     {
-
+        string text = "That's it...";
+        textDisplay.GetComponent<TextDisplay>().TriggerText(text);
     }
 
     /// <summary>
@@ -89,6 +94,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void DisplayCollectAttachmentText()
     {
-
+        string text = "more...";
+        textDisplay.GetComponent<TextDisplay>().TriggerText(text);
     }
 }
