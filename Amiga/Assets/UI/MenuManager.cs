@@ -239,6 +239,23 @@ public class StaffMenuManager : MonoBehaviour
         attachmentUIInsts[a] = attachmentUIInsts[b];
         attachmentUIInsts[b] = temp;
     }
+
+    public string GetAttachmentDescriptionForPosition (Vector2 pos)
+    {
+        int slot = PositionToStaffSlot (pos);
+        if (slot == -1)
+        {
+            slot = PositionToInventorySlot (pos);
+            if (slot == -1)
+                return "";
+            if (attachmentUIInsts[slot + staff.maxAttachmentCount] != null)
+                return attachmentUIInsts[slot + staff.maxAttachmentCount].GetComponent<AttachmentUIScript> ().attachment.GetDescription ();
+            return "";
+        }
+        if (attachmentUIInsts[slot] != null)
+            return attachmentUIInsts[slot].GetComponent<AttachmentUIScript> ().attachment.GetDescription ();
+        return "";
+    }
 }
 
 

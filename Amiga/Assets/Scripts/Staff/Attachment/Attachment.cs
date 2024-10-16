@@ -36,4 +36,15 @@ public abstract class Attachment : MonoBehaviour
     /// </summary>
     /// <param name="staff"> the staff to detach from </param>
     public abstract void Detach(Staff staff);
+
+    /// <summary>
+    /// Return the description of the attachment.
+    /// </summary>
+    /// <returns></returns>
+    public abstract string GetDescription();
+
+    /// <summary>
+    /// Buff the attachement based on a ratio(computed from current level nunber).
+    /// </summary>
+    public abstract void Buff(float ratio);
 }

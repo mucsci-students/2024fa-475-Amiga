@@ -9,4 +9,14 @@ public class ManaIncreaseAttachment : SpecialAttachment
     {
         manaIncrease = 10;
     }
+
+    public override string GetDescription()
+    {
+        return "Increase Mana Capacity by 10";
+    }
+
+    public override void Buff(float ratio)
+    {
+        manaIncrease = (int)(manaIncrease * ratio);
+    }
 }

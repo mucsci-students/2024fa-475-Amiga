@@ -19,19 +19,37 @@ public class EnemySpawner : MonoBehaviour
     /// </summary>
     public GameObject enemyPrefab;
 
-    // Subscribe to the event
-    void OnEnable()
+    /// <summary>
+    /// Radius for proximity check
+    /// </summary>
+    public float spawnRadius = 10.0f;
+
+    /// <summary>
+    /// Flag to ensure spawning only once per proximity
+    /// </summary>
+    private bool hasSpawned = false;
+
+    void Update()
     {
-        GameEvents.OnEnemySpawn += SpawnEnemy;  // Subscribe to the custom event
+        // Calculate the distance between the player and the spawner
+        float distance = Vector2.Distance(player.transform.position, transform.position);
+
+        // Check if the player is within the spawn radius and hasn't already triggered a spawn
+        if (distance <= spawnRadius && !hasSpawned)
+        {
+            SpawnEnemy();
+            hasSpawned = true; // Ensure only one spawn per proximity event
+        }
+        // Reset if the player moves away
+        else if (distance > spawnRadius)
+        {
+            hasSpawned = false; // Reset the spawn trigger if the player moves away
+        }
     }
 
-    // Unsubscribe from the event
-    void OnDisable()
-    {
-        GameEvents.OnEnemySpawn -= SpawnEnemy;  // Unsubscribe to avoid memory leaks
-    }
-
-    // Spawn the enemy when the custom event is triggered
+    /// <summary>
+    /// Spawn the enemy
+    /// </summary>
     void SpawnEnemy()
     {
         GameObject enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);

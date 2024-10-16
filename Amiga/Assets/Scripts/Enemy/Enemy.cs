@@ -65,10 +65,18 @@ public abstract class Enemy : MonoBehaviour
     {
         if (health <= 0.0f)
         {
+            player.GetComponent<Player>().gameManager.GetComponent<GameManager>().NextKill();
+
             Attachment attachment = attachmentGenerator.GetComponent<RandomAttachmentPrefab>().GenerateAttachement();
             Instantiate(attachment, transform.position, Quaternion.identity);
+            int level = player.GetComponent<Player>().gameManager.GetComponent<GameManager>().level;
+            // Don't grow too fast
+            float ratio = 1.0f + 0.1f * level;
+            attachment.Buff(ratio);
 
             Destroy(gameObject);
+
+            player.GetComponent<Player>().gameManager.GetComponent<GameManager>().DisplayKillText();
         }
     }
 

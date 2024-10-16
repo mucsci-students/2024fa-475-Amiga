@@ -9,4 +9,14 @@ public class BulletCountIncrease : AttackAttachment
     {
         bulletCountIncrease = 1;
     }
+
+    public override string GetDescription()
+    {
+        return "Increase Bullet Count by 1";
+    }
+
+    public override void Buff(float ratio)
+    {
+        bulletCountIncrease = (int)(bulletCountIncrease * ratio);
+    }
 }

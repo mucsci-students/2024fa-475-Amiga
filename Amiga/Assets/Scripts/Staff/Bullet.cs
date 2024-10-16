@@ -30,12 +30,6 @@ public class Bullet : MonoBehaviour
     /// </summary>
     public float life;
 
-    void Awake()
-    {
-        // Add a Collider2D component
-        //gameObject.GetComponent<CircleCollider2D>().isTrigger = true;
-    }
-
     public void Initialize(float damage, float speed, float size, float life, Vector2 direction)
     {
         this.damage = damage;
@@ -72,7 +66,6 @@ public class Bullet : MonoBehaviour
             return;
         }
         // Check if the bullet hits a tilemap and destroy the tile
-        // TODO: only destroy tile if the attachment is attached
         else if (collision.gameObject.GetComponent<Tilemap>() != null)
         {
             Vector2 contactPoint = collision.ClosestPoint(transform.position);  // Get the closest point of contact

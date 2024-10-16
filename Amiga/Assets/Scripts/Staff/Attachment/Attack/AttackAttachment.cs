@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackAttachment : Attachment
+public abstract class AttackAttachment : Attachment
 {
     /// <summary>
     /// The damage increase amount of the attachment.
