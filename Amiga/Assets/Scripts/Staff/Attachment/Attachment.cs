@@ -36,4 +36,6 @@ public abstract class Attachment : MonoBehaviour
     /// </summary>
     /// <param name="staff"> the staff to detach from </param>
     public abstract void Detach(Staff staff);
+
+    public abstract string GetDescription();
 }

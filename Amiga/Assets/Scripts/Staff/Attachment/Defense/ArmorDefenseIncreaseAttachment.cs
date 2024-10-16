@@ -8,4 +8,9 @@ public class ArmorDefenseIncreaseAttachment : DefenseAttachment
     {
         armorDefenseIncrease = 10;
     }
+
+    public override string GetDescription()
+    {
+        return "Increase Armor by 10";
+    }
 }

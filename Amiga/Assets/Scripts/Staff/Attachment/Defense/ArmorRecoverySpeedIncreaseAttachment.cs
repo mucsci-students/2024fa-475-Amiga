@@ -8,4 +8,9 @@ public class ArmorRecoverySpeedIncreaseAttachment : DefenseAttachment
     {
         armorRecoverySpeedIncrease = 5;
     }
+
+    public override string GetDescription()
+    {
+        return "Increase Armor Recovery Speed by 5";
+    }
 }

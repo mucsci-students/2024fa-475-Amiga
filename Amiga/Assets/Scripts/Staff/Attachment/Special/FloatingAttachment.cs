@@ -9,4 +9,9 @@ public class FloatingAttachment : SpecialAttachment
     {
         floating = 1;
     }
+
+    public override string GetDescription()
+    {
+        return "Enable Floating";
+    }
 }

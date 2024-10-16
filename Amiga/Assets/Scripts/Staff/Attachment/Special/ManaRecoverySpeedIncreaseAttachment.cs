@@ -9,4 +9,8 @@ public class ManaRecoverySpeedIncreaseAttachment : SpecialAttachment
     {
         manaRecoverySpeedIncrease = 10;
     }
+    public override string GetDescription()
+    {
+        return "Increase Mana Recovery Speed by 10";
+    }
 }

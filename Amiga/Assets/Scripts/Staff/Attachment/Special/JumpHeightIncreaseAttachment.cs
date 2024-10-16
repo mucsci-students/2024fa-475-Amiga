@@ -8,4 +8,9 @@ public class JumpHeightIncreaseAttachment : SpecialAttachment
     {
         jumpHeightIncrease = 5;
     }
+
+    public override string GetDescription()
+    {
+        return "Increase Jump Height by 5";
+    }
 }

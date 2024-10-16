@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefenseAttachment : Attachment
+public abstract class DefenseAttachment : Attachment
 {
     /// <summary>
     /// The defense increase amount of the attachment.

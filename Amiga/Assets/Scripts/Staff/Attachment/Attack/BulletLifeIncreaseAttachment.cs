@@ -9,4 +9,9 @@ public class BulletLifeIncrease : AttackAttachment
     {
         bulletLifeIncrease = 1.0f;
     }
+
+    public override string GetDescription()
+    {
+        return "Increase Bullet Life by 1";
+    }
 }
