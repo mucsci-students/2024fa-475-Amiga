@@ -8,7 +8,7 @@ public class TextDisplay : MonoBehaviour
     /// <summary>
     /// Reference to the UI Text component.
     /// </summary>
-    public TextMeshPro eventText;
+    public TextMeshProUGUI eventText;
 
     /// <summary>
     /// Duration of the fade-out effect.
@@ -24,7 +24,7 @@ public class TextDisplay : MonoBehaviour
 
     void Start()
     {
-        eventText = GetComponent<TextMeshPro>();
+        eventText = GetComponent<TextMeshProUGUI>();
 
         // Store the original color of the text (to reset it later)
         originalColor = eventText.color;

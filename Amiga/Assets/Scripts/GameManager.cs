@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
     /// <summary>
     /// Reference to text display UI
     /// </summary>
