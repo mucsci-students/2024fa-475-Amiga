@@ -121,6 +121,11 @@ public class Staff : MonoBehaviour
     /// </summary>
     public float armorRecoverySpeed;
 
+    /// <summary>
+    /// Number of seconds to wait before armor recovery.
+    /// </summary>
+    public float armorRecoveryWaited;
+
     // Special properties:-------------------------------------------
 
     /// <summary>
@@ -212,9 +217,11 @@ public class Staff : MonoBehaviour
         bulletSize = 0.5f;
         bulletLife = 1.0f;
 
-        armorDefense = 50.0f;
-        currentArmorDefense = 50.0f;
+        armorDefense = 0.0f; // Start with no armor
+        currentArmorDefense = 0.0f;
         armorRecoverySpeed = 5.0f;
+        armorRecoveryWaited = 0.0f;
+
         jumpHeight = 10;
         floating = 0;
         slowmoEffect = 1f;
@@ -437,7 +444,12 @@ public class Staff : MonoBehaviour
     /// </summary>
     public void Recover()
     {
-        currentArmorDefense = Mathf.Min(armorDefense, currentArmorDefense + armorRecoverySpeed * Time.deltaTime);
+        armorRecoveryWaited += Time.deltaTime;
+        if (armorRecoveryWaited > 5.0f)
+        {
+            currentArmorDefense = Mathf.Min(armorDefense, currentArmorDefense + armorRecoverySpeed * Time.deltaTime);
+        }
+        
         currentHealth = Mathf.Min(maxHealth, currentHealth + healthRecoverySpeed * Time.deltaTime);
         currentMana = Mathf.Min(maxMana, currentMana + manaRecoverySpeed * Time.deltaTime);
     }
@@ -449,6 +461,11 @@ public class Staff : MonoBehaviour
     /// <returns> true for alive, false for dead </returns>
     public virtual bool TakeDamage(float damage, bool skipArmor = false)
     {
+        if (!skipArmor)
+        {
+            armorRecoveryWaited = 0.0f;
+        }
+
         if (!skipArmor && currentArmorDefense > 0.0f)
         {
             currentArmorDefense = Mathf.Max(0.0f, currentArmorDefense - damage);
