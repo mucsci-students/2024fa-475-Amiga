@@ -1,22 +1,17 @@
 # 2024fa-475-Amiga
 
+### OverStaffed
+The adventure of a staff.
+
+## Screenshots
 
 
+## Gameplay
+- Move: ``WASD`` OR ``ARROW KEYS``
+- Jump: ``SPACE`` OR ``W``
+- Attack: ``MOUSE LEFT BUTTON``
 
-
-Contributors: Marshall Feng, Lincoln Craddock, Darlin Piruch
-
-
-
-PROJECT BACKLOG
----------------
-
-(these can be done once all of the current issues have been resolved)
-
-More levels
-More attachments
-Boss enemy
-Background music
-Sound clips
-Parallax effect
-Towers & structures for the monster
+## Authors
+- Marshall Feng
+- Lincoln Craddock
+- Darlin Piruch
