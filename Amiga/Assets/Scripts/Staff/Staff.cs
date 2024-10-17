@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
@@ -413,10 +412,13 @@ public class Staff : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < Mathf.Min(bulletCount, currentMana / manaCost); ++i)
+            int numBullets = (int) Mathf.Min(bulletCount, currentMana / manaCost);
+            float baseAngle = -4f * (numBullets - 1) / 2f;
+            for (int i = 0; i < numBullets; ++i)
             {
                 launched = true;
-                Shoot(direction);
+                Vector3 actualBulletDirection = Quaternion.AngleAxis (baseAngle + i * 4f, Vector3.forward) * direction;
+                Shoot(actualBulletDirection);
                 currentMana -= manaCost;
             }
         }
@@ -431,8 +433,6 @@ public class Staff : MonoBehaviour
     /// </summary>
     private void Shoot(Vector2 direction)
     {
-        // TODO: avoid bullet overlap
-
         // Instantiate the bullet
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         bullet.GetComponent<Bullet>().handler = handler;
