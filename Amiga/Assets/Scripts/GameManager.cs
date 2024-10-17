@@ -19,6 +19,36 @@ public class GameManager : MonoBehaviour
         "Naught boy..."
     };
 
+    [SerializeField]
+    public string[] hurtText =
+    {
+        "Is it really painful...?",
+        "How does it feel...?",
+        "Is \"he\" bleeding...?"
+    };
+
+    [SerializeField]
+    public string[] deathText =
+    {
+        "This one looks stronger...",
+        "Poor man...",
+        "Need a stronger body..."
+    };
+
+    [SerializeField]
+    public string[] killText =
+    {
+        "That's it...",
+        "Kill..."
+    };
+
+    [SerializeField]
+    public string[] collectAttachmentText =
+    {
+        "more...",
+        "I love it..."
+    };
+
     //LEVEL META DATA-----------------------------------------
 
     /// <summary>
@@ -87,8 +117,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void DisplayHurtText()
     {
-        string text = "Is it painful...";
-        textDisplay.GetComponent<TextDisplay>().TriggerText(text);
+        textDisplay.GetComponent<TextDisplay>().TriggerText(RandomText(hurtText));
     }
 
     /// <summary>
@@ -96,9 +125,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void DisplayDeathText()
     {
-        //string text = "Poor man...";
-        string text = "This one looks stronger...";
-        textDisplay.GetComponent<TextDisplay>().TriggerText(text);
+        textDisplay.GetComponent<TextDisplay>().TriggerText(RandomText(deathText));
     }
 
     /// <summary>
@@ -106,8 +133,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void DisplayKillText()
     {
-        string text = "That's it...";
-        textDisplay.GetComponent<TextDisplay>().TriggerText(text);
+        textDisplay.GetComponent<TextDisplay>().TriggerText(RandomText(killText));
     }
 
     /// <summary>
@@ -115,7 +141,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void DisplayCollectAttachmentText()
     {
-        string text = "more...";
-        textDisplay.GetComponent<TextDisplay>().TriggerText(text);
+        textDisplay.GetComponent<TextDisplay>().TriggerText(RandomText(collectAttachmentText));
     }
 }
