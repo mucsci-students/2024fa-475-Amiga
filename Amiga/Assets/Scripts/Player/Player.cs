@@ -163,7 +163,7 @@ public class Player : MonoBehaviour
     public virtual void Die()
     {
         // Move to the original position
-        transform.localPosition = new Vector3(-166.88f, 60.59f, 0);
+        transform.localPosition = new Vector3(-166.88f, 61.22f, 0);
 
         staff.Reset();
 
