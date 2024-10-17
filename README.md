@@ -1,10 +1,14 @@
 # 2024fa-475-Amiga
 
-### OverStaffed
+## OverStaffed
 The adventure of a staff.
 
 ## Screenshots
 
+
+## Run the game
+- Windows: 
+- MacOS:
 
 ## Gameplay
 - Move: ``WASD`` OR ``ARROW KEYS``
