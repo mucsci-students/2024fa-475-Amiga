@@ -11,7 +11,7 @@ public class JumpHeightIncreaseAttachment : SpecialAttachment
 
     public override string GetDescription()
     {
-        return "Increase Jump Height by 5";
+        return "Jump Boost";
     }
 
     public override void Buff(float ratio)

@@ -30,6 +30,22 @@ public abstract class SpecialAttachment : Attachment
     /// </summary>
     public int manaCostDecrease = 0;
 
+    /// <summary>
+    /// The amount of extra speed the player gets when running
+    /// </summary>
+    public int movementSpeedIncrease = 0;
+
+    /// <summary>
+    /// Whether or not bullets destroy tiles
+    /// Use an int so that the debris flies farther if there are more attachments
+    /// </summary>
+    public int destruction = 0;
+
+    /// <summary>
+    /// How much time slows down whenever the player is firing
+    /// </summary>
+    public float slowmo = 1;
+
     public override void Attach(Staff staff)
     {
         staff.jumpHeight += jumpHeightIncrease;
@@ -37,6 +53,9 @@ public abstract class SpecialAttachment : Attachment
         staff.maxMana += manaIncrease;
         staff.manaRecoverySpeed += manaRecoverySpeedIncrease;
         staff.manaCost -= manaCostDecrease;
+        staff.speedBoost += movementSpeedIncrease;
+        staff.destruction += destruction;
+        staff.slowmoEffect *= slowmo;
 
         attached = true;
     }
@@ -48,6 +67,9 @@ public abstract class SpecialAttachment : Attachment
         staff.maxMana -= manaIncrease;
         staff.manaRecoverySpeed -= manaRecoverySpeedIncrease;
         staff.manaCost += manaCostDecrease;
+        staff.speedBoost -= movementSpeedIncrease;
+        staff.destruction -= destruction;
+        staff.slowmoEffect /= slowmo;
 
         attached = false;
     }

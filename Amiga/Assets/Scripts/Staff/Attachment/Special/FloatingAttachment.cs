@@ -12,7 +12,7 @@ public class FloatingAttachment : SpecialAttachment
 
     public override string GetDescription()
     {
-        return "Enable Floating";
+        return "Floating";
     }
 
     public override void Buff(float ratio)

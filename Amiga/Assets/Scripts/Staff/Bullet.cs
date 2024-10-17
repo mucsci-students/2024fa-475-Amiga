@@ -30,12 +30,18 @@ public class Bullet : MonoBehaviour
     /// </summary>
     public float life;
 
-    public void Initialize(float damage, float speed, float size, float life, Vector2 direction)
+    /// <summary>
+    /// Whether to destroy tiles. > 0 means destroy.
+    /// </summary>
+    public float destruction;
+
+    public void Initialize(float damage, float speed, float size, float life, Vector2 direction, float destruction)
     {
         this.damage = damage;
         this.speed = speed;
         this.size = size;
         this.life = life;
+        this.destruction = destruction;
 
         //Update size of components
         transform.localScale = new Vector3(size, size, 1);
@@ -68,14 +74,19 @@ public class Bullet : MonoBehaviour
         // Check if the bullet hits a tilemap and destroy the tile
         else if (collision.gameObject.GetComponent<Tilemap>() != null)
         {
-            Vector2 contactPoint = collision.ClosestPoint(transform.position);  // Get the closest point of contact
+            // only destroy tile if we have that attachment
+            if (destruction > 0)
+            {
+                Vector2 contactPoint = collision.ClosestPoint(transform.position);  // Get the closest point of contact
             
-            // Not sure why, but the impactPos need adjustment
-            Vector3 adjustedImpactPos = contactPoint + new Vector2(
-            transform.right.x > 0 ? 0.05f : -0.05f,  // Adjust based on horizontal direction
-            transform.right.y > 0 ? 0.05f : -0.05f);  // Adjust based on vertical direction);
+                // Not sure why, but the impactPos need adjustment
+                Vector3 adjustedImpactPos = contactPoint + new Vector2(
+                transform.right.x > 0 ? 0.05f : -0.05f,  // Adjust based on horizontal direction
+                transform.right.y > 0 ? 0.05f : -0.05f);  // Adjust based on vertical direction);
 
-            handler.DestroyTile(adjustedImpactPos, transform.right * 3);  // Destroy the tile at the contact point
+                handler.DestroyTile(adjustedImpactPos, transform.right * (2 + destruction));  // Destroy the tile at the contact point
+            }
+            
             Destroy(gameObject);
         }
         // Check if the bullet hits an enemy and apply damage

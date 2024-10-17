@@ -12,7 +12,7 @@ public class ManaIncreaseAttachment : SpecialAttachment
 
     public override string GetDescription()
     {
-        return "Increase Mana Capacity by 10";
+        return "+ Mana Capacity";
     }
 
     public override void Buff(float ratio)

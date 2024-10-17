@@ -33,6 +33,11 @@ public class KillCounter : MonoBehaviour
         return false;
     }
 
+    public void resetCount ()
+    {
+        count = 0;
+    }
+
     // sets tiles so that the tally marks appear on the kill count wall
     public void createTallyMarks ()
     {

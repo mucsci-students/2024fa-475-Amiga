@@ -104,3 +104,6 @@ MonoBehaviour:
   manaIncrease: 0
   manaRecoverySpeedIncrease: 0
   manaCostDecrease: 0
+  movementSpeedIncrease: 0
+  destruction: 0
+  slowmo: 1

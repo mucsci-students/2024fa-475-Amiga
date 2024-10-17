@@ -11,7 +11,7 @@ public class ManaRecoverySpeedIncreaseAttachment : SpecialAttachment
     }
     public override string GetDescription()
     {
-        return "Increase Mana Recovery Speed by 10";
+        return "+ Mana Recovery";
     }
 
     public override void Buff(float ratio)

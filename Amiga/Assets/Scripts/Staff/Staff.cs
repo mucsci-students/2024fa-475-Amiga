@@ -55,7 +55,7 @@ public class Staff : MonoBehaviour
     /// <summary>
     /// The maximum level the staff can reach
     /// </summary>
-    private int maxStaffLevel = 2;
+    private int maxStaffLevel = 3;
 
     /// <summary>
     /// The attachments currently in the player's inventory
@@ -146,8 +146,14 @@ public class Staff : MonoBehaviour
 
     /// <summary>
     /// How much the player will slow enemies down when firing
+    /// normally at 1f
     /// </summary>
-    public float slowmoEffect = 0.5f;
+    public float slowmoEffect;
+
+    /// <summary>
+    /// Whether or not the player's bullets destroy tiles
+    /// </summary>
+    public float destruction;
 
     /// <summary>
     /// The maximum mana
@@ -436,7 +442,8 @@ public class Staff : MonoBehaviour
                                                  bulletSpeed,
                                                  bulletSize,
                                                  bulletLife,
-                                                 direction);
+                                                 direction,
+                                                 destruction);
     }
 
     /// <summary>

@@ -10,6 +10,11 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public GameObject textDisplay;
 
+    /// <summary>
+    /// Reference to Kill count background tilemap
+    /// </summary>
+    public KillCounter killCounter;
+
     [SerializeField]
     public string[] lavaText =
     {
@@ -85,12 +90,14 @@ public class GameManager : MonoBehaviour
     public void NextKill()
     {
         ++enemyKilled;
+        killCounter.increaseCount();
     }
 
     public void Reset()
     {
         level = 0;
         enemyKilled = 0;
+        killCounter.createTallyMarks ();
     }
 
     public void DisplayText(string text)

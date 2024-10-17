@@ -20,8 +20,8 @@ public class StaffMenuManager : MonoBehaviour
 
     [SerializeField] private UISFXController sfxPlayer;
 
-    private List<float> staffSlotXCoords = new List<float> {240f, 160f, 200f, 120f, 80f, 0f, 40f}; // todo
-    private List<float> staffSlotYCoords = new List<float> {140f, 140f, 20f, 20f, 140f, 160f, 20f};
+    private List<float> staffSlotXCoords = new List<float> {240f, 160f, 200f, 120f, 80f, 0f, 40f, -40f, -80f};
+    private List<float> staffSlotYCoords = new List<float> {140f, 140f, 20f, 20f, 140f, 160f, 20f, 0f, 160f};
 
     public List<GameObject> attachmentUIInsts = new List<GameObject> (); // {attached...attached, inventory...inventory}
 

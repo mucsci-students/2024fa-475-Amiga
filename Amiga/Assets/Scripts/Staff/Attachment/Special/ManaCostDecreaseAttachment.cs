@@ -11,7 +11,7 @@ public class ManaCostDecreaseAttachment : SpecialAttachment
     }
     public override string GetDescription()
     {
-        return "Decrease Mana Cost by 10";
+        return "- Mana Cost";
     }
 
     public override void Buff(float ratio)
